@@ -14,6 +14,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(favicon(path.join(__dirname, 'public', 'icon_violet.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.get('/',(req,res)=>{
+
+    res.redirect("/landing_page")
+
+})
+
+
 app.get('/landing_page', async (req, res)=> {
 
 res.render('landing_page_dua');
