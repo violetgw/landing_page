@@ -3,8 +3,12 @@ const express = require("express");
 const app = express();
 const path = require('path');
 var favicon = require('serve-favicon')
+var bodyParser = require('body-parser')
 
 
+// Gunakan middleware body-parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.set("view engine", "ejs");
@@ -21,6 +25,13 @@ app.get('/',(req,res)=>{
 
 })
 
+
+app.get('/send_wa',async (req,res)=>{
+
+   const wa_nama = req.query.wa_nama;
+
+    res.redirect(`https://wa.me/6281290663757/?text=Assalamualaikum Kak, Saya, ${wa_nama}, baru saja mengisi formulir di website violetstore.id. Apakah produk Spesial SARIMBIT AZZURA 2024 masih tersedia? Mohon bantuan dan informasinya, ya Kak. Terima kasih atas bantuannya😉`)
+})
 
 app.get('/landing_page', async (req, res)=> {
 

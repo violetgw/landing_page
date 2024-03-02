@@ -404,16 +404,13 @@
   <div class="container mt-5" style="margin-bottom: 100px;">
     <div class="row d-flex justify-content-center align-items-center">
         <h2 id="hubungi">Hubungi Kami?</h2>
-        <form>
+        <form action="/send_wa" method="get">
             <div class="row">
               <div class="col">
-                <input type="text" id="wa_nama" class="form-control" placeholder="nama" required>
-              </div>
+                <input type="text" id="wa_nama" class="form-control" placeholder="nama" name="wa_nama" required>
+              </div>  
               <div class="col">
-                <input type="number" id="wa_no_telp" class="form-control" placeholder="No Telp" required>
-              </div>
-              <div class="col">
-              <a type="submit" id="tombol_send_wa" class="btn btn-success mb-2"><i class="ri-whatsapp-line"></i>Send Wa</a>
+              <button type="submit" id="tombol_send_wa" class="btn btn-success mb-2"><i class="ri-whatsapp-line"></i>Send Wa</button>
               </div>              
             </div>
           </form>
