@@ -1984,6 +1984,28 @@ section {
   font-size: 14px;
 }
 
+
+
+/*--------------------------------------------------------------
+# untuk tabel
+--------------------------------------------------------------*/
+
+#tabel_gamis_dewasa h4{
+  
+  font-family: serif;
+
+}
+
+#tabel_gamis th{
+
+  background-color: #4b5320;
+  color: white;
+
+}
+#tabel_gamis_dewasa th, #tabel_gamis_dewasa td{
+  color: white;
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
