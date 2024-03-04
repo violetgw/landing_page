@@ -70,7 +70,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: rgb(244, 244, 244);
+  background: #4a614d;
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
