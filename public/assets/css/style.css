@@ -49,10 +49,6 @@ h6 {
   background: #53bd55;
   color: #fff;
 }
-.back-to-top:hover {
-  background: #53bd55;
-  color: #fff;
-}
 
 .back-to-top.active {
   visibility: visible;
