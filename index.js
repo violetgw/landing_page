@@ -5,33 +5,19 @@ const app = express();
 const path = require('path');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const { Schema, default: mongoose } = require("mongoose");
-const uri = "mongodb+srv://violetfotogwzambrud:2t62A9s0slATxgcS@cluster0.6uboakq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const mongoose  = require("mongoose");
+const uri = "mongodb+srv://violetfotogwzambrud:2t62A9s0slATxgcS@cluster0.6uboakq.mongodb.net/violet";
+const moment = require('moment');
+require('moment-timezone');
+moment.tz.setDefault('Asia/Jakarta');
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
 
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
-run().catch(console.dir);
+const options = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+};
 
+mongoose.connect(uri, options);
 
 
 
@@ -56,7 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-// tets mongose 
+// test mongose 
 
 
 const akun = new mongoose.Schema({
@@ -65,9 +51,24 @@ const akun = new mongoose.Schema({
   nama : String
 });
 
+
+const form_data = new mongoose.Schema({
+  nama:String,
+  nomer_telephone:String,
+  jam:String
+});
+
+
+const data_form_data = new mongoose.model("form_datas",form_data);
+
 const data_akun = mongoose.model("akun_violets",akun);
 
-// var data_a
+var kirim_form = new data_form_data({
+  nama : "Moza Achmad Dani",
+  nomer_telphone : "081932240030"
+});
+
+// kirim_form.save();
 
 
 
@@ -82,11 +83,34 @@ app.get('/',(req,res)=>{
 
 
 app.get('/send_wa',async (req,res)=>{
+  const currentTime = moment();
 
-   const wa_nama = req.query.wa_nama;
+   const {wa_nama,nomer_telephone} = req.query;
+   console.log(`Data Masuk ${wa_nama} pukul ${currentTime.format("HH:mm:ss")}`);
 
-    res.redirect(`https://wa.me/6281290663757/?text=Assalamualaikum Kak, Saya, ${wa_nama}, baru saja mengisi formulir di website violetstore.id. Apakah produk Spesial SARIMBIT AZZURA 2024 masih tersedia? Mohon bantuan dan informasinya, ya Kak. Terima kasih atas bantuannya😉`)
-})
+   const data_short_form =  await data_form_data.findOne({nama:wa_nama, nomer_telephone:nomer_telephone},`nama nomer_telphone`);
+
+   if(data_short_form){
+
+    res.redirect(`https://wa.me/6281290663757/?text=Assalamu'alaikum kak saya ${wa_nama} Mau tanya" terkait sarimbit.😉`)
+
+   }
+   else{
+
+    const save_short_form = new data_form_data({
+      nama:wa_nama,
+      nomer_telephone:nomer_telephone,
+      jam : currentTime.format("HH:mm:ss")
+
+    });
+
+    save_short_form.save();
+    res.redirect(`https://wa.me/6281290663757/?text=Assalamu'alaikum kak saya ${wa_nama} Mau tanya" terkait sarimbit.😉`)
+   
+  }
+
+    // res.redirect(`https://wa.me/6281290663757/?text=Assalamualaikum Kak, Saya, ${wa_nama}, baru saja mengisi formulir di website violetstore.id. Apakah produk Spesial SARIMBIT AZZURA 2024 masih tersedia? Mohon bantuan dan informasinya, ya Kak. Terima kasih atas bantuannya😉`)
+});
 
 app.get('/landing_page', async (req, res)=> {
 
@@ -114,28 +138,48 @@ else{
 
 });
 
-app.get('/proses_login',(req,res)=>{
 
-const {username,password} = req.query;
+// app.get("/test", async (req,res) => {
 
-console.log(username);
-console.log(password);
 
-req.session.username = username;
-req.session.password = password;
 
-console.log(`username : ${req.session.username}`);
-console.log(`password : ${req.session.password}`);
+// });
+
+
+app.get('/proses_login', async (req,res)=>{
 
 
 if(req.session.username && req.session.password){
-
   res.redirect("/admin");
+}
+else{
+  const {username,password} = req.query;
+
+
+  const db_akun = await data_akun.findOne({username:username,password:password},"nama username password");
+  
+  
+  
+  if(db_akun){
+    
+    console.log("-------data ada------");  
+    console.log(`Username :${db_akun.username}`);
+    console.log(`Password :${db_akun.password}`);
+    console.log(`nama :${db_akun.nama}`);
+    req.session.username = db_akun.username;
+    req.session.password = db_akun.password;
+    req.session.nama = db_akun.nama;
+  
+    res.redirect("/admin");
+  }
+  else {
+    console.log("-------data tidak ada------");
+    res.redirect("/login?i=salah");
+  
+  }
 
 }
-else {
-  res.render("admin")
-}
+
 
 });
 
@@ -144,7 +188,11 @@ app.get("/admin",(req,res) => {
 
 if(req.session.username && req.session.password){
 
-  res.render("admin");
+  res.render("admin",{
+    nama : req.session.nama,
+    username : req.session.username,
+    pasword: req.session.password
+  });
 
 }
 else{
