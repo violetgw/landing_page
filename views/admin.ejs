@@ -52,7 +52,7 @@
                     <div class="form-group">
                       <label for="exampleFormControlSelect2">Example multiple select</label>
                       <select multiple class="form-control" id="exampleFormControlSelect2">
-                        <option>1</option>
+                        <option><%= db_setting.img_slide.img_satu %></option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
@@ -68,7 +68,146 @@
               </div>
             </div>
         </div>
+<!-- untuk Upload -->
+<div class="container">
 
+<h4> Gambar Slide </h4>
+  <!-- batsan card -->
+<div class="card">
+  <h1>Slide Satu</h1>
+  <div class="card-body">
+<form method="post" action="upload_img_slide_satu">
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Slide Satu</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+  <input type="submit" value="Upload" />
+</form>
+<form method="post" action="/edit_img_satu">
+  <h6>judul</h6>
+  <input name="judul_slide_satu" class="form-control" type="text" placeholder="Default input" required>
+  <h6>Deskripsi</h6>
+  <input name="deskripsi_slide_satu" class="form-control" type="text" placeholder="Default input" required>
+</form>
+</div>
+</div>
+<!-- batasnya slide -->
+
+  <!-- batsan card -->
+  <div class="card">
+    <h1>Slide dua</h1>
+    <div class="card-body">
+  <form method="post" action="upload_img_slide_dua">
+    <div class="form-group">
+      <label for="exampleFormControlFile1">Slide dua</label>
+      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+    <input type="submit" value="Upload" />
+  </form>
+  <form method="post" action="/edit_img_dua">
+    <h6>judul</h6>
+    <input name="judul_slide_dua" class="form-control" type="text" placeholder="Default input" required>
+    <h6>Deskripsi</h6>
+    <input name="deskripsi_slide_dua" class="form-control" type="text" placeholder="Default input" required>
+  </form>
+  </div>
+  </div>
+  <!-- batasnya slide -->
+    <!-- batsan card -->
+    <div class="card">
+      <h1>Slide tiga</h1>
+      <div class="card-body">
+    <form method="post" action="upload_img_slide_tiga">
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Slide tiga</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+      <input type="submit" value="Upload" />
+    </form>
+    <form method="post" action="/edit_img_tiga">
+      <h6>judul</h6>
+      <input name="judul_slide_tiga" class="form-control" type="text" placeholder="Default input" required>
+      <h6>Deskripsi</h6>
+      <input name="deskripsi_slide_tiga" class="form-control" type="text" placeholder="Default input" required>
+    </form>
+    </div>
+    </div>
+    <!-- batasnya slide -->
+    <!-- batsan card -->
+    <div class="card">
+      <h1>Slide empat</h1>
+      <div class="card-body">
+    <form method="post" action="upload_img_slide_empat">
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Slide empat</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+      <input type="submit" value="Upload" />
+    </form>
+    <form method="post" action="/edit_img_empat">
+      <h6>judul</h6>
+      <input name="judul_slide_empat" class="form-control" type="text" placeholder="Default input" required>
+      <h6>Deskripsi</h6>
+      <input name="deskripsi_slide_empat" class="form-control" type="text" placeholder="Default input" required>
+    </form>
+    </div>
+    </div>
+    <!-- batasnya slide -->
+        <!-- batsan card -->
+        <div class="card">
+          <h1>Slide lima</h1>
+          <div class="card-body">
+        <form method="post" action="upload_img_slide_lima">
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Slide lima</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+          <input type="submit" value="Upload" />
+        </form>
+        <form method="post" action="/edit_img_lima">
+          <h6>judul</h6>
+          <input name="judul_slide_lima" class="form-control" type="text" placeholder="Default input" required>
+          <h6>Deskripsi</h6>
+          <input name="deskripsi_slide_lima" class="form-control" type="text" placeholder="Default input" required>
+        </form>
+        </div>
+        </div>
+        <!-- batasnya slide -->
+</div>
+
+<!-- untuk judul dan deskripsi -->
+
+<div class="container">
+
+  <h4> Judul dan Deskripsi </h4>
+    <!-- batsan judul dan deskripsi -->
+  <div class="card">
+    <div class="card-body">
+  </form>
+  <form method="post" action="/edit_judul_dan_deskripsi_produk">
+    <h6>judul</h6>
+    <input name="judul" class="form-control" type="text" placeholder="Judul" required>
+    <h6>jenis produk</h6>
+    <input name="jenis_produk" class="form-control" type="text" placeholder="jenis_produk" required>
+    <h6>Deskripsi</h6>
+    <textarea name="deskripsi_produk" id="" cols="130" rows="10"></textarea>
+    <input type="submit" value="simpan">
+  </form>
+  </div>
+  </div>
+  </div>
+
+
+
+<form method="POST" action="/profile-upload-multiple" enctype="multipart/form-data">
+  <div>
+      <label>Upload multiple profile picture</label>
+      <input type="file" name="profile-files" required multiple  />
+  </div>
+  <div>
+      <input type="submit" value="Upload" />
+  </div>
+</form>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>

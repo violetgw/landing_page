@@ -2,6 +2,7 @@ const port = 3000;
 const express = require("express");
 var session = require('express-session')
 const app = express();
+var multer  = require('multer');
 const path = require('path');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
