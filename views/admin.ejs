@@ -76,10 +76,10 @@
 <div class="card">
   <h1>Slide Satu</h1>
   <div class="card-body">
-<form method="post" action="upload_img_slide_satu">
+<form method="post" action="/upload_img_slide_satu" enctype="multipart/form-data">
   <div class="form-group">
     <label for="exampleFormControlFile1">Slide Satu</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
   </div>
   <input type="submit" value="Upload" />
 </form>
@@ -97,10 +97,10 @@
   <div class="card">
     <h1>Slide dua</h1>
     <div class="card-body">
-  <form method="post" action="upload_img_slide_dua">
+  <form method="post" action="/upload_img_slide_dua">
     <div class="form-group">
       <label for="exampleFormControlFile1">Slide dua</label>
-      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
     </div>
     <input type="submit" value="Upload" />
   </form>
@@ -117,10 +117,10 @@
     <div class="card">
       <h1>Slide tiga</h1>
       <div class="card-body">
-    <form method="post" action="upload_img_slide_tiga">
+    <form method="post" action="/upload_img_slide_tiga">
       <div class="form-group">
         <label for="exampleFormControlFile1">Slide tiga</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
       </div>
       <input type="submit" value="Upload" />
     </form>
@@ -137,10 +137,10 @@
     <div class="card">
       <h1>Slide empat</h1>
       <div class="card-body">
-    <form method="post" action="upload_img_slide_empat">
+    <form method="post" action="/upload_img_slide_empat">
       <div class="form-group">
         <label for="exampleFormControlFile1">Slide empat</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
       </div>
       <input type="submit" value="Upload" />
     </form>
@@ -157,10 +157,10 @@
         <div class="card">
           <h1>Slide lima</h1>
           <div class="card-body">
-        <form method="post" action="upload_img_slide_lima">
+        <form method="post" action="/upload_img_slide_lima">
           <div class="form-group">
             <label for="exampleFormControlFile1">Slide lima</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
           </div>
           <input type="submit" value="Upload" />
         </form>
@@ -175,6 +175,416 @@
         <!-- batasnya slide -->
 </div>
 
+
+<!-- untuk kirim data card -->
+<div class="container">
+
+  <h4> Gambar Card </h4>
+    <!-- batsan card -->
+  <div class="card">
+    <h1>card Satu</h1>
+    <div class="card-body">
+  <form method="post" action="/upload_img_card_satu">
+    <div class="form-group">
+      <label for="exampleFormControlFile1">card Satu</label>
+      <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+    <input type="submit" value="Upload" />
+  </form>
+  <form method="post" action="/edit_img_satu">
+    <h6>judul</h6>
+    <input name="judul_card_satu" class="form-control" type="text" placeholder="Default input" required>
+    <h6>Deskripsi</h6>
+    <input name="deskripsi_card_satu" class="form-control" type="text" placeholder="Default input" required>
+  </form>
+  </div>
+  </div>
+  <!-- batasnya card -->
+  
+    <!-- batsan card -->
+    <div class="card">
+      <h1>card dua</h1>
+      <div class="card-body">
+    <form method="post" action="/upload_img_card_dua">
+      <div class="form-group">
+        <label for="exampleFormControlFile1">card dua</label>
+        <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+      <input type="submit" value="Upload" />
+    </form>
+    <form method="post" action="/edit_img_dua">
+      <h6>judul</h6>
+      <input name="judul_card_dua" class="form-control" type="text" placeholder="Default input" required>
+      <h6>Deskripsi</h6>
+      <input name="deskripsi_card_dua" class="form-control" type="text" placeholder="Default input" required>
+    </form>
+    </div>
+    </div>
+    <!-- batasnya card -->
+      <!-- batsan card -->
+      <div class="card">
+        <h1>card tiga</h1>
+        <div class="card-body">
+      <form method="post" action="/upload_img_card_tiga">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">card tiga</label>
+          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <input type="submit" value="Upload" />
+      </form>
+      <form method="post" action="/edit_img_tiga">
+        <h6>judul</h6>
+        <input name="judul_card_tiga" class="form-control" type="text" placeholder="Default input" required>
+        <h6>Deskripsi</h6>
+        <input name="deskripsi_card_tiga" class="form-control" type="text" placeholder="Default input" required>
+      </form>
+      </div>
+      </div>
+      <!-- batasnya card -->
+      <!-- batsan card -->
+      <div class="card">
+        <h1>card empat</h1>
+        <div class="card-body">
+      <form method="post" action="/upload_img_card_empat">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">card empat</label>
+          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <input type="submit" value="Upload" />
+      </form>
+      <form method="post" action="/edit_img_empat">
+        <h6>judul</h6>
+        <input name="judul_card_empat" class="form-control" type="text" placeholder="Default input" required>
+        <h6>Deskripsi</h6>
+        <input name="deskripsi_card_empat" class="form-control" type="text" placeholder="Default input" required>
+      </form>
+      </div>
+      </div>
+      <!-- batasnya card -->
+          <!-- batsan card -->
+          <div class="card">
+            <h1>card lima</h1>
+            <div class="card-body">
+          <form method="post" action="/upload_img_card_lima">
+            <div class="form-group">
+              <label for="exampleFormControlFile1">card lima</label>
+              <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <input type="submit" value="Upload" />
+          </form>
+          <form method="post" action="/edit_img_lima">
+            <h6>judul</h6>
+            <input name="judul_card_lima" class="form-control" type="text" placeholder="Default input" required>
+            <h6>Deskripsi</h6>
+            <input name="deskripsi_card_lima" class="form-control" type="text" placeholder="Default input" required>
+          </form>
+          </div>
+          </div>
+          <!-- batasnya card -->
+              <!-- batsan card -->
+  <div class="card">
+    <h1>card enam</h1>
+    <div class="card-body">
+  <form method="post" action="/upload_img_card_enam">
+    <div class="form-group">
+      <label for="exampleFormControlFile1">card enam</label>
+      <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+    <input type="submit" value="Upload" />
+  </form>
+  <form method="post" action="/edit_img_enam">
+    <h6>judul</h6>
+    <input name="judul_card_enam" class="form-control" type="text" placeholder="Default input" required>
+    <h6>Deskripsi</h6>
+    <input name="deskripsi_card_enam" class="form-control" type="text" placeholder="Default input" required>
+  </form>
+  </div>
+  </div>
+  <!-- batasnya card -->
+  
+    <!-- batsan card -->
+    <div class="card">
+      <h1>card tuju</h1>
+      <div class="card-body">
+    <form method="post" action="/upload_img_card_tuju">
+      <div class="form-group">
+        <label for="exampleFormControlFile1">card tuju</label>
+        <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+      <input type="submit" value="Upload" />
+    </form>
+    <form method="post" action="/edit_img_tuju">
+      <h6>judul</h6>
+      <input name="judul_card_tuju" class="form-control" type="text" placeholder="Default input" required>
+      <h6>Deskripsi</h6>
+      <input name="deskripsi_card_tuju" class="form-control" type="text" placeholder="Default input" required>
+    </form>
+    </div>
+    </div>
+    <!-- batasnya card -->
+      <!-- batsan card -->
+      <div class="card">
+        <h1>card delapan</h1>
+        <div class="card-body">
+      <form method="post" action="/upload_img_card_delapan">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">card delapan</label>
+          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <input type="submit" value="Upload" />
+      </form>
+      <form method="post" action="/edit_img_delapan">
+        <h6>judul</h6>
+        <input name="judul_card_delapan" class="form-control" type="text" placeholder="Default input" required>
+        <h6>Deskripsi</h6>
+        <input name="deskripsi_card_delapan" class="form-control" type="text" placeholder="Default input" required>
+      </form>
+      </div>
+      </div>
+      <!-- batasnya card -->
+      <!-- batsan card -->
+      <div class="card">
+        <h1>card sembilan</h1>
+        <div class="card-body">
+      <form method="post" action="/upload_img_card_sembilan">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">card sembilan</label>
+          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <input type="submit" value="Upload" />
+      </form>
+      <form method="post" action="/edit_img_sembilan">
+        <h6>judul</h6>
+        <input name="judul_card_sembilan" class="form-control" type="text" placeholder="Default input" required>
+        <h6>Deskripsi</h6>
+        <input name="deskripsi_card_sembilan" class="form-control" type="text" placeholder="Default input" required>
+      </form>
+      </div>
+      </div>
+      <!-- batasnya card -->
+          <!-- batsan card -->
+          <div class="card">
+            <h1>card sepuluh</h1>
+            <div class="card-body">
+          <form method="post" action="/upload_img_card_sepuluh">
+            <div class="form-group">
+              <label for="exampleFormControlFile1">card sepuluh</label>
+              <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <input type="submit" value="Upload" />
+          </form>
+          <form method="post" action="/edit_img_sepuluh">
+            <h6>judul</h6>
+            <input name="judul_card_sepuluh" class="form-control" type="text" placeholder="Default input" required>
+            <h6>Deskripsi</h6>
+            <input name="deskripsi_card_sepuluh" class="form-control" type="text" placeholder="Default input" required>
+          </form>
+          </div>
+          </div>
+          <!-- batasnya card -->
+  <!-- batsan card -->
+  <div class="card">
+    <h1>card sebelas</h1>
+    <div class="card-body">
+  <form method="post" action="/upload_img_card_sebelas">
+    <div class="form-group">
+      <label for="exampleFormControlFile1">card sebelas</label>
+      <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+    <input type="submit" value="Upload" />
+  </form>
+  <form method="post" action="/edit_img_sebelas">
+    <h6>judul</h6>
+    <input name="judul_card_sebelas" class="form-control" type="text" placeholder="Default input" required>
+    <h6>Deskripsi</h6>
+    <input name="deskripsi_card_sebelas" class="form-control" type="text" placeholder="Default input" required>
+  </form>
+  </div>
+  </div>
+  <!-- batasnya card -->
+  
+    <!-- batsan card -->
+    <div class="card">
+      <h1>card duabelas</h1>
+      <div class="card-body">
+    <form method="post" action="/upload_img_card_duabelas">
+      <div class="form-group">
+        <label for="exampleFormControlFile1">card duabelas</label>
+        <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+      <input type="submit" value="Upload" />
+    </form>
+    <form method="post" action="/edit_img_duabelas">
+      <h6>judul</h6>
+      <input name="judul_card_duabelas" class="form-control" type="text" placeholder="Default input" required>
+      <h6>Deskripsi</h6>
+      <input name="deskripsi_card_duabelas" class="form-control" type="text" placeholder="Default input" required>
+    </form>
+    </div>
+    </div>
+    <!-- batasnya card -->
+      <!-- batsan card -->
+      <div class="card">
+        <h1>card tigabelas</h1>
+        <div class="card-body">
+      <form method="post" action="/upload_img_card_tigabelas">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">card tigabelas</label>
+          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <input type="submit" value="Upload" />
+      </form>
+      <form method="post" action="/edit_img_tigabelas">
+        <h6>judul</h6>
+        <input name="judul_card_tigabelas" class="form-control" type="text" placeholder="Default input" required>
+        <h6>Deskripsi</h6>
+        <input name="deskripsi_card_tigabelas" class="form-control" type="text" placeholder="Default input" required>
+      </form>
+      </div>
+      </div>
+      <!-- batasnya card -->
+      <!-- batsan card -->
+      <div class="card">
+        <h1>card empatbelas</h1>
+        <div class="card-body">
+      <form method="post" action="/upload_img_card_empatbelas">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">card empatbelas</label>
+          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <input type="submit" value="Upload" />
+      </form>
+      <form method="post" action="/edit_img_empatbelas">
+        <h6>judul</h6>
+        <input name="judul_card_empatbelas" class="form-control" type="text" placeholder="Default input" required>
+        <h6>Deskripsi</h6>
+        <input name="deskripsi_card_empatbelas" class="form-control" type="text" placeholder="Default input" required>
+      </form>
+      </div>
+      </div>
+      <!-- batasnya card -->
+          <!-- batsan card -->
+          <div class="card">
+            <h1>card limabelas</h1>
+            <div class="card-body">
+          <form method="post" action="/upload_img_card_limabelas">
+            <div class="form-group">
+              <label for="exampleFormControlFile1">card limabelas</label>
+              <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <input type="submit" value="Upload" />
+          </form>
+          <form method="post" action="/edit_img_limabelas">
+            <h6>judul</h6>
+            <input name="judul_card_limabelas" class="form-control" type="text" placeholder="Default input" required>
+            <h6>Deskripsi</h6>
+            <input name="deskripsi_card_limabelas" class="form-control" type="text" placeholder="Default input" required>
+          </form>
+          </div>
+          </div>
+          <!-- batasnya card -->
+              <!-- batsan card -->
+  <div class="card">
+    <h1>card enambelas</h1>
+    <div class="card-body">
+  <form method="post" action="/upload_img_card_enambelas">
+    <div class="form-group">
+      <label for="exampleFormControlFile1">card enambelas</label>
+      <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+    <input type="submit" value="Upload" />
+  </form>
+  <form method="post" action="/edit_img_enambelas">
+    <h6>judul</h6>
+    <input name="judul_card_enambelas" class="form-control" type="text" placeholder="Default input" required>
+    <h6>Deskripsi</h6>
+    <input name="deskripsi_card_enambelas" class="form-control" type="text" placeholder="Default input" required>
+  </form>
+  </div>
+  </div>
+  <!-- batasnya card -->
+  
+    <!-- batsan card -->
+    <div class="card">
+      <h1>card tujubelas</h1>
+      <div class="card-body">
+    <form method="post" action="/upload_img_card_tujubelas">
+      <div class="form-group">
+        <label for="exampleFormControlFile1">card tujubelas</label>
+        <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+      <input type="submit" value="Upload" />
+    </form>
+    <form method="post" action="/edit_img_tujubelas">
+      <h6>judul</h6>
+      <input name="judul_card_tujubelas" class="form-control" type="text" placeholder="Default input" required>
+      <h6>Deskripsi</h6>
+      <input name="deskripsi_card_tujubelas" class="form-control" type="text" placeholder="Default input" required>
+    </form>
+    </div>
+    </div>
+    <!-- batasnya card -->
+      <!-- batsan card -->
+      <div class="card">
+        <h1>card delapanbelas</h1>
+        <div class="card-body">
+      <form method="post" action="/upload_img_card_delapanbelas">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">card delapanbelas</label>
+          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <input type="submit" value="Upload" />
+      </form>
+      <form method="post" action="/edit_img_delapanbelas">
+        <h6>judul</h6>
+        <input name="judul_card_delapanbelas" class="form-control" type="text" placeholder="Default input" required>
+        <h6>Deskripsi</h6>
+        <input name="deskripsi_card_delapanbelas" class="form-control" type="text" placeholder="Default input" required>
+      </form>
+      </div>
+      </div>
+      <!-- batasnya card -->
+      <!-- batsan card -->
+      <div class="card">
+        <h1>card sembilanbelas</h1>
+        <div class="card-body">
+      <form method="post" action="/upload_img_card_sembilanbelas">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">card sembilanbelas</label>
+          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <input type="submit" value="Upload" />
+      </form>
+      <form method="post" action="/edit_img_sembilanbelas">
+        <h6>judul</h6>
+        <input name="judul_card_sembilanbelas" class="form-control" type="text" placeholder="Default input" required>
+        <h6>Deskripsi</h6>
+        <input name="deskripsi_card_sembilanbelas" class="form-control" type="text" placeholder="Default input" required>
+      </form>
+      </div>
+      </div>
+      <!-- batasnya card -->
+          <!-- batsan card -->
+          <div class="card">
+            <h1>card duapuluh</h1>
+            <div class="card-body">
+          <form method="post" action="/upload_img_card_duapuluh">
+            <div class="form-group">
+              <label for="exampleFormControlFile1">card duapuluh</label>
+              <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <input type="submit" value="Upload" />
+          </form>
+          <form method="post" action="/edit_img_duapuluh">
+            <h6>judul</h6>
+            <input name="judul_card_duapuluh" class="form-control" type="text" placeholder="Default input" required>
+            <h6>Deskripsi</h6>
+            <input name="deskripsi_card_duapuluh" class="form-control" type="text" placeholder="Default input" required>
+          </form>
+          </div>
+          </div>
+          <!-- batasnya card -->
+  </div>
 <!-- untuk judul dan deskripsi -->
 
 <div class="container">
@@ -199,10 +609,10 @@
 
 
 
-<form method="POST" action="/profile-upload-multiple" enctype="multipart/form-data">
+<form method="POST" action="/upload_img_slide_satu" enctype="multipart/form-data">
   <div>
       <label>Upload multiple profile picture</label>
-      <input type="file" name="profile-files" required multiple  />
+      <input type="file" name="upload-file" required multiple  />
   </div>
   <div>
       <input type="submit" value="Upload" />

@@ -10,6 +10,7 @@ const mongoose  = require("mongoose");
 const uri = "mongodb+srv://violetfotogwzambrud:2t62A9s0slATxgcS@cluster0.6uboakq.mongodb.net/violet";
 const moment = require('moment');
 require('moment-timezone');
+const fs = require('fs');
 moment.tz.setDefault('Asia/Jakarta');
 const {data_akun,data_form_data,db_atur_img} = require('./models/schema_db');
 
@@ -328,6 +329,8 @@ const options = {
   
   
   });
+
+
   
   
   app.get("/admin", async (req,res) => {
@@ -377,7 +380,15 @@ var storage = multer.diskStorage({
 })
 var upload = multer({ storage: storage });
 
-app.post('/profile-upload-single', upload.single('profile-file'), (req, res) => {
+app.post('/upload_img_slide_satu', upload.single('upload-file'), (req, res) => {
+    const direktori_folder ="./public/img/gambar_landing_page";
+    const file_name = "moza.jpg";
+
+    const file_path= path.join(direktori_folder,file_name);
+
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+
 
     res.redirect('/admin');
 
