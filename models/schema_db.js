@@ -48,12 +48,30 @@ const akun = new mongoose.Schema({
         deskripsi_produk:String
     },
     filter:{
-        satu:String,
-        dua:String,
-        tiga:String,
-        empat:String,
-        lima:String,
-        enam:String
+        satu:{
+            nama:String,
+            get_filter:String
+        },
+        dua:{
+            nama:String,
+            get_filter:String
+        },
+        tiga:{
+            nama:String,
+            get_filter:String
+        },
+        empat:{
+            nama:String,
+            get_filter:String
+        },
+        lima:{
+            nama:String,
+            get_filter:String
+        },
+        enam:{
+            nama:String,
+            get_filter:String
+        }
     },
     all_img:{
         img_satu:{

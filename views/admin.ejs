@@ -29,45 +29,6 @@
       </head>
 <body>
     
-
-    <div class="container">
-        <div class="row" style="min-height: 100vh;">
-            <div class="col align-self-center">
-            <div class="card">
-                <form>
-                    <div class="form-group">
-                      <label for="exampleFormControlInput1">Email address</label>
-                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlSelect1">Example select</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlSelect2">Example multiple select</label>
-                      <select multiple class="form-control" id="exampleFormControlSelect2">
-                        <option><%= db_setting.img_slide.img_satu %></option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea1">Example textarea</label>
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-        </div>
 <!-- untuk Upload -->
 <div class="container">
 
@@ -76,18 +37,31 @@
 <div class="card">
   <h1>Slide Satu</h1>
   <div class="card-body">
-<form method="post" action="/upload_img_slide_satu" enctype="multipart/form-data">
+<form enctype="multipart/form-data" method="post" action="/upload_img_slide_satu">
   <div class="form-group">
     <label for="exampleFormControlFile1">Slide Satu</label>
-    <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+    <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+  <input type="submit" value="Upload"/>
   </div>
-  <input type="submit" value="Upload" />
 </form>
-<form method="post" action="/edit_img_satu">
+<img src="/img/gambar_landing_page/<%=db_setting.img_slide.img_satu%>.jpg" alt="slide satu" class="img-thumbnail" width="304" height="236">
+<form enctype="multipart/form-data" method="post" action="/edit_img_satu">
   <h6>judul</h6>
+  <% if(db_setting.img_slide.img_satu_tulisan.judulproduk=="False"){%>
   <input name="judul_slide_satu" class="form-control" type="text" placeholder="Default input" required>
+  <%} 
+  else{
+  %>
+  <input name="judul_slide_satu" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_satu_tulisan.judulproduk %>" required>
+    <%}%>
   <h6>Deskripsi</h6>
+  <% if(db_setting.img_slide.img_satu_tulisan.deskripsi=="False"){%>
   <input name="deskripsi_slide_satu" class="form-control" type="text" placeholder="Default input" required>
+  <%} 
+  else{
+  %>
+  <input name="deskripsi_slide_satu" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_satu_tulisan.deskripsi %>" required>
+    <%}%>
 </form>
 </div>
 </div>
@@ -97,18 +71,31 @@
   <div class="card">
     <h1>Slide dua</h1>
     <div class="card-body">
-  <form method="post" action="/upload_img_slide_dua">
+  <form enctype="multipart/form-data" method="post" action="/upload_img_slide_dua">
     <div class="form-group">
       <label for="exampleFormControlFile1">Slide dua</label>
-      <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+      <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
     </div>
     <input type="submit" value="Upload" />
   </form>
-  <form method="post" action="/edit_img_dua">
+  <img src="/img/gambar_landing_page/<%=db_setting.img_slide.img_dua%>.jpg" alt="slide dua" class="img-thumbnail" width="304" height="236">
+  <form enctype="multipart/form-data" method="post" action="/edit_img_dua">
     <h6>judul</h6>
+    <% if(db_setting.img_slide.img_dua_tulisan.judulproduk=="False"){%>
     <input name="judul_slide_dua" class="form-control" type="text" placeholder="Default input" required>
+    <%} 
+    else{
+    %>
+    <input name="judul_slide_dua" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_dua_tulisan.judulproduk %>" required>
+      <%}%>
     <h6>Deskripsi</h6>
+    <% if(db_setting.img_slide.img_dua_tulisan.deskripsi=="False"){%>
     <input name="deskripsi_slide_dua" class="form-control" type="text" placeholder="Default input" required>
+    <%} 
+    else{
+    %>
+    <input name="deskripsi_slide_dua" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_satu_tulisan.deskripsi %>" required>
+      <%}%>
   </form>
   </div>
   </div>
@@ -117,18 +104,31 @@
     <div class="card">
       <h1>Slide tiga</h1>
       <div class="card-body">
-    <form method="post" action="/upload_img_slide_tiga">
+    <form enctype="multipart/form-data" method="post" action="/upload_img_slide_tiga">
       <div class="form-group">
         <label for="exampleFormControlFile1">Slide tiga</label>
-        <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+        <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
       </div>
       <input type="submit" value="Upload" />
     </form>
-    <form method="post" action="/edit_img_tiga">
+    <img src="/img/gambar_landing_page/<%=db_setting.img_slide.img_tiga%>.jpg" alt="slide tiga" class="img-thumbnail" width="304" height="236">
+    <form enctype="multipart/form-data" method="post" action="/edit_img_tiga">
       <h6>judul</h6>
+      <% if(db_setting.img_slide.img_tiga_tulisan.judulproduk=="False"){%>
       <input name="judul_slide_tiga" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="judul_slide_tiga" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_tiga_tulisan.judulproduk %>" required>
+        <%}%>
       <h6>Deskripsi</h6>
+      <% if(db_setting.img_slide.img_tiga_tulisan.deskripsi=="False"){%>
       <input name="deskripsi_slide_tiga" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="deskripsi_slide_tiga" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_satu_tulisan.deskripsi %>" required>
+        <%}%>
     </form>
     </div>
     </div>
@@ -137,18 +137,31 @@
     <div class="card">
       <h1>Slide empat</h1>
       <div class="card-body">
-    <form method="post" action="/upload_img_slide_empat">
+    <form enctype="multipart/form-data" method="post" action="/upload_img_slide_empat">
       <div class="form-group">
         <label for="exampleFormControlFile1">Slide empat</label>
-        <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+        <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
       </div>
       <input type="submit" value="Upload" />
     </form>
-    <form method="post" action="/edit_img_empat">
+    <img src="/img/gambar_landing_page/<%=db_setting.img_slide.img_empat%>.jpg" alt="slide empat" class="img-thumbnail" width="304" height="236">
+    <form enctype="multipart/form-data" method="post" action="/edit_img_empat">
       <h6>judul</h6>
+      <% if(db_setting.img_slide.img_empat_tulisan.judulproduk=="False"){%>
       <input name="judul_slide_empat" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="judul_slide_empat" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_empat_tulisan.judulproduk %>" required>
+        <%}%>
       <h6>Deskripsi</h6>
+      <% if(db_setting.img_slide.img_empat_tulisan.deskripsi=="False"){%>
       <input name="deskripsi_slide_empat" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="deskripsi_slide_empat" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_satu_tulisan.deskripsi %>" required>
+        <%}%>
     </form>
     </div>
     </div>
@@ -157,434 +170,37 @@
         <div class="card">
           <h1>Slide lima</h1>
           <div class="card-body">
-        <form method="post" action="/upload_img_slide_lima">
+        <form enctype="multipart/form-data" method="post" action="upload_img_slide_lima">
           <div class="form-group">
             <label for="exampleFormControlFile1">Slide lima</label>
-            <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
+            <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
           </div>
           <input type="submit" value="Upload" />
         </form>
-        <form method="post" action="/edit_img_lima">
-          <h6>judul</h6>
-          <input name="judul_slide_lima" class="form-control" type="text" placeholder="Default input" required>
-          <h6>Deskripsi</h6>
-          <input name="deskripsi_slide_lima" class="form-control" type="text" placeholder="Default input" required>
-        </form>
+    <img src="/img/gambar_landing_page/<%=db_setting.img_slide.img_lima%>.jpg" alt="slide lima" class="img-thumbnail" width="304" height="236">
+    <form enctype="multipart/form-data" method="post" action="/edit_img_lima">
+      <h6>judul</h6>
+      <% if(db_setting.img_slide.img_lima_tulisan.judulproduk=="False"){%>
+      <input name="judul_slide_lima" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="judul_slide_lima" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_lima_tulisan.judulproduk %>" required>
+        <%}%>
+      <h6>Deskripsi</h6>
+      <% if(db_setting.img_slide.img_lima_tulisan.deskripsi=="False"){%>
+      <input name="deskripsi_slide_lima" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="deskripsi_slide_lima" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_satu_tulisan.deskripsi %>" required>
+        <%}%>
+    </form>
         </div>
         </div>
         <!-- batasnya slide -->
 </div>
 
-
-<!-- untuk kirim data card -->
-<div class="container">
-
-  <h4> Gambar Card </h4>
-    <!-- batsan card -->
-  <div class="card">
-    <h1>card Satu</h1>
-    <div class="card-body">
-  <form method="post" action="/upload_img_card_satu">
-    <div class="form-group">
-      <label for="exampleFormControlFile1">card Satu</label>
-      <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-    </div>
-    <input type="submit" value="Upload" />
-  </form>
-  <form method="post" action="/edit_img_satu">
-    <h6>judul</h6>
-    <input name="judul_card_satu" class="form-control" type="text" placeholder="Default input" required>
-    <h6>Deskripsi</h6>
-    <input name="deskripsi_card_satu" class="form-control" type="text" placeholder="Default input" required>
-  </form>
-  </div>
-  </div>
-  <!-- batasnya card -->
-  
-    <!-- batsan card -->
-    <div class="card">
-      <h1>card dua</h1>
-      <div class="card-body">
-    <form method="post" action="/upload_img_card_dua">
-      <div class="form-group">
-        <label for="exampleFormControlFile1">card dua</label>
-        <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-      </div>
-      <input type="submit" value="Upload" />
-    </form>
-    <form method="post" action="/edit_img_dua">
-      <h6>judul</h6>
-      <input name="judul_card_dua" class="form-control" type="text" placeholder="Default input" required>
-      <h6>Deskripsi</h6>
-      <input name="deskripsi_card_dua" class="form-control" type="text" placeholder="Default input" required>
-    </form>
-    </div>
-    </div>
-    <!-- batasnya card -->
-      <!-- batsan card -->
-      <div class="card">
-        <h1>card tiga</h1>
-        <div class="card-body">
-      <form method="post" action="/upload_img_card_tiga">
-        <div class="form-group">
-          <label for="exampleFormControlFile1">card tiga</label>
-          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-        </div>
-        <input type="submit" value="Upload" />
-      </form>
-      <form method="post" action="/edit_img_tiga">
-        <h6>judul</h6>
-        <input name="judul_card_tiga" class="form-control" type="text" placeholder="Default input" required>
-        <h6>Deskripsi</h6>
-        <input name="deskripsi_card_tiga" class="form-control" type="text" placeholder="Default input" required>
-      </form>
-      </div>
-      </div>
-      <!-- batasnya card -->
-      <!-- batsan card -->
-      <div class="card">
-        <h1>card empat</h1>
-        <div class="card-body">
-      <form method="post" action="/upload_img_card_empat">
-        <div class="form-group">
-          <label for="exampleFormControlFile1">card empat</label>
-          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-        </div>
-        <input type="submit" value="Upload" />
-      </form>
-      <form method="post" action="/edit_img_empat">
-        <h6>judul</h6>
-        <input name="judul_card_empat" class="form-control" type="text" placeholder="Default input" required>
-        <h6>Deskripsi</h6>
-        <input name="deskripsi_card_empat" class="form-control" type="text" placeholder="Default input" required>
-      </form>
-      </div>
-      </div>
-      <!-- batasnya card -->
-          <!-- batsan card -->
-          <div class="card">
-            <h1>card lima</h1>
-            <div class="card-body">
-          <form method="post" action="/upload_img_card_lima">
-            <div class="form-group">
-              <label for="exampleFormControlFile1">card lima</label>
-              <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-            <input type="submit" value="Upload" />
-          </form>
-          <form method="post" action="/edit_img_lima">
-            <h6>judul</h6>
-            <input name="judul_card_lima" class="form-control" type="text" placeholder="Default input" required>
-            <h6>Deskripsi</h6>
-            <input name="deskripsi_card_lima" class="form-control" type="text" placeholder="Default input" required>
-          </form>
-          </div>
-          </div>
-          <!-- batasnya card -->
-              <!-- batsan card -->
-  <div class="card">
-    <h1>card enam</h1>
-    <div class="card-body">
-  <form method="post" action="/upload_img_card_enam">
-    <div class="form-group">
-      <label for="exampleFormControlFile1">card enam</label>
-      <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-    </div>
-    <input type="submit" value="Upload" />
-  </form>
-  <form method="post" action="/edit_img_enam">
-    <h6>judul</h6>
-    <input name="judul_card_enam" class="form-control" type="text" placeholder="Default input" required>
-    <h6>Deskripsi</h6>
-    <input name="deskripsi_card_enam" class="form-control" type="text" placeholder="Default input" required>
-  </form>
-  </div>
-  </div>
-  <!-- batasnya card -->
-  
-    <!-- batsan card -->
-    <div class="card">
-      <h1>card tuju</h1>
-      <div class="card-body">
-    <form method="post" action="/upload_img_card_tuju">
-      <div class="form-group">
-        <label for="exampleFormControlFile1">card tuju</label>
-        <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-      </div>
-      <input type="submit" value="Upload" />
-    </form>
-    <form method="post" action="/edit_img_tuju">
-      <h6>judul</h6>
-      <input name="judul_card_tuju" class="form-control" type="text" placeholder="Default input" required>
-      <h6>Deskripsi</h6>
-      <input name="deskripsi_card_tuju" class="form-control" type="text" placeholder="Default input" required>
-    </form>
-    </div>
-    </div>
-    <!-- batasnya card -->
-      <!-- batsan card -->
-      <div class="card">
-        <h1>card delapan</h1>
-        <div class="card-body">
-      <form method="post" action="/upload_img_card_delapan">
-        <div class="form-group">
-          <label for="exampleFormControlFile1">card delapan</label>
-          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-        </div>
-        <input type="submit" value="Upload" />
-      </form>
-      <form method="post" action="/edit_img_delapan">
-        <h6>judul</h6>
-        <input name="judul_card_delapan" class="form-control" type="text" placeholder="Default input" required>
-        <h6>Deskripsi</h6>
-        <input name="deskripsi_card_delapan" class="form-control" type="text" placeholder="Default input" required>
-      </form>
-      </div>
-      </div>
-      <!-- batasnya card -->
-      <!-- batsan card -->
-      <div class="card">
-        <h1>card sembilan</h1>
-        <div class="card-body">
-      <form method="post" action="/upload_img_card_sembilan">
-        <div class="form-group">
-          <label for="exampleFormControlFile1">card sembilan</label>
-          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-        </div>
-        <input type="submit" value="Upload" />
-      </form>
-      <form method="post" action="/edit_img_sembilan">
-        <h6>judul</h6>
-        <input name="judul_card_sembilan" class="form-control" type="text" placeholder="Default input" required>
-        <h6>Deskripsi</h6>
-        <input name="deskripsi_card_sembilan" class="form-control" type="text" placeholder="Default input" required>
-      </form>
-      </div>
-      </div>
-      <!-- batasnya card -->
-          <!-- batsan card -->
-          <div class="card">
-            <h1>card sepuluh</h1>
-            <div class="card-body">
-          <form method="post" action="/upload_img_card_sepuluh">
-            <div class="form-group">
-              <label for="exampleFormControlFile1">card sepuluh</label>
-              <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-            <input type="submit" value="Upload" />
-          </form>
-          <form method="post" action="/edit_img_sepuluh">
-            <h6>judul</h6>
-            <input name="judul_card_sepuluh" class="form-control" type="text" placeholder="Default input" required>
-            <h6>Deskripsi</h6>
-            <input name="deskripsi_card_sepuluh" class="form-control" type="text" placeholder="Default input" required>
-          </form>
-          </div>
-          </div>
-          <!-- batasnya card -->
-  <!-- batsan card -->
-  <div class="card">
-    <h1>card sebelas</h1>
-    <div class="card-body">
-  <form method="post" action="/upload_img_card_sebelas">
-    <div class="form-group">
-      <label for="exampleFormControlFile1">card sebelas</label>
-      <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-    </div>
-    <input type="submit" value="Upload" />
-  </form>
-  <form method="post" action="/edit_img_sebelas">
-    <h6>judul</h6>
-    <input name="judul_card_sebelas" class="form-control" type="text" placeholder="Default input" required>
-    <h6>Deskripsi</h6>
-    <input name="deskripsi_card_sebelas" class="form-control" type="text" placeholder="Default input" required>
-  </form>
-  </div>
-  </div>
-  <!-- batasnya card -->
-  
-    <!-- batsan card -->
-    <div class="card">
-      <h1>card duabelas</h1>
-      <div class="card-body">
-    <form method="post" action="/upload_img_card_duabelas">
-      <div class="form-group">
-        <label for="exampleFormControlFile1">card duabelas</label>
-        <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-      </div>
-      <input type="submit" value="Upload" />
-    </form>
-    <form method="post" action="/edit_img_duabelas">
-      <h6>judul</h6>
-      <input name="judul_card_duabelas" class="form-control" type="text" placeholder="Default input" required>
-      <h6>Deskripsi</h6>
-      <input name="deskripsi_card_duabelas" class="form-control" type="text" placeholder="Default input" required>
-    </form>
-    </div>
-    </div>
-    <!-- batasnya card -->
-      <!-- batsan card -->
-      <div class="card">
-        <h1>card tigabelas</h1>
-        <div class="card-body">
-      <form method="post" action="/upload_img_card_tigabelas">
-        <div class="form-group">
-          <label for="exampleFormControlFile1">card tigabelas</label>
-          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-        </div>
-        <input type="submit" value="Upload" />
-      </form>
-      <form method="post" action="/edit_img_tigabelas">
-        <h6>judul</h6>
-        <input name="judul_card_tigabelas" class="form-control" type="text" placeholder="Default input" required>
-        <h6>Deskripsi</h6>
-        <input name="deskripsi_card_tigabelas" class="form-control" type="text" placeholder="Default input" required>
-      </form>
-      </div>
-      </div>
-      <!-- batasnya card -->
-      <!-- batsan card -->
-      <div class="card">
-        <h1>card empatbelas</h1>
-        <div class="card-body">
-      <form method="post" action="/upload_img_card_empatbelas">
-        <div class="form-group">
-          <label for="exampleFormControlFile1">card empatbelas</label>
-          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-        </div>
-        <input type="submit" value="Upload" />
-      </form>
-      <form method="post" action="/edit_img_empatbelas">
-        <h6>judul</h6>
-        <input name="judul_card_empatbelas" class="form-control" type="text" placeholder="Default input" required>
-        <h6>Deskripsi</h6>
-        <input name="deskripsi_card_empatbelas" class="form-control" type="text" placeholder="Default input" required>
-      </form>
-      </div>
-      </div>
-      <!-- batasnya card -->
-          <!-- batsan card -->
-          <div class="card">
-            <h1>card limabelas</h1>
-            <div class="card-body">
-          <form method="post" action="/upload_img_card_limabelas">
-            <div class="form-group">
-              <label for="exampleFormControlFile1">card limabelas</label>
-              <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-            <input type="submit" value="Upload" />
-          </form>
-          <form method="post" action="/edit_img_limabelas">
-            <h6>judul</h6>
-            <input name="judul_card_limabelas" class="form-control" type="text" placeholder="Default input" required>
-            <h6>Deskripsi</h6>
-            <input name="deskripsi_card_limabelas" class="form-control" type="text" placeholder="Default input" required>
-          </form>
-          </div>
-          </div>
-          <!-- batasnya card -->
-              <!-- batsan card -->
-  <div class="card">
-    <h1>card enambelas</h1>
-    <div class="card-body">
-  <form method="post" action="/upload_img_card_enambelas">
-    <div class="form-group">
-      <label for="exampleFormControlFile1">card enambelas</label>
-      <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-    </div>
-    <input type="submit" value="Upload" />
-  </form>
-  <form method="post" action="/edit_img_enambelas">
-    <h6>judul</h6>
-    <input name="judul_card_enambelas" class="form-control" type="text" placeholder="Default input" required>
-    <h6>Deskripsi</h6>
-    <input name="deskripsi_card_enambelas" class="form-control" type="text" placeholder="Default input" required>
-  </form>
-  </div>
-  </div>
-  <!-- batasnya card -->
-  
-    <!-- batsan card -->
-    <div class="card">
-      <h1>card tujubelas</h1>
-      <div class="card-body">
-    <form method="post" action="/upload_img_card_tujubelas">
-      <div class="form-group">
-        <label for="exampleFormControlFile1">card tujubelas</label>
-        <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-      </div>
-      <input type="submit" value="Upload" />
-    </form>
-    <form method="post" action="/edit_img_tujubelas">
-      <h6>judul</h6>
-      <input name="judul_card_tujubelas" class="form-control" type="text" placeholder="Default input" required>
-      <h6>Deskripsi</h6>
-      <input name="deskripsi_card_tujubelas" class="form-control" type="text" placeholder="Default input" required>
-    </form>
-    </div>
-    </div>
-    <!-- batasnya card -->
-      <!-- batsan card -->
-      <div class="card">
-        <h1>card delapanbelas</h1>
-        <div class="card-body">
-      <form method="post" action="/upload_img_card_delapanbelas">
-        <div class="form-group">
-          <label for="exampleFormControlFile1">card delapanbelas</label>
-          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-        </div>
-        <input type="submit" value="Upload" />
-      </form>
-      <form method="post" action="/edit_img_delapanbelas">
-        <h6>judul</h6>
-        <input name="judul_card_delapanbelas" class="form-control" type="text" placeholder="Default input" required>
-        <h6>Deskripsi</h6>
-        <input name="deskripsi_card_delapanbelas" class="form-control" type="text" placeholder="Default input" required>
-      </form>
-      </div>
-      </div>
-      <!-- batasnya card -->
-      <!-- batsan card -->
-      <div class="card">
-        <h1>card sembilanbelas</h1>
-        <div class="card-body">
-      <form method="post" action="/upload_img_card_sembilanbelas">
-        <div class="form-group">
-          <label for="exampleFormControlFile1">card sembilanbelas</label>
-          <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-        </div>
-        <input type="submit" value="Upload" />
-      </form>
-      <form method="post" action="/edit_img_sembilanbelas">
-        <h6>judul</h6>
-        <input name="judul_card_sembilanbelas" class="form-control" type="text" placeholder="Default input" required>
-        <h6>Deskripsi</h6>
-        <input name="deskripsi_card_sembilanbelas" class="form-control" type="text" placeholder="Default input" required>
-      </form>
-      </div>
-      </div>
-      <!-- batasnya card -->
-          <!-- batsan card -->
-          <div class="card">
-            <h1>card duapuluh</h1>
-            <div class="card-body">
-          <form method="post" action="/upload_img_card_duapuluh">
-            <div class="form-group">
-              <label for="exampleFormControlFile1">card duapuluh</label>
-              <input type="file" name="upload-file" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-            <input type="submit" value="Upload" />
-          </form>
-          <form method="post" action="/edit_img_duapuluh">
-            <h6>judul</h6>
-            <input name="judul_card_duapuluh" class="form-control" type="text" placeholder="Default input" required>
-            <h6>Deskripsi</h6>
-            <input name="deskripsi_card_duapuluh" class="form-control" type="text" placeholder="Default input" required>
-          </form>
-          </div>
-          </div>
-          <!-- batasnya card -->
-  </div>
 <!-- untuk judul dan deskripsi -->
 
 <div class="container">
@@ -594,30 +210,1044 @@
   <div class="card">
     <div class="card-body">
   </form>
-  <form method="post" action="/edit_judul_dan_deskripsi_produk">
+  <form enctype="multipart/form-data" method="post" action="/edit_judul_dan_deskripsi_produk">
     <h6>judul</h6>
+    <% if(db_setting.judul_dan_deskripsi_produk.judul=="False"){%>
     <input name="judul" class="form-control" type="text" placeholder="Judul" required>
+    <%} 
+    else{
+    %>
+    <input name="judul" class="form-control" value="<%=db_setting.judul_dan_deskripsi_produk.judul%>" type="text" placeholder="Judul" required>
+    <%}%>
     <h6>jenis produk</h6>
+    <% if(db_setting.judul_dan_deskripsi_produk.jenis_produk=="False"){%>
     <input name="jenis_produk" class="form-control" type="text" placeholder="jenis_produk" required>
+    <%} 
+    else{
+    %>
+    <input name="jenis_produk" class="form-control" value="<%=db_setting.judul_dan_deskripsi_produk.jenis_produk%>" type="text" placeholder="jenis_produk" required>
+    <%}%>
     <h6>Deskripsi</h6>
-    <textarea name="deskripsi_produk" id="" cols="130" rows="10"></textarea>
+    <% if(db_setting.judul_dan_deskripsi_produk.deskripsi_produk=="False"){%>
+    <textarea name="deskripsi_produk" cols="130" rows="10"></textarea>
+    <%} 
+    else{
+    %>
+    <textarea name="deskripsi_produk" cols="130" rows="10"><%=db_setting.judul_dan_deskripsi_produk.deskripsi_produk%></textarea>
+    <%}%>
     <input type="submit" value="simpan">
   </form>
   </div>
   </div>
   </div>
 
+  <div class="container">
 
+    <h4> Filter </h4>
+      <!-- filter satu -->
+    <div class="card">
+      <div class="card-body">
+    </form>
+    <form enctype="multipart/form-data" method="post" action="/edit_filter_satu">
+      <h6>Filter satu</h6>
+      <% if(db_setting.filter.satu.nama=="False"){%>
+      <input name="nama_filter" class="form-control" type="text" placeholder="nama" required>
+      <%} 
+      else{
+      %>
+      <input name="nama_filter" class="form-control" value="<%=db_setting.filter.satu.nama%>" type="text" placeholder="nama" required>
+      <%}%>
+      <% if(db_setting.filter.satu.get_filter=="False"){%>
+        <input name="get_filter_satu" class="form-control" type="text" placeholder="get filter" required>
+        <%} 
+        else{
+        %>
+        <input name="get_filter_satu" class="form-control" value="<%=db_setting.filter.satu.get_filter%>" type="text" placeholder="get filter" required>
+        <%}%>
+      <input type="submit" value="simpan">
+    </form>         
+    </div>
+    </div>
+    <!-- filter satu -->
+          <!-- filter satu -->
+          <div class="card">
+            <div class="card-body">
+          </form>
+          <form enctype="multipart/form-data" method="post" action="/edit_filter_dua">
+            <h6>Filter dua</h6>
+            <% if(db_setting.filter.dua.nama=="False"){%>
+            <input name="nama_filter" class="form-control" type="text" placeholder="nama" required>
+            <%} 
+            else{
+            %>
+            <input name="nama_filter" class="form-control" value="<%=db_setting.filter.dua.nama%>" type="text" placeholder="nama" required>
+            <%}%>
+            <% if(db_setting.filter.dua.get_filter=="False"){%>
+              <input name="get_filter_dua" class="form-control" type="text" placeholder="get filter" required>
+              <%} 
+              else{
+              %>
+              <input name="get_filter_dua" class="form-control" value="<%=db_setting.filter.dua.get_filter%>" type="text" placeholder="get filter" required>
+              <%}%>
+            <input type="submit" value="simpan">
+          </form>
+          </div>
+          </div>
+          <!-- filter dua -->
+    <!-- filter tiga -->
+    <div class="card">
+      <div class="card-body">
+    </form>
+    <form enctype="multipart/form-data" method="post" action="/edit_filter_tiga">
+      <h6>Filter tiga</h6>
+      <% if(db_setting.filter.tiga.nama=="False"){%>
+      <input name="nama_filter" class="form-control" type="text" placeholder="nama" required>
+      <%} 
+      else{
+      %>
+      <input name="nama_filter" class="form-control" value="<%=db_setting.filter.tiga.nama%>" type="text" placeholder="nama" required>
+      <%}%>
+      <% if(db_setting.filter.tiga.get_filter=="False"){%>
+        <input name="get_filter_tiga" class="form-control" type="text" placeholder="get filter" required>
+        <%} 
+        else{
+        %>
+        <input name="get_filter_tiga" class="form-control" value="<%=db_setting.filter.tiga.get_filter%>" type="text" placeholder="get filter" required>
+        <%}%>
+      <input type="submit" value="simpan">
+    </form>
+    </div>
+    </div>
+    <!-- filter tiga -->
+      <!-- filter empat -->
+      <div class="card">
+        <div class="card-body">
+      </form>
+      <form enctype="multipart/form-data" method="post" action="/edit_filter_empat">
+        <h6>Filter empat</h6>
+        <% if(db_setting.filter.empat.nama=="False"){%>
+        <input name="nama_filter" class="form-control" type="text" placeholder="nama" required>
+        <%} 
+        else{
+        %>
+        <input name="nama_filter" class="form-control" value="<%=db_setting.filter.empat.nama%>" type="text" placeholder="nama" required>
+        <%}%>
+        <% if(db_setting.filter.empat.get_filter=="False"){%>
+          <input name="get_filter_empat" class="form-control" type="text" placeholder="get filter" required>
+          <%} 
+          else{
+          %>
+          <input name="get_filter_empat" class="form-control" value="<%=db_setting.filter.empat.get_filter%>" type="text" placeholder="nama" required>
+          <%}%>
+        <input type="submit" value="simpan">
+      </form>
+      </div>
+      </div>
+      <!-- filter empat -->
 
-<form method="POST" action="/upload_img_slide_satu" enctype="multipart/form-data">
-  <div>
-      <label>Upload multiple profile picture</label>
-      <input type="file" name="upload-file" required multiple  />
+      <!-- filter lima -->
+    <div class="card">
+      <div class="card-body">
+    </form>
+    <form enctype="multipart/form-data" method="post" action="/edit_filter_lima">
+      <h6>Filter lima</h6>
+      <% if(db_setting.filter.lima.nama=="False"){%>
+      <input name="nama_filter" class="form-control" type="text" placeholder="nama" required>
+      <%} 
+      else{
+      %>
+      <input name="nama_filter" class="form-control" value="<%=db_setting.filter.lima.nama%>" type="text" placeholder="nama" required>
+      <%}%>
+      <% if(db_setting.filter.lima.get_filter=="False"){%>
+        <input name="get_filter_lima" class="form-control" type="text" placeholder="get filter" required>
+        <%} 
+        else{
+        %>
+        <input name="get_filter_lima" class="form-control" value="<%=db_setting.filter.lima.get_filter%>" type="text" placeholder="get filter" required>
+        <%}%>
+      <input type="submit" value="simpan">
+    </form>
+    </div>
+    </div>
+    <!-- filter lima -->
+
+      <!-- filter enam -->
+      <div class="card">
+        <div class="card-body">
+      </form>
+      <form enctype="multipart/form-data" method="post" action="/edit_filter_enam">
+        <h6>Filter enam</h6>
+        <% if(db_setting.filter.enam.nama=="False"){%>
+        <input name="nama_filter" class="form-control" type="text" placeholder="nama" required>
+        <%} 
+        else{
+        %>
+        <input name="nama_filter" class="form-control" value="<%=db_setting.filter.enam.nama%>" type="text" placeholder="nama" required>
+        <%}%>
+        <% if(db_setting.filter.enam.get_filter=="False"){%>
+          <input name="get_filter_enam" class="form-control" type="text" placeholder="get filter" required>
+          <%} 
+          else{
+          %>
+          <input name="get_filter_enam" class="form-control" value="<%=db_setting.filter.enam.get_filter%>" type="text" placeholder="get filter" required>
+          <%}%>
+        <input type="submit" value="simpan">
+      </form>
+      </div>
+      </div>
+      <!-- filter enam -->
+    </div>
+
+<!-- untuk img card -->
+<div class="container">
+
+  <h4> card img </h4>
+    <!-- batsan card -->
+  <div class="card">
+    <h1>card Satu</h1>
+    <div class="card-body">
+  <form enctype="multipart/form-data" method="post" action="/upload_img_slide_satu">
+    <div class="form-group">
+      <label for="exampleFormControlFile1">Slide Satu</label>
+      <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+    <input type="submit" value="Upload"/>
+    </div>
+  </form>
+  <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_satu.img%>.jpg" alt="slide satu" class="img-thumbnail" width="304" height="236">
+  <form enctype="multipart/form-data" method="post" action="/edit_img_card_satu">
+    <h6>judul</h6>
+    <% if(db_setting.all_img.img_satu.judulproduk=="False"){%>
+    <input name="judul_img_card_satu" class="form-control" type="text" placeholder="Default input" required>
+    <%} 
+    else{
+    %>
+    <input name="judul_img_card_satu" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_satu.judulproduk %>" required>
+      <%}%>
+    <h6>Deskripsi</h6>
+    <% if(db_setting.all_img.img_satu.deskripsiproduk=="False"){%>
+    <input name="deskripsi_img_card_satu" class="form-control" type="text" placeholder="Default input" required>
+    <%} 
+    else{
+    %>
+    <input name="deskripsi_img_card_satu" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_satu.deskripsiproduk %>" required>
+      <%}%>
+      <!-- batas  -->
+      <h6>filter</h6>
+      <% if(db_setting.all_img.img_satu.filter=="False"){%>
+      <input name="filter_img_card_satu" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="filter_img_card_satu" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_satu.filter %>" required>
+        <%}%>
+  </form>
   </div>
-  <div>
+  </div>
+  <!-- batasnya slide -->
+  
+    <!-- batsan card -->
+    <div class="card">
+      <h1>card dua</h1>
+      <div class="card-body">
+    <form enctype="multipart/form-data" method="post" action="/upload_all_img_dua">
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Slide dua</label>
+        <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
       <input type="submit" value="Upload" />
+    </form>
+    <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_dua.img%>.jpg" alt="slide dua" class="img-thumbnail" width="304" height="236">
+    <form enctype="multipart/form-data" method="post" action="/edit_img_card_dua">
+      <h6>judul</h6>
+      <% if(db_setting.all_img.img_dua.judulproduk=="False"){%>
+      <input name="judul_img_card_dua" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="judul_img_card_dua" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_dua.judulproduk %>" required>
+        <%}%>
+      <h6>Deskripsi</h6>
+      <% if(db_setting.all_img.img_dua.deskripsiproduk=="False"){%>
+      <input name="deskripsi_img_card_dua" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="deskripsi_img_card_dua" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_dua.deskripsiproduk %>" required>
+        <%}%>
+      <!-- batas  -->
+      <h6>filter</h6>
+      <% if(db_setting.all_img.img_dua.filter=="False"){%>
+      <input name="filter_img_card_dua" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="filter_img_card_dua" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_dua.filter %>" required>
+        <%}%>s
+    </form>
+    </div>
+    </div>
+    <!-- batasnya slide -->
+      <!-- batsan card -->
+      <div class="card">
+        <h1>card tiga</h1>
+        <div class="card-body">
+      <form enctype="multipart/form-data" method="post" action="/upload_all_img_tiga">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">Slide tiga</label>
+          <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <input type="submit" value="Upload" />
+      </form>
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tiga.img%>.jpg" alt="slide tiga" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_img_card_tiga">
+        <h6>judul</h6>
+        <% if(db_setting.all_img.img_tiga.judulproduk=="False"){%>
+        <input name="judul_img_card_tiga" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="judul_img_card_tiga" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tiga.judulproduk %>" required>
+          <%}%>
+        <h6>Deskripsi</h6>
+        <% if(db_setting.all_img.img_tiga.deskripsiproduk=="False"){%>
+        <input name="deskripsi_img_card_tiga" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="deskripsi_img_card_tiga" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tiga.deskripsiproduk %>" required>
+          <%}%>
+      <!-- batas  -->
+      <h6>filter</h6>
+      <% if(db_setting.all_img.img_tiga.filter=="False"){%>
+      <input name="filter_img_card_tiga" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="filter_img_card_tiga" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tiga.filter %>" required>
+        <%}%>
+      </form>
+      </div>
+      </div>
+      <!-- batasnya slide -->
+      <!-- batsan card -->
+      <div class="card">
+        <h1>card empat</h1>
+        <div class="card-body">
+      <form enctype="multipart/form-data" method="post" action="/upload_all_img_empat">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">Slide empat</label>
+          <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <input type="submit" value="Upload" />
+      </form>
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_empat.img%>.jpg" alt="slide empat" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_img_card_empat">
+        <h6>judul</h6>
+        <% if(db_setting.all_img.img_empat.judulproduk=="False"){%>
+        <input name="judul_img_card_empat" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="judul_img_card_empat" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_empat.judulproduk %>" required>
+          <%}%>
+        <h6>Deskripsi</h6>
+        <% if(db_setting.all_img.img_empat.deskripsiproduk=="False"){%>
+        <input name="deskripsi_img_card_empat" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="deskripsi_img_card_empat" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_empat.deskripsiproduk %>" required>
+          <%}%>
+      <!-- batas  -->
+      <h6>filter</h6>
+      <% if(db_setting.all_img.img_empat.filter=="False"){%>
+      <input name="filter_img_card_empat" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="filter_img_card_empat" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_empat.filter %>" required>
+        <%}%>
+      </form>
+      </div>
+      </div>
+      <!-- batasnya slide -->
+          <!-- batsan card -->
+          <div class="card">
+            <h1>card lima</h1>
+            <div class="card-body">
+          <form enctype="multipart/form-data" method="post" action=".upload_all_img_lima">
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Slide lima</label>
+              <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <input type="submit" value="Upload" />
+          </form>
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_lima.img%>.jpg" alt="slide lima" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_img_card_lima">
+        <h6>judul</h6>
+        <% if(db_setting.all_img.img_lima.judulproduk=="False"){%>
+        <input name="judul_img_card_lima" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="judul_img_card_lima" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_lima.judulproduk %>" required>
+          <%}%>
+        <h6>Deskripsi</h6>
+        <% if(db_setting.all_img.img_lima.deskripsiproduk=="False"){%>
+        <input name="deskripsi_img_card_lima" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="deskripsi_img_card_lima" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_lima.deskripsiproduk %>" required>
+          <%}%>
+      <!-- batas  -->
+      <h6>filter</h6>
+      <% if(db_setting.all_img.img_lima.filter=="False"){%>
+      <input name="filter_img_card_lima" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="filter_img_card_lima" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_lima.filter %>" required>
+        <%}%>
+      </form>
+          </div>
+          </div>      
+          <!-- batasnya slide -->
+              <!-- batsan card -->
+  <div class="card">
+    <h1>card enam</h1>
+    <div class="card-body">
+  <form enctype="multipart/form-data" method="post" action="/upload_img_slide_enam">
+    <div class="form-group">
+      <label for="exampleFormControlFile1">Slide enam</label>
+      <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+    <input type="submit" value="Upload"/>
+    </div>
+  </form>
+  <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_enam.img%>.jpg" alt="slide enam" class="img-thumbnail" width="304" height="236">
+  <form enctype="multipart/form-data" method="post" action="/edit_img_card_enam">
+    <h6>judul</h6>
+    <% if(db_setting.all_img.img_enam.judulproduk=="False"){%>
+    <input name="judul_img_card_enam" class="form-control" type="text" placeholder="Default input" required>
+    <%} 
+    else{
+    %>
+    <input name="judul_img_card_enam" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_enam.judulproduk %>" required>
+      <%}%>
+    <h6>Deskripsi</h6>
+    <% if(db_setting.all_img.img_enam.deskripsiproduk=="False"){%>
+    <input name="deskripsi_img_card_enam" class="form-control" type="text" placeholder="Default input" required>
+    <%} 
+    else{
+    %>
+    <input name="deskripsi_img_card_enam" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_enam.deskripsiproduk %>" required>
+      <%}%>
+      <!-- batas  -->
+      <h6>filter</h6>
+      <% if(db_setting.all_img.img_enam.filter=="False"){%>
+      <input name="filter_img_card_enam" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="filter_img_card_enam" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_enam.filter %>" required>
+        <%}%>
+  </form>
   </div>
-</form>
+  </div>
+  <!-- batasnya slide -->
+  
+    <!-- batsan card -->
+    <div class="card">
+      <h1>card tuju</h1>
+      <div class="card-body">
+    <form enctype="multipart/form-data" method="post" action="/upload_all_img_tuju">
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Slide tuju</label>
+        <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+      <input type="submit" value="Upload" />
+    </form>
+    <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tuju.img%>.jpg" alt="slide tuju" class="img-thumbnail" width="304" height="236">
+    <form enctype="multipart/form-data" method="post" action="/edit_img_card_tuju">
+      <h6>judul</h6>
+      <% if(db_setting.all_img.img_tuju.judulproduk=="False"){%>
+      <input name="judul_img_card_tuju" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="judul_img_card_tuju" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tuju.judulproduk %>" required>
+        <%}%>
+      <h6>Deskripsi</h6>
+      <% if(db_setting.all_img.img_tuju.deskripsiproduk=="False"){%>
+      <input name="deskripsi_img_card_tuju" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="deskripsi_img_card_tuju" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tuju.deskripsiproduk %>" required>
+        <%}%>
+      <!-- batas  -->
+      <h6>filter</h6>
+      <% if(db_setting.all_img.img_tuju.filter=="False"){%>
+      <input name="filter_img_card_tuju" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="filter_img_card_tuju" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tuju.filter %>" required>
+        <%}%>s
+    </form>
+    </div>
+    </div>
+    <!-- batasnya slide -->
+      <!-- batsan card -->
+      <div class="card">
+        <h1>card lapan</h1>
+        <div class="card-body">
+      <form enctype="multipart/form-data" method="post" action="/upload_all_img_lapan">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">Slide lapan</label>
+          <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <input type="submit" value="Upload" />
+      </form>
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_lapan.img%>.jpg" alt="slide lapan" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_img_card_lapan">
+        <h6>judul</h6>
+        <% if(db_setting.all_img.img_lapan.judulproduk=="False"){%>
+        <input name="judul_img_card_lapan" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="judul_img_card_lapan" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_lapan.judulproduk %>" required>
+          <%}%>
+        <h6>Deskripsi</h6>
+        <% if(db_setting.all_img.img_lapan.deskripsiproduk=="False"){%>
+        <input name="deskripsi_img_card_lapan" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="deskripsi_img_card_lapan" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_lapan.deskripsiproduk %>" required>
+          <%}%>
+      <!-- batas  -->
+      <h6>filter</h6>
+      <% if(db_setting.all_img.img_lapan.filter=="False"){%>
+      <input name="filter_img_card_lapan" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="filter_img_card_lapan" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_lapan.filter %>" required>
+        <%}%>
+      </form>
+      </div>
+      </div>
+      <!-- batasnya slide -->
+      <!-- batsan card -->
+      <div class="card">
+        <h1>card sembilan</h1>
+        <div class="card-body">
+      <form enctype="multipart/form-data" method="post" action="/upload_all_img_sembilan">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">Slide sembilan</label>
+          <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <input type="submit" value="Upload" />
+      </form>
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sembilan.img%>.jpg" alt="slide sembilan" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_img_card_sembilan">
+        <h6>judul</h6>
+        <% if(db_setting.all_img.img_sembilan.judulproduk=="False"){%>
+        <input name="judul_img_card_sembilan" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="judul_img_card_sembilan" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sembilan.judulproduk %>" required>
+          <%}%>
+        <h6>Deskripsi</h6>
+        <% if(db_setting.all_img.img_sembilan.deskripsiproduk=="False"){%>
+        <input name="deskripsi_img_card_sembilan" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="deskripsi_img_card_sembilan" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sembilan.deskripsiproduk %>" required>
+          <%}%>
+      <!-- batas  -->
+      <h6>filter</h6>
+      <% if(db_setting.all_img.img_sembilan.filter=="False"){%>
+      <input name="filter_img_card_sembilan" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="filter_img_card_sembilan" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sembilan.filter %>" required>
+        <%}%>
+      </form>
+      </div>
+      </div>
+      <!-- batasnya slide -->
+          <!-- batsan card -->
+          <div class="card">
+            <h1>card sepuluh</h1>
+            <div class="card-body">
+          <form enctype="multipart/form-data" method="post" action=".upload_all_img_sepuluh">
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Slide sepuluh</label>
+              <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <input type="submit" value="Upload" />
+          </form>
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sepuluh.img%>.jpg" alt="slide sepuluh" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_img_card_sepuluh">
+        <h6>judul</h6>
+        <% if(db_setting.all_img.img_sepuluh.judulproduk=="False"){%>
+        <input name="judul_img_card_sepuluh" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="judul_img_card_sepuluh" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sepuluh.judulproduk %>" required>
+          <%}%>
+        <h6>Deskripsi</h6>
+        <% if(db_setting.all_img.img_sepuluh.deskripsiproduk=="False"){%>
+        <input name="deskripsi_img_card_sepuluh" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="deskripsi_img_card_sepuluh" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sepuluh.deskripsiproduk %>" required>
+          <%}%>
+      <!-- batas  -->
+      <h6>filter</h6>
+      <% if(db_setting.all_img.img_sepuluh.filter=="False"){%>
+      <input name="filter_img_card_sepuluh" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="filter_img_card_sepuluh" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sepuluh.filter %>" required>
+        <%}%>
+      </form>
+          </div>
+          </div>      
+          <!-- batasnya slide -->
+    <!-- batsan card -->
+    <div class="card">
+      <h1>card sebelas</h1>
+      <div class="card-body">
+    <form enctype="multipart/form-data" method="post" action="/upload_img_slide_sebelas">
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Slide sebelas</label>
+        <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+      <input type="submit" value="Upload"/>
+      </div>
+    </form>
+    <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sebelas.img%>.jpg" alt="slide sebelas" class="img-thumbnail" width="304" height="236">
+    <form enctype="multipart/form-data" method="post" action="/edit_img_card_sebelas">
+      <h6>judul</h6>
+      <% if(db_setting.all_img.img_sebelas.judulproduk=="False"){%>
+      <input name="judul_img_card_sebelas" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="judul_img_card_sebelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sebelas.judulproduk %>" required>
+        <%}%>
+      <h6>Deskripsi</h6>
+      <% if(db_setting.all_img.img_sebelas.deskripsiproduk=="False"){%>
+      <input name="deskripsi_img_card_sebelas" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="deskripsi_img_card_sebelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sebelas.deskripsiproduk %>" required>
+        <%}%>
+        <!-- batas  -->
+        <h6>filter</h6>
+        <% if(db_setting.all_img.img_sebelas.filter=="False"){%>
+        <input name="filter_img_card_sebelas" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="filter_img_card_sebelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sebelas.filter %>" required>
+          <%}%>
+    </form>
+    </div>
+    </div>
+    <!-- batasnya slide -->
+    
+      <!-- batsan card -->
+      <div class="card">
+        <h1>card duabelas</h1>
+        <div class="card-body">
+      <form enctype="multipart/form-data" method="post" action="/upload_all_img_duabelas">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">Slide duabelas</label>
+          <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <input type="submit" value="Upload" />
+      </form>
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_duabelas.img%>.jpg" alt="slide duabelas" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_img_card_duabelas">
+        <h6>judul</h6>
+        <% if(db_setting.all_img.img_duabelas.judulproduk=="False"){%>
+        <input name="judul_img_card_duabelas" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="judul_img_card_duabelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_duabelas.judulproduk %>" required>
+          <%}%>
+        <h6>Deskripsi</h6>
+        <% if(db_setting.all_img.img_duabelas.deskripsiproduk=="False"){%>
+        <input name="deskripsi_img_card_duabelas" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="deskripsi_img_card_duabelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_duabelas.deskripsiproduk %>" required>
+          <%}%>
+        <!-- batas  -->
+        <h6>filter</h6>
+        <% if(db_setting.all_img.img_duabelas.filter=="False"){%>
+        <input name="filter_img_card_duabelas" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="filter_img_card_duabelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_duabelas.filter %>" required>
+          <%}%>s
+      </form>
+      </div>
+      </div>
+      <!-- batasnya slide -->
+        <!-- batsan card -->
+        <div class="card">
+          <h1>card tigabelas</h1>
+          <div class="card-body">
+        <form enctype="multipart/form-data" method="post" action="/upload_all_img_tigabelas">
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Slide tigabelas</label>
+            <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+          <input type="submit" value="Upload" />
+        </form>
+        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tigabelas.img%>.jpg" alt="slide tigabelas" class="img-thumbnail" width="304" height="236">
+        <form enctype="multipart/form-data" method="post" action="/edit_img_card_tigabelas">
+          <h6>judul</h6>
+          <% if(db_setting.all_img.img_tigabelas.judulproduk=="False"){%>
+          <input name="judul_img_card_tigabelas" class="form-control" type="text" placeholder="Default input" required>
+          <%} 
+          else{
+          %>
+          <input name="judul_img_card_tigabelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tigabelas.judulproduk %>" required>
+            <%}%>
+          <h6>Deskripsi</h6>
+          <% if(db_setting.all_img.img_tigabelas.deskripsiproduk=="False"){%>
+          <input name="deskripsi_img_card_tigabelas" class="form-control" type="text" placeholder="Default input" required>
+          <%} 
+          else{
+          %>
+          <input name="deskripsi_img_card_tigabelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tigabelas.deskripsiproduk %>" required>
+            <%}%>
+        <!-- batas  -->
+        <h6>filter</h6>
+        <% if(db_setting.all_img.img_tigabelas.filter=="False"){%>
+        <input name="filter_img_card_tigabelas" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="filter_img_card_tigabelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tigabelas.filter %>" required>
+          <%}%>
+        </form>
+        </div>
+        </div>
+        <!-- batasnya slide -->
+        <!-- batsan card -->
+        <div class="card">
+          <h1>card empatbelas</h1>
+          <div class="card-body">
+        <form enctype="multipart/form-data" method="post" action="/upload_all_img_empatbelas">
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Slide empatbelas</label>
+            <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+          <input type="submit" value="Upload" />
+        </form>
+        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_empatbelas.img%>.jpg" alt="slide empatbelas" class="img-thumbnail" width="304" height="236">
+        <form enctype="multipart/form-data" method="post" action="/edit_img_card_empatbelas">
+          <h6>judul</h6>
+          <% if(db_setting.all_img.img_empatbelas.judulproduk=="False"){%>
+          <input name="judul_img_card_empatbelas" class="form-control" type="text" placeholder="Default input" required>
+          <%} 
+          else{
+          %>
+          <input name="judul_img_card_empatbelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_empatbelas.judulproduk %>" required>
+            <%}%>
+          <h6>Deskripsi</h6>
+          <% if(db_setting.all_img.img_empatbelas.deskripsiproduk=="False"){%>
+          <input name="deskripsi_img_card_empatbelas" class="form-control" type="text" placeholder="Default input" required>
+          <%} 
+          else{
+          %>
+          <input name="deskripsi_img_card_empatbelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_empatbelas.deskripsiproduk %>" required>
+            <%}%>
+        <!-- batas  -->
+        <h6>filter</h6>
+        <% if(db_setting.all_img.img_empatbelas.filter=="False"){%>
+        <input name="filter_img_card_empatbelas" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="filter_img_card_empatbelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_empatbelas.filter %>" required>
+          <%}%>
+        </form>
+        </div>
+        </div>
+        <!-- batasnya slide -->
+            <!-- batsan card -->
+            <div class="card">
+              <h1>card limabelas</h1>
+              <div class="card-body">
+            <form enctype="multipart/form-data" method="post" action=".upload_all_img_limabelas">
+              <div class="form-group">
+                <label for="exampleFormControlFile1">Slide limabelas</label>
+                <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+              </div>
+              <input type="submit" value="Upload" />
+            </form>
+        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_limabelas.img%>.jpg" alt="slide limabelas" class="img-thumbnail" width="304" height="236">
+        <form enctype="multipart/form-data" method="post" action="/edit_img_card_limabelas">
+          <h6>judul</h6>
+          <% if(db_setting.all_img.img_limabelas.judulproduk=="False"){%>
+          <input name="judul_img_card_limabelas" class="form-control" type="text" placeholder="Default input" required>
+          <%} 
+          else{
+          %>
+          <input name="judul_img_card_limabelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_limabelas.judulproduk %>" required>
+            <%}%>
+          <h6>Deskripsi</h6>
+          <% if(db_setting.all_img.img_limabelas.deskripsiproduk=="False"){%>
+          <input name="deskripsi_img_card_limabelas" class="form-control" type="text" placeholder="Default input" required>
+          <%} 
+          else{
+          %>
+          <input name="deskripsi_img_card_limabelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_limabelas.deskripsiproduk %>" required>
+            <%}%>
+        <!-- batas  -->
+        <h6>filter</h6>
+        <% if(db_setting.all_img.img_limabelas.filter=="False"){%>
+        <input name="filter_img_card_limabelas" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="filter_img_card_limabelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_limabelas.filter %>" required>
+          <%}%>
+        </form>
+            </div>
+            </div>      
+            <!-- batasnya slide -->
+                <!-- batsan card -->
+    <div class="card">
+      <h1>card enambelas</h1>
+      <div class="card-body">
+    <form enctype="multipart/form-data" method="post" action="/upload_img_slide_enambelas">
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Slide enambelas</label>
+        <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+      <input type="submit" value="Upload"/>
+      </div>
+    </form>
+    <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_enambelas.img%>.jpg" alt="slide enambelas" class="img-thumbnail" width="304" height="236">
+    <form enctype="multipart/form-data" method="post" action="/edit_img_card_enambelas">
+      <h6>judul</h6>
+      <% if(db_setting.all_img.img_enambelas.judulproduk=="False"){%>
+      <input name="judul_img_card_enambelas" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="judul_img_card_enambelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_enambelas.judulproduk %>" required>
+        <%}%>
+      <h6>Deskripsi</h6>
+      <% if(db_setting.all_img.img_enambelas.deskripsiproduk=="False"){%>
+      <input name="deskripsi_img_card_enambelas" class="form-control" type="text" placeholder="Default input" required>
+      <%} 
+      else{
+      %>
+      <input name="deskripsi_img_card_enambelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_enambelas.deskripsiproduk %>" required>
+        <%}%>
+        <!-- batas  -->
+        <h6>filter</h6>
+        <% if(db_setting.all_img.img_enambelas.filter=="False"){%>
+        <input name="filter_img_card_enambelas" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="filter_img_card_enambelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_enambelas.filter %>" required>
+          <%}%>
+    </form>
+    </div>
+    </div>
+    <!-- batasnya slide -->
+    
+      <!-- batsan card -->
+      <div class="card">
+        <h1>card tujubelas</h1>
+        <div class="card-body">
+      <form enctype="multipart/form-data" method="post" action="/upload_all_img_tujubelas">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">Slide tujubelas</label>
+          <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <input type="submit" value="Upload" />
+      </form>
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tujubelas.img%>.jpg" alt="slide tujubelas" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_img_card_tujubelas">
+        <h6>judul</h6>
+        <% if(db_setting.all_img.img_tujubelas.judulproduk=="False"){%>
+        <input name="judul_img_card_tujubelas" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="judul_img_card_tujubelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tujubelas.judulproduk %>" required>
+          <%}%>
+        <h6>Deskripsi</h6>
+        <% if(db_setting.all_img.img_tujubelas.deskripsiproduk=="False"){%>
+        <input name="deskripsi_img_card_tujubelas" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="deskripsi_img_card_tujubelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tujubelas.deskripsiproduk %>" required>
+          <%}%>
+        <!-- batas  -->
+        <h6>filter</h6>
+        <% if(db_setting.all_img.img_tujubelas.filter=="False"){%>
+        <input name="filter_img_card_tujubelas" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="filter_img_card_tujubelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tujubelas.filter %>" required>
+          <%}%>s
+      </form>
+      </div>
+      </div>
+      <!-- batasnya slide -->
+        <!-- batsan card -->
+        <div class="card">
+          <h1>card lapanbelas</h1>
+          <div class="card-body">
+        <form enctype="multipart/form-data" method="post" action="/upload_all_img_lapanbelas">
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Slide lapanbelas</label>
+            <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+          <input type="submit" value="Upload" />
+        </form>
+        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_lapanbelas.img%>.jpg" alt="slide lapanbelas" class="img-thumbnail" width="304" height="236">
+        <form enctype="multipart/form-data" method="post" action="/edit_img_card_lapanbelas">
+          <h6>judul</h6>
+          <% if(db_setting.all_img.img_lapanbelas.judulproduk=="False"){%>
+          <input name="judul_img_card_lapanbelas" class="form-control" type="text" placeholder="Default input" required>
+          <%} 
+          else{
+          %>
+          <input name="judul_img_card_lapanbelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_lapanbelas.judulproduk %>" required>
+            <%}%>
+          <h6>Deskripsi</h6>
+          <% if(db_setting.all_img.img_lapanbelas.deskripsiproduk=="False"){%>
+          <input name="deskripsi_img_card_lapanbelas" class="form-control" type="text" placeholder="Default input" required>
+          <%} 
+          else{
+          %>
+          <input name="deskripsi_img_card_lapanbelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_lapanbelas.deskripsiproduk %>" required>
+            <%}%>
+        <!-- batas  -->
+        <h6>filter</h6>
+        <% if(db_setting.all_img.img_lapanbelas.filter=="False"){%>
+        <input name="filter_img_card_lapanbelas" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="filter_img_card_lapanbelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_lapanbelas.filter %>" required>
+          <%}%>
+        </form>
+        </div>
+        </div>
+        <!-- batasnya slide -->
+        <!-- batsan card -->
+        <div class="card">
+          <h1>card sembilanbelas</h1>
+          <div class="card-body">
+        <form enctype="multipart/form-data" method="post" action="/upload_all_img_sembilanbelas">
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Slide sembilanbelas</label>
+            <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+          <input type="submit" value="Upload" />
+        </form>
+        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sembilanbelas.img%>.jpg" alt="slide sembilanbelas" class="img-thumbnail" width="304" height="236">
+        <form enctype="multipart/form-data" method="post" action="/edit_img_card_sembilanbelas">
+          <h6>judul</h6>
+          <% if(db_setting.all_img.img_sembilanbelas.judulproduk=="False"){%>
+          <input name="judul_img_card_sembilanbelas" class="form-control" type="text" placeholder="Default input" required>
+          <%} 
+          else{
+          %>
+          <input name="judul_img_card_sembilanbelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sembilanbelas.judulproduk %>" required>
+            <%}%>
+          <h6>Deskripsi</h6>
+          <% if(db_setting.all_img.img_sembilanbelas.deskripsiproduk=="False"){%>
+          <input name="deskripsi_img_card_sembilanbelas" class="form-control" type="text" placeholder="Default input" required>
+          <%} 
+          else{
+          %>
+          <input name="deskripsi_img_card_sembilanbelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sembilanbelas.deskripsiproduk %>" required>
+            <%}%>
+        <!-- batas  -->
+        <h6>filter</h6>
+        <% if(db_setting.all_img.img_sembilanbelas.filter=="False"){%>
+        <input name="filter_img_card_sembilanbelas" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="filter_img_card_sembilanbelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sembilanbelas.filter %>" required>
+          <%}%>
+        </form>
+        </div>
+        </div>
+        <!-- batasnya slide -->
+            <!-- batsan card -->
+            <div class="card">
+              <h1>card duapuluh</h1>
+              <div class="card-body">
+            <form enctype="multipart/form-data" method="post" action=".upload_all_img_duapuluh">
+              <div class="form-group">
+                <label for="exampleFormControlFile1">Slide duapuluh</label>
+                <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
+              </div>
+              <input type="submit" value="Upload" />
+            </form>
+        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_duapuluh.img%>.jpg" alt="slide duapuluh" class="img-thumbnail" width="304" height="236">
+        <form enctype="multipart/form-data" method="post" action="/edit_img_card_duapuluh">
+          <h6>judul</h6>
+          <% if(db_setting.all_img.img_duapuluh.judulproduk=="False"){%>
+          <input name="judul_img_card_duapuluh" class="form-control" type="text" placeholder="Default input" required>
+          <%} 
+          else{
+          %>
+          <input name="judul_img_card_duapuluh" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_duapuluh.judulproduk %>" required>
+            <%}%>
+          <h6>Deskripsi</h6>
+          <% if(db_setting.all_img.img_duapuluh.deskripsiproduk=="False"){%>
+          <input name="deskripsi_img_card_duapuluh" class="form-control" type="text" placeholder="Default input" required>
+          <%} 
+          else{
+          %>
+          <input name="deskripsi_img_card_duapuluh" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_duapuluh.deskripsiproduk %>" required>
+            <%}%>
+        <!-- batas  -->
+        <h6>filter</h6>
+        <% if(db_setting.all_img.img_duapuluh.filter=="False"){%>
+        <input name="filter_img_card_duapuluh" class="form-control" type="text" placeholder="Default input" required>
+        <%} 
+        else{
+        %>
+        <input name="filter_img_card_duapuluh" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_duapuluh.filter %>" required>
+          <%}%>
+        </form>
+            </div>
+            </div>      
+            <!-- batasnya slide -->
+  </div>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
