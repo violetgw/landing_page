@@ -13,7 +13,8 @@ require('moment-timezone');
 const fs = require('fs');
 moment.tz.setDefault('Asia/Jakarta');
 const {data_akun,data_form_data,db_atur_img} = require('./models/schema_db');
-const timestamp = Date.now();
+
+
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -245,7 +246,6 @@ const options = {
   
   
   
-  
   app.get('/send_wa',async (req,res)=>{
     const currentTime = moment();
   
@@ -304,20 +304,10 @@ const options = {
   
 
   // Fungsi untuk memperbarui settingan
-  async function setting_img_db(query, update) {
-      try {
+//   async function setting_img_db(query, update) {
         
-          const result = await db_atur_img.updateOne(query, update);
-
-          if (result.nModified === 1) {
-              console.log('setting berhasil diperbarui');
-          } else {
-              console.log('settingan tidak ditemukan atau tidak ada yang berubah');
-          }
-      } catch (error) {
-          console.error('Error saat memperbarui settingan:', error);
-      }
-  }
+//           const result = await db_atur_img.updateOne(query, update);
+//   }
   
   app.get('/proses_login', async (req,res)=>{
     
@@ -361,7 +351,7 @@ const options = {
 
     const db_setting = await db_atur_img.findOne({},);
 
-    console.log(db_setting.img_slide.img_satu);
+    // console.log(db_setting.img_slide.img_satu);
 
 
   if(req.session.username && req.session.password){
@@ -389,77 +379,94 @@ const options = {
   });
   
 //   setting_img_db({ username: 'Moza' }, { $set: { password: 'moza123' ,username:'moza'} });
+
+var lastTimestamp; // Variabel global untuk menyimpan timestamp terakhir
+
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, './public/img/gambar_landing_page');
+        cb(null, './public/img/gambar_landing_page');
     },
     filename: function (req, file, cb) {
+        lastTimestamp = Date.now(); // Simpan timestamp terbaru
         const extension = path.extname(file.originalname);
-        
-        const newFilename = `${timestamp}${extension}`;
-        
+        const newFilename = `${lastTimestamp}${extension}`;
+        console.log(lastTimestamp); // Output timestamp
         cb(null, newFilename);
     }
-})
+});
+
 var upload = multer({ storage: storage });
 
-                                        // slide
+//untuk upload slide dua
+app.post('/upload_img_slide_satu', upload.single('upload_file_satu'), async (req, res) => {
+    // Gunakan timestamp terakhir yang disimpan
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({});
+    await db_atur_img.updateOne({ "img_slide.img_satu": db_setting.img_slide.img_satu }, { $set: { "img_slide.img_satu": timestamp } });
+    const file_path = path.join("./public/img/gambar_landing_page", `${db_setting.img_slide.img_satu}.jpg`);
+    // Menghapus file
+    fs.unlink(file_path, (err) => {});
+    console.log("satu" + timestamp); // Output timestamp
 
-//untuk upload slide satu
-
-
-app.post('/upload_img_slide_satu', upload.single('upload_file'), async (req, res) => {
-    const db_setting = await db_atur_img.findOne({},);
-    setting_img_db({ "img_slide.img_satu":db_setting.img_slide.img_satu}, { $set: {"img_slide.img_satu":timestamp} });
-    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.img_slide.img_satu}.jpg`);
-        // Menghapus file
-        fs.unlink(file_path, (err) => {});
     res.redirect('/admin');
 });
+
 
 //untuk upload slide dua
 
 
-app.post('/upload_img_slide_dua', upload.single('upload_file'), async (req, res) => {
+app.post('/upload_img_slide_dua', upload.single('upload_file_dua'), async (req, res) => {
+    const timestamp = lastTimestamp;
     const db_setting = await db_atur_img.findOne({},);
-    setting_img_db({ "img_slide.img_dua":db_setting.img_slide.img_dua}, { $set: {"img_slide.img_dua":timestamp} });
+    await db_atur_img.updateOne({ "img_slide.img_dua":db_setting.img_slide.img_dua}, { $set: {"img_slide.img_dua":timestamp} });
     const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.img_slide.img_dua}.jpg`);
         // Menghapus file
         fs.unlink(file_path, (err) => {});
+        console.log("dua"+timestamp);
+
     res.redirect('/admin');
 });
 //untuk upload slide dua
 
 
-app.post('/upload_img_slide_tiga', upload.single('upload_file'), async (req, res) => {
+app.post('/upload_img_slide_tiga', upload.single('upload_file_tiga'), async (req, res) => {
+    const timestamp = lastTimestamp;
     const db_setting = await db_atur_img.findOne({},);
-    setting_img_db({ "img_slide.img_tiga":db_setting.img_slide.img_tiga}, { $set: {"img_slide.img_tiga":timestamp} });
+    await db_atur_img.updateOne({ "img_slide.img_tiga":db_setting.img_slide.img_tiga}, { $set: {"img_slide.img_tiga":timestamp} });
     const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.img_slide.img_tiga}.jpg`);
         // Menghapus file
         fs.unlink(file_path, (err) => {});
+        console.log("tiga"+timestamp);
+
     res.redirect('/admin');
 });
 
 //untuk upload slide empat
 
 
-app.post('/upload_img_slide_empat', upload.single('upload_file'), async (req, res) => {
+app.post('/upload_img_slide_empat', upload.single('upload_file_empat'), async (req, res) => {
+    const timestamp = lastTimestamp;
     const db_setting = await db_atur_img.findOne({},);
-    setting_img_db({ "img_slide.img_empat":db_setting.img_slide.img_empat}, { $set: {"img_slide.img_empat":timestamp} });
+    await db_atur_img.updateOne({ "img_slide.img_empat":db_setting.img_slide.img_empat}, { $set: {"img_slide.img_empat":timestamp} });
     const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.img_slide.img_empat}.jpg`);
         // Menghapus file
         fs.unlink(file_path, (err) => {});
+        console.log("empat"+timestamp);
+
     res.redirect('/admin');
 });
 
 
 //untuk upload slide lima
-app.post('/upload_img_slide_lima', upload.single('upload_file'), async (req, res) => {
+app.post('/upload_img_slide_lima', upload.single('upload_file_lima'), async (req, res) => {
+    const timestamp = lastTimestamp;
     const db_setting = await db_atur_img.findOne({},);
-    setting_img_db({ "img_slide.img_lima":db_setting.img_slide.img_lima}, { $set: {"img_slide.img_lima":timestamp} });
+    await db_atur_img.updateOne({ "img_slide.img_lima":db_setting.img_slide.img_lima}, { $set: {"img_slide.img_lima":timestamp} });
     const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.img_slide.img_lima}.jpg`);
         // Menghapus file
         fs.unlink(file_path, (err) => {});
+        console.log("lima"+timestamp);
+
     res.redirect('/admin');
 });
 
