@@ -406,15 +406,19 @@
   <div class="card">
     <h1>card Satu</h1>
     <div class="card-body">
-  <form enctype="multipart/form-data" method="post" action="/upload_img_slide_satu">
+            <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 1">
+      </form>
+  <form enctype="multipart/form-data" method="post" action="/upload_all_img_satu">
     <div class="form-group">
-      <label for="exampleFormControlFile1">Slide Satu</label>
+      <label for="exampleFormControlFile1">card Satu</label>
       <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
     <input type="submit" value="Upload"/>
     </div>
   </form>
-  <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_satu.img%>.jpg" alt="slide satu" class="img-thumbnail" width="304" height="236">
-  <form enctype="multipart/form-data" method="post" action="/edit_img_card_satu">
+  <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_satu.img%>.jpg" alt="card satu" class="img-thumbnail" width="304" height="236">
+  <form enctype="multipart/form-data" method="post" action="/edit_all_img_satu">
     <h6>judul</h6>
     <% if(db_setting.all_img.img_satu.judulproduk=="False"){%>
     <input name="judul_img_card_satu" class="form-control" type="text" placeholder="Default input" required>
@@ -443,21 +447,25 @@
   </form>
   </div>
   </div>
-  <!-- batasnya slide -->
+  <!-- batasnya card -->
   
     <!-- batsan card -->
     <div class="card">
       <h1>card dua</h1>
       <div class="card-body">
+              <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 2">
+      </form>
     <form enctype="multipart/form-data" method="post" action="/upload_all_img_dua">
       <div class="form-group">
-        <label for="exampleFormControlFile1">Slide dua</label>
+        <label for="exampleFormControlFile1">card dua</label>
         <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
       </div>
-      <input type="submit" value="Upload" />
+      <input type="submit" value="Upload"/>
     </form>
-    <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_dua.img%>.jpg" alt="slide dua" class="img-thumbnail" width="304" height="236">
-    <form enctype="multipart/form-data" method="post" action="/edit_img_card_dua">
+    <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_dua.img%>.jpg" alt="card dua" class="img-thumbnail" width="304" height="236">
+    <form enctype="multipart/form-data" method="post" action="/edit_all_img_dua">
       <h6>judul</h6>
       <% if(db_setting.all_img.img_dua.judulproduk=="False"){%>
       <input name="judul_img_card_dua" class="form-control" type="text" placeholder="Default input" required>
@@ -486,20 +494,24 @@
     </form>
     </div>
     </div>
-    <!-- batasnya slide -->
+    <!-- batasnya card -->
       <!-- batsan card -->
       <div class="card">
         <h1>card tiga</h1>
         <div class="card-body">
+                <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 3">
+      </form>
       <form enctype="multipart/form-data" method="post" action="/upload_all_img_tiga">
         <div class="form-group">
-          <label for="exampleFormControlFile1">Slide tiga</label>
+          <label for="exampleFormControlFile1">card tiga</label>
           <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
         </div>
         <input type="submit" value="Upload" />
       </form>
-      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tiga.img%>.jpg" alt="slide tiga" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_img_card_tiga">
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tiga.img%>.jpg" alt="card tiga" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_all_img_tiga">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_tiga.judulproduk=="False"){%>
         <input name="judul_img_card_tiga" class="form-control" type="text" placeholder="Default input" required>
@@ -528,20 +540,24 @@
       </form>
       </div>
       </div>
-      <!-- batasnya slide -->
+      <!-- batasnya card -->
       <!-- batsan card -->
       <div class="card">
         <h1>card empat</h1>
         <div class="card-body">
+                <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 4">
+      </form>
       <form enctype="multipart/form-data" method="post" action="/upload_all_img_empat">
         <div class="form-group">
-          <label for="exampleFormControlFile1">Slide empat</label>
+          <label for="exampleFormControlFile1">card empat</label>
           <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
         </div>
         <input type="submit" value="Upload" />
       </form>
-      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_empat.img%>.jpg" alt="slide empat" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_img_card_empat">
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_empat.img%>.jpg" alt="card empat" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_all_img_empat">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_empat.judulproduk=="False"){%>
         <input name="judul_img_card_empat" class="form-control" type="text" placeholder="Default input" required>
@@ -570,20 +586,24 @@
       </form>
       </div>
       </div>
-      <!-- batasnya slide -->
+      <!-- batasnya card -->
           <!-- batsan card -->
           <div class="card">
             <h1>card lima</h1>
             <div class="card-body">
-          <form enctype="multipart/form-data" method="post" action=".upload_all_img_lima">
+                    <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 5">
+      </form>
+          <form enctype="multipart/form-data" method="post" action="/upload_all_img_lima">
             <div class="form-group">
-              <label for="exampleFormControlFile1">Slide lima</label>
+              <label for="exampleFormControlFile1">card lima</label>
               <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
             </div>
             <input type="submit" value="Upload" />
           </form>
-      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_lima.img%>.jpg" alt="slide lima" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_img_card_lima">
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_lima.img%>.jpg" alt="card lima" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_all_img_lima">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_lima.judulproduk=="False"){%>
         <input name="judul_img_card_lima" class="form-control" type="text" placeholder="Default input" required>
@@ -612,20 +632,24 @@
       </form>
           </div>
           </div>      
-          <!-- batasnya slide -->
+          <!-- batasnya card -->
               <!-- batsan card -->
   <div class="card">
     <h1>card enam</h1>
     <div class="card-body">
-  <form enctype="multipart/form-data" method="post" action="/upload_img_slide_enam">
+            <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 6">
+      </form>
+  <form enctype="multipart/form-data" method="post" action="/upload_all_img_enam">
     <div class="form-group">
-      <label for="exampleFormControlFile1">Slide enam</label>
+      <label for="exampleFormControlFile1">card enam</label>
       <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
     <input type="submit" value="Upload"/>
     </div>
   </form>
-  <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_enam.img%>.jpg" alt="slide enam" class="img-thumbnail" width="304" height="236">
-  <form enctype="multipart/form-data" method="post" action="/edit_img_card_enam">
+  <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_enam.img%>.jpg" alt="card enam" class="img-thumbnail" width="304" height="236">
+  <form enctype="multipart/form-data" method="post" action="/edit_all_img_enam">
     <h6>judul</h6>
     <% if(db_setting.all_img.img_enam.judulproduk=="False"){%>
     <input name="judul_img_card_enam" class="form-control" type="text" placeholder="Default input" required>
@@ -654,21 +678,25 @@
   </form>
   </div>
   </div>
-  <!-- batasnya slide -->
+  <!-- batasnya card -->
   
     <!-- batsan card -->
     <div class="card">
       <h1>card tuju</h1>
       <div class="card-body">
+              <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 7">
+      </form>
     <form enctype="multipart/form-data" method="post" action="/upload_all_img_tuju">
       <div class="form-group">
-        <label for="exampleFormControlFile1">Slide tuju</label>
+        <label for="exampleFormControlFile1">card tuju</label>
         <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
       </div>
       <input type="submit" value="Upload" />
     </form>
-    <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tuju.img%>.jpg" alt="slide tuju" class="img-thumbnail" width="304" height="236">
-    <form enctype="multipart/form-data" method="post" action="/edit_img_card_tuju">
+    <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tuju.img%>.jpg" alt="card tuju" class="img-thumbnail" width="304" height="236">
+    <form enctype="multipart/form-data" method="post" action="/edit_all_img_tuju">
       <h6>judul</h6>
       <% if(db_setting.all_img.img_tuju.judulproduk=="False"){%>
       <input name="judul_img_card_tuju" class="form-control" type="text" placeholder="Default input" required>
@@ -697,20 +725,24 @@
     </form>
     </div>
     </div>
-    <!-- batasnya slide -->
+    <!-- batasnya card -->
       <!-- batsan card -->
       <div class="card">
         <h1>card lapan</h1>
         <div class="card-body">
+                <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 8">
+      </form>
       <form enctype="multipart/form-data" method="post" action="/upload_all_img_lapan">
         <div class="form-group">
-          <label for="exampleFormControlFile1">Slide lapan</label>
+          <label for="exampleFormControlFile1">card lapan</label>
           <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
         </div>
         <input type="submit" value="Upload" />
       </form>
-      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_lapan.img%>.jpg" alt="slide lapan" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_img_card_lapan">
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_lapan.img%>.jpg" alt="card lapan" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_all_img_lapan">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_lapan.judulproduk=="False"){%>
         <input name="judul_img_card_lapan" class="form-control" type="text" placeholder="Default input" required>
@@ -739,20 +771,24 @@
       </form>
       </div>
       </div>
-      <!-- batasnya slide -->
+      <!-- batasnya card -->
       <!-- batsan card -->
       <div class="card">
         <h1>card sembilan</h1>
         <div class="card-body">
+                <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 9">
+      </form>
       <form enctype="multipart/form-data" method="post" action="/upload_all_img_sembilan">
         <div class="form-group">
-          <label for="exampleFormControlFile1">Slide sembilan</label>
+          <label for="exampleFormControlFile1">card sembilan</label>
           <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
         </div>
         <input type="submit" value="Upload" />
       </form>
-      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sembilan.img%>.jpg" alt="slide sembilan" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_img_card_sembilan">
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sembilan.img%>.jpg" alt="card sembilan" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_all_img_sembilan">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_sembilan.judulproduk=="False"){%>
         <input name="judul_img_card_sembilan" class="form-control" type="text" placeholder="Default input" required>
@@ -781,20 +817,24 @@
       </form>
       </div>
       </div>
-      <!-- batasnya slide -->
+      <!-- batasnya card -->
           <!-- batsan card -->
           <div class="card">
             <h1>card sepuluh</h1>
             <div class="card-body">
-          <form enctype="multipart/form-data" method="post" action=".upload_all_img_sepuluh">
+                    <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 10">
+      </form>
+          <form enctype="multipart/form-data" method="post" action="/upload_all_img_sepuluh">
             <div class="form-group">
-              <label for="exampleFormControlFile1">Slide sepuluh</label>
+              <label for="exampleFormControlFile1">card sepuluh</label>
               <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
             </div>
             <input type="submit" value="Upload" />
           </form>
-      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sepuluh.img%>.jpg" alt="slide sepuluh" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_img_card_sepuluh">
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sepuluh.img%>.jpg" alt="card sepuluh" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_all_img_sepuluh">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_sepuluh.judulproduk=="False"){%>
         <input name="judul_img_card_sepuluh" class="form-control" type="text" placeholder="Default input" required>
@@ -823,20 +863,24 @@
       </form>
           </div>
           </div>      
-          <!-- batasnya slide -->
+          <!-- batasnya card -->
     <!-- batsan card -->
     <div class="card">
       <h1>card sebelas</h1>
       <div class="card-body">
-    <form enctype="multipart/form-data" method="post" action="/upload_img_slide_sebelas">
+              <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 11">
+      </form>
+    <form enctype="multipart/form-data" method="post" action="/upload_all_img_sebelas">
       <div class="form-group">
-        <label for="exampleFormControlFile1">Slide sebelas</label>
+        <label for="exampleFormControlFile1">card sebelas</label>
         <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
       <input type="submit" value="Upload"/>
       </div>
     </form>
-    <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sebelas.img%>.jpg" alt="slide sebelas" class="img-thumbnail" width="304" height="236">
-    <form enctype="multipart/form-data" method="post" action="/edit_img_card_sebelas">
+    <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sebelas.img%>.jpg" alt="card sebelas" class="img-thumbnail" width="304" height="236">
+    <form enctype="multipart/form-data" method="post" action="/edit_all_img_sebelas">
       <h6>judul</h6>
       <% if(db_setting.all_img.img_sebelas.judulproduk=="False"){%>
       <input name="judul_img_card_sebelas" class="form-control" type="text" placeholder="Default input" required>
@@ -865,21 +909,25 @@
     </form>
     </div>
     </div>
-    <!-- batasnya slide -->
+    <!-- batasnya card -->
     
       <!-- batsan card -->
       <div class="card">
         <h1>card duabelas</h1>
         <div class="card-body">
+                <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 12">
+      </form>
       <form enctype="multipart/form-data" method="post" action="/upload_all_img_duabelas">
         <div class="form-group">
-          <label for="exampleFormControlFile1">Slide duabelas</label>
+          <label for="exampleFormControlFile1">card duabelas</label>
           <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
         </div>
         <input type="submit" value="Upload" />
       </form>
-      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_duabelas.img%>.jpg" alt="slide duabelas" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_img_card_duabelas">
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_duabelas.img%>.jpg" alt="card duabelas" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_all_img_duabelas">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_duabelas.judulproduk=="False"){%>
         <input name="judul_img_card_duabelas" class="form-control" type="text" placeholder="Default input" required>
@@ -908,20 +956,24 @@
       </form>
       </div>
       </div>
-      <!-- batasnya slide -->
+      <!-- batasnya card -->
         <!-- batsan card -->
         <div class="card">
           <h1>card tigabelas</h1>
           <div class="card-body">
+                  <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 13">
+      </form>
         <form enctype="multipart/form-data" method="post" action="/upload_all_img_tigabelas">
           <div class="form-group">
-            <label for="exampleFormControlFile1">Slide tigabelas</label>
+            <label for="exampleFormControlFile1">card tigabelas</label>
             <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
           </div>
           <input type="submit" value="Upload" />
         </form>
-        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tigabelas.img%>.jpg" alt="slide tigabelas" class="img-thumbnail" width="304" height="236">
-        <form enctype="multipart/form-data" method="post" action="/edit_img_card_tigabelas">
+        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tigabelas.img%>.jpg" alt="card tigabelas" class="img-thumbnail" width="304" height="236">
+        <form enctype="multipart/form-data" method="post" action="/edit_all_img_tigabelas">
           <h6>judul</h6>
           <% if(db_setting.all_img.img_tigabelas.judulproduk=="False"){%>
           <input name="judul_img_card_tigabelas" class="form-control" type="text" placeholder="Default input" required>
@@ -950,20 +1002,24 @@
         </form>
         </div>
         </div>
-        <!-- batasnya slide -->
+        <!-- batasnya card -->
         <!-- batsan card -->
         <div class="card">
           <h1>card empatbelas</h1>
           <div class="card-body">
+                  <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 14">
+      </form>
         <form enctype="multipart/form-data" method="post" action="/upload_all_img_empatbelas">
           <div class="form-group">
-            <label for="exampleFormControlFile1">Slide empatbelas</label>
+            <label for="exampleFormControlFile1">card empatbelas</label>
             <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
           </div>
           <input type="submit" value="Upload" />
         </form>
-        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_empatbelas.img%>.jpg" alt="slide empatbelas" class="img-thumbnail" width="304" height="236">
-        <form enctype="multipart/form-data" method="post" action="/edit_img_card_empatbelas">
+        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_empatbelas.img%>.jpg" alt="card empatbelas" class="img-thumbnail" width="304" height="236">
+        <form enctype="multipart/form-data" method="post" action="/edit_all_img_empatbelas">
           <h6>judul</h6>
           <% if(db_setting.all_img.img_empatbelas.judulproduk=="False"){%>
           <input name="judul_img_card_empatbelas" class="form-control" type="text" placeholder="Default input" required>
@@ -992,20 +1048,24 @@
         </form>
         </div>
         </div>
-        <!-- batasnya slide -->
+        <!-- batasnya card -->
             <!-- batsan card -->
             <div class="card">
               <h1>card limabelas</h1>
               <div class="card-body">
-            <form enctype="multipart/form-data" method="post" action=".upload_all_img_limabelas">
+                      <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 15">
+      </form>
+            <form enctype="multipart/form-data" method="post" action="/upload_all_img_limabelas">
               <div class="form-group">
-                <label for="exampleFormControlFile1">Slide limabelas</label>
+                <label for="exampleFormControlFile1">card limabelas</label>
                 <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
               </div>
               <input type="submit" value="Upload" />
             </form>
-        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_limabelas.img%>.jpg" alt="slide limabelas" class="img-thumbnail" width="304" height="236">
-        <form enctype="multipart/form-data" method="post" action="/edit_img_card_limabelas">
+        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_limabelas.img%>.jpg" alt="card limabelas" class="img-thumbnail" width="304" height="236">
+        <form enctype="multipart/form-data" method="post" action="/edit_all_img_limabelas">
           <h6>judul</h6>
           <% if(db_setting.all_img.img_limabelas.judulproduk=="False"){%>
           <input name="judul_img_card_limabelas" class="form-control" type="text" placeholder="Default input" required>
@@ -1034,20 +1094,24 @@
         </form>
             </div>
             </div>      
-            <!-- batasnya slide -->
+            <!-- batasnya card -->
                 <!-- batsan card -->
     <div class="card">
       <h1>card enambelas</h1>
       <div class="card-body">
-    <form enctype="multipart/form-data" method="post" action="/upload_img_slide_enambelas">
+              <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 16">
+      </form>
+    <form enctype="multipart/form-data" method="post" action="/upload_all_img_enambelas">
       <div class="form-group">
-        <label for="exampleFormControlFile1">Slide enambelas</label>
+        <label for="exampleFormControlFile1">card enambelas</label>
         <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
       <input type="submit" value="Upload"/>
       </div>
     </form>
-    <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_enambelas.img%>.jpg" alt="slide enambelas" class="img-thumbnail" width="304" height="236">
-    <form enctype="multipart/form-data" method="post" action="/edit_img_card_enambelas">
+    <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_enambelas.img%>.jpg" alt="card enambelas" class="img-thumbnail" width="304" height="236">
+    <form enctype="multipart/form-data" method="post" action="/edit_all_img_enambelas">
       <h6>judul</h6>
       <% if(db_setting.all_img.img_enambelas.judulproduk=="False"){%>
       <input name="judul_img_card_enambelas" class="form-control" type="text" placeholder="Default input" required>
@@ -1076,21 +1140,25 @@
     </form>
     </div>
     </div>
-    <!-- batasnya slide -->
+    <!-- batasnya card -->
     
       <!-- batsan card -->
       <div class="card">
         <h1>card tujubelas</h1>
         <div class="card-body">
+                <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 17">
+      </form>
       <form enctype="multipart/form-data" method="post" action="/upload_all_img_tujubelas">
         <div class="form-group">
-          <label for="exampleFormControlFile1">Slide tujubelas</label>
+          <label for="exampleFormControlFile1">card tujubelas</label>
           <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
         </div>
         <input type="submit" value="Upload" />
       </form>
-      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tujubelas.img%>.jpg" alt="slide tujubelas" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_img_card_tujubelas">
+      <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tujubelas.img%>.jpg" alt="card tujubelas" class="img-thumbnail" width="304" height="236">
+      <form enctype="multipart/form-data" method="post" action="/edit_all_img_tujubelas">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_tujubelas.judulproduk=="False"){%>
         <input name="judul_img_card_tujubelas" class="form-control" type="text" placeholder="Default input" required>
@@ -1119,20 +1187,24 @@
       </form>
       </div>
       </div>
-      <!-- batasnya slide -->
+      <!-- batasnya card -->
         <!-- batsan card -->
         <div class="card">
           <h1>card lapanbelas</h1>
           <div class="card-body">
+                  <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 18">
+      </form>
         <form enctype="multipart/form-data" method="post" action="/upload_all_img_lapanbelas">
           <div class="form-group">
-            <label for="exampleFormControlFile1">Slide lapanbelas</label>
+            <label for="exampleFormControlFile1">card lapanbelas</label>
             <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
           </div>
           <input type="submit" value="Upload" />
         </form>
-        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_lapanbelas.img%>.jpg" alt="slide lapanbelas" class="img-thumbnail" width="304" height="236">
-        <form enctype="multipart/form-data" method="post" action="/edit_img_card_lapanbelas">
+        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_lapanbelas.img%>.jpg" alt="card lapanbelas" class="img-thumbnail" width="304" height="236">
+        <form enctype="multipart/form-data" method="post" action="/edit_all_img_lapanbelas">
           <h6>judul</h6>
           <% if(db_setting.all_img.img_lapanbelas.judulproduk=="False"){%>
           <input name="judul_img_card_lapanbelas" class="form-control" type="text" placeholder="Default input" required>
@@ -1161,20 +1233,24 @@
         </form>
         </div>
         </div>
-        <!-- batasnya slide -->
+        <!-- batasnya card -->
         <!-- batsan card -->
         <div class="card">
           <h1>card sembilanbelas</h1>
           <div class="card-body">
+                  <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 19">
+      </form>
         <form enctype="multipart/form-data" method="post" action="/upload_all_img_sembilanbelas">
           <div class="form-group">
-            <label for="exampleFormControlFile1">Slide sembilanbelas</label>
+            <label for="exampleFormControlFile1">card sembilanbelas</label>
             <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
           </div>
           <input type="submit" value="Upload" />
         </form>
-        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sembilanbelas.img%>.jpg" alt="slide sembilanbelas" class="img-thumbnail" width="304" height="236">
-        <form enctype="multipart/form-data" method="post" action="/edit_img_card_sembilanbelas">
+        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sembilanbelas.img%>.jpg" alt="card sembilanbelas" class="img-thumbnail" width="304" height="236">
+        <form enctype="multipart/form-data" method="post" action="/edit_all_img_sembilanbelas">
           <h6>judul</h6>
           <% if(db_setting.all_img.img_sembilanbelas.judulproduk=="False"){%>
           <input name="judul_img_card_sembilanbelas" class="form-control" type="text" placeholder="Default input" required>
@@ -1203,20 +1279,24 @@
         </form>
         </div>
         </div>
-        <!-- batasnya slide -->
+        <!-- batasnya card -->
             <!-- batsan card -->
             <div class="card">
               <h1>card duapuluh</h1>
               <div class="card-body">
-            <form enctype="multipart/form-data" method="post" action=".upload_all_img_duapuluh">
+                      <!-- false gambaar card -->
+      <form method="post" action="/hapus_gambar_all_card">
+        <input type="submit" name="img_card_all" value="False img 20">
+      </form>
+            <form enctype="multipart/form-data" method="post" action="/upload_all_img_duapuluh">
               <div class="form-group">
-                <label for="exampleFormControlFile1">Slide duapuluh</label>
+                <label for="exampleFormControlFile1">card duapuluh</label>
                 <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
               </div>
               <input type="submit" value="Upload" />
             </form>
-        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_duapuluh.img%>.jpg" alt="slide duapuluh" class="img-thumbnail" width="304" height="236">
-        <form enctype="multipart/form-data" method="post" action="/edit_img_card_duapuluh">
+        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_duapuluh.img%>.jpg" alt="card duapuluh" class="img-thumbnail" width="304" height="236">
+        <form enctype="multipart/form-data" method="post" action="/edit_all_img_duapuluh">
           <h6>judul</h6>
           <% if(db_setting.all_img.img_duapuluh.judulproduk=="False"){%>
           <input name="judul_img_card_duapuluh" class="form-control" type="text" placeholder="Default input" required>
@@ -1245,7 +1325,7 @@
         </form>
             </div>
             </div>      
-            <!-- batasnya slide -->
+            <!-- batasnya card -->
   </div>
 
   <!-- Vendor JS Files -->

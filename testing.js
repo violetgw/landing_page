@@ -1,4 +1,4 @@
-const port = 3000;
+const port = 3001;
 const express = require("express");
 var session = require('express-session')
 const app = express();
@@ -470,7 +470,364 @@ app.post('/upload_img_slide_lima', upload.single('upload_file_lima'), async (req
     res.redirect('/admin');
 });
 
+//  untuk 
+app.post('/upload_all_img_satu', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_satu.img":db_setting.all_img.img_satu.img}, { $set: {"all_img.img_satu.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_satu.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img satu");
+    res.redirect('/admin');
+});
+// card dua
+app.post('/upload_all_img_dua', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_dua.img":db_setting.all_img.img_dua.img}, { $set: {"all_img.img_dua.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_dua.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img dua");
+    res.redirect('/admin');
+});
+// card tiga
+app.post('/upload_all_img_tiga', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_tiga.img":db_setting.all_img.img_tiga.img}, { $set: {"all_img.img_tiga.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_tiga.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img tiga");
+    res.redirect('/admin');
+});
+app.post('/profile-upload-multiple', upload.array('profile-files'), (req, res) => {
+    res.redirect('/admin');
 
+});
+// card empat
+app.post('/upload_all_img_empat', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_empat.img":db_setting.all_img.img_empat.img}, { $set: {"all_img.img_empat.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_empat.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img empat");
+    res.redirect('/admin');
+});
+// card lima
+app.post('/upload_all_img_lima', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_lima.img":db_setting.all_img.img_lima.img}, { $set: {"all_img.img_lima.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_lima.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img lima");
+    res.redirect('/admin');
+});
+// card enam
+app.post('/upload_all_img_enam', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_enam.img":db_setting.all_img.img_enam.img}, { $set: {"all_img.img_enam.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_enam.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img enam");
+    res.redirect('/admin');
+});
+// card tuju
+app.post('/upload_all_img_tuju', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_tuju.img":db_setting.all_img.img_tuju.img}, { $set: {"all_img.img_tuju.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_tuju.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img tuju");
+    res.redirect('/admin');
+});
+// card lapan
+app.post('/upload_all_img_lapan', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_lapan.img":db_setting.all_img.img_lapan.img}, { $set: {"all_img.img_lapan.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_lapan.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img lapan");
+    res.redirect('/admin');
+});
+// card sembilan
+app.post('/upload_all_img_sembilan', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_sembilan.img":db_setting.all_img.img_sembilan.img}, { $set: {"all_img.img_sembilan.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_sembilan.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img sembilan");
+    res.redirect('/admin');
+});
+// card sepuluh
+app.post('/upload_all_img_sepuluh', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_sepuluh.img":db_setting.all_img.img_sepuluh.img}, { $set: {"all_img.img_sepuluh.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_sepuluh.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img sepuluh");
+    res.redirect('/admin');
+});
+// card sebelas
+app.post('/upload_all_img_sebelas', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_sebelas.img":db_setting.all_img.img_sebelas.img}, { $set: {"all_img.img_sebelas.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_sebelas.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img sebelas");
+    res.redirect('/admin');
+});
+// card duabelas
+app.post('/upload_all_img_duabelas', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_duabelas.img":db_setting.all_img.img_duabelas.img}, { $set: {"all_img.img_duabelas.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_duabelas.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img duabelas");
+    res.redirect('/admin');
+});
+// card tigabelas
+app.post('/upload_all_img_tigabelas', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_tigabelas.img":db_setting.all_img.img_tigabelas.img}, { $set: {"all_img.img_tigabelas.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_tigabelas.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img tigabelas");
+    res.redirect('/admin');
+});
+// card empatbelas
+app.post('/upload_all_img_empatbelas', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_empatbelas.img":db_setting.all_img.img_empatbelas.img}, { $set: {"all_img.img_empatbelas.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_empatbelas.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img empatbelas");
+    res.redirect('/admin');
+});
+// card limabelas
+app.post('/upload_all_img_limabelas', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_limabelas.img":db_setting.all_img.img_limabelas.img}, { $set: {"all_img.img_limabelas.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_limabelas.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img limabelas");
+    res.redirect('/admin');
+});
+// card enambelas
+app.post('/upload_all_img_enambelas', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_enambelas.img":db_setting.all_img.img_enambelas.img}, { $set: {"all_img.img_enambelas.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_enambelas.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img enambelas");
+    res.redirect('/admin');
+});
+// card tujubelas
+app.post('/upload_all_img_tujubelas', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_tujubelas.img":db_setting.all_img.img_tujubelas.img}, { $set: {"all_img.img_tujubelas.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_tujubelas.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img tujubelas");
+    res.redirect('/admin');
+});
+// card lapanbelas
+app.post('/upload_all_img_lapanbelas', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_lapanbelas.img":db_setting.all_img.img_lapanbelas.img}, { $set: {"all_img.img_lapanbelas.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_lapanbelas.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img lapanbelas");
+    res.redirect('/admin');
+});
+// card sembilanbelas
+app.post('/upload_all_img_sembilanbelas', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_sembilanbelas.img":db_setting.all_img.img_sembilanbelas.img}, { $set: {"all_img.img_sembilanbelas.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_sembilanbelas.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img sembilanbelas");
+    res.redirect('/admin');
+});
+// card duapuluh
+app.post('/upload_all_img_duapuluh', upload.single('upload_file'), async (req, res) => {
+    const timestamp = lastTimestamp;
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({ "all_img.img_duapuluh.img":db_setting.all_img.img_duapuluh.img}, { $set: {"all_img.img_duapuluh.img":timestamp} });
+    const file_path= path.join("./public/img/gambar_landing_page",`${db_setting.all_img.img_duapuluh.img}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+        console.log("test img duapuluh");
+    res.redirect('/admin');
+});
+
+// card untuk hapus
+app.post('/hapus_gambar_all_card', async (req, res) => {
+    const {img_card_all} =  req.body;
+    console.log(img_card_all);              
+    const db_setting = await db_atur_img.findOne({},);
+
+    // fungsi mengahpus di multer 
+    async function hapus_img_multer(nama_path){
+        const file_path= path.join("./public/img/gambar_landing_page",`${nama_path}.jpg`);
+        // Menghapus file
+        fs.unlink(file_path, (err) => {});
+    }
+
+
+    if(img_card_all == "False img 1"){
+        console.log(`data sama dapat di dalate`);
+        hapus_img_multer(db_setting.all_img.img_satu.img);
+        await db_atur_img.updateOne({ "all_img.img_satu.img":db_setting.all_img.img_satu.img}, { $set: {"all_img.img_satu.img":"False"} });
+
+     }
+    else  if(img_card_all == "False img 2"){
+        console.log(`data sama dapat di dalate`);
+        hapus_img_multer(db_setting.all_img.img_dua.img);
+        await db_atur_img.updateOne({ "all_img.img_dua.img":db_setting.all_img.img_dua.img}, { $set: {"all_img.img_dua.img":"False"} });
+    }
+    else  if(img_card_all == "False img 3"){
+        console.log(`data sama dapat di dalate`);
+        hapus_img_multer(db_setting.all_img.img_tiga.img);
+        await db_atur_img.updateOne({ "all_img.img_tiga.img":db_setting.all_img.img_tiga.img}, { $set: {"all_img.img_tiga.img":"False"} });
+    }
+    else  if(img_card_all == "False img 4"){
+        console.log(`data sama dapat di dalate`);
+        hapus_img_multer(db_setting.all_img.img_empat.img);
+        await db_atur_img.updateOne({ "all_img.img_empat.img":db_setting.all_img.img_empat.img}, { $set: {"all_img.img_empat.img":"False"} });
+     }
+    else  if(img_card_all == "False img 5"){
+        console.log(`data sama dapat di dalate`);
+        hapus_img_multer(db_setting.all_img.img_lima.img);
+        await db_atur_img.updateOne({ "all_img.img_lima.img":db_setting.all_img.img_lima.img}, { $set: {"all_img.img_lima.img":"False"} });
+
+     }
+    else  if(img_card_all == "False img 6"){
+        console.log(`data sama dapat di dalate`);
+        hapus_img_multer(db_setting.all_img.img_enam.img);
+        await db_atur_img.updateOne({ "all_img.img_enam.img":db_setting.all_img.img_enam.img}, { $set: {"all_img.img_enam.img":"False"} });
+
+     }
+    else  if(img_card_all == "False img 7"){
+         console.log(`data sama dapat di dalate`);
+         hapus_img_multer(db_setting.all_img.img_tuju.img);
+         await db_atur_img.updateOne({ "all_img.img_tuju.img":db_setting.all_img.img_tuju.img}, { $set: {"all_img.img_tuju.img":"False"} });
+ 
+    }
+    else  if(img_card_all == "False img 8"){
+          console.log(`data sama dapat di dalate`);
+          hapus_img_multer(db_setting.all_img.img_lapan.img);
+          await db_atur_img.updateOne({ "all_img.img_lapan.img":db_setting.all_img.img_lapan.img}, { $set: {"all_img.img_lapan.img":"False"} });
+  
+    }
+    else  if(img_card_all == "False img 9"){
+           console.log(`data sama dapat di dalate`);
+           hapus_img_multer(db_setting.all_img.img_sembilan.img);
+           await db_atur_img.updateOne({ "all_img.img_sembilan.img":db_setting.all_img.img_sembilan.img}, { $set: {"all_img.img_sembilan.img":"False"} });
+   
+    }
+    else  if(img_card_all == "False img 10"){
+        console.log(`data sama dapat di dalate`);
+        hapus_img_multer(db_setting.all_img.img_sepuluh.img);
+        await db_atur_img.updateOne({ "all_img.img_sepuluh.img":db_setting.all_img.img_sepuluh.img}, { $set: {"all_img.img_sepuluh.img":"False"} });
+
+     }
+    else if(img_card_all == "False img 11"){
+        console.log(`data sama dapat di dalate`);
+        hapus_img_multer(db_setting.all_img.img_sebelas.img);
+        await db_atur_img.updateOne({ "all_img.img_sebelas.img":db_setting.all_img.img_sebelas.img}, { $set: {"all_img.img_sebelas.img":"False"} });
+
+     }
+    else  if(img_card_all == "False img 12"){
+        console.log(`data sama dapat di dalate`);
+        hapus_img_multer(db_setting.all_img.img_duabelas.img);
+        await db_atur_img.updateOne({ "all_img.img_duabelas.img":db_setting.all_img.img_duabelas.img}, { $set: {"all_img.img_duabelas.img":"False"} });
+    }
+    else  if(img_card_all == "False img 13"){
+        console.log(`data sama dapat di dalate`);
+        hapus_img_multer(db_setting.all_img.img_tigabelas.img);
+        await db_atur_img.updateOne({ "all_img.img_tigabelas.img":db_setting.all_img.img_tigabelas.img}, { $set: {"all_img.img_tigabelas.img":"False"} });
+    }
+    else  if(img_card_all == "False img 14"){
+        console.log(`data sama dapat di dalate`);
+        hapus_img_multer(db_setting.all_img.img_empatbelas.img);
+        await db_atur_img.updateOne({ "all_img.img_empatbelas.img":db_setting.all_img.img_empatbelas.img}, { $set: {"all_img.img_empatbelas.img":"False"} });
+     }
+    else  if(img_card_all == "False img 15"){
+        console.log(`data sama dapat di dalate`);
+        hapus_img_multer(db_setting.all_img.img_limabelas.img);
+        await db_atur_img.updateOne({ "all_img.img_limabelas.img":db_setting.all_img.img_limabelas.img}, { $set: {"all_img.img_limabelas.img":"False"} });
+
+     }
+    else  if(img_card_all == "False img 16"){
+        console.log(`data sama dapat di dalate`);
+        hapus_img_multer(db_setting.all_img.img_enambelas.img);
+        await db_atur_img.updateOne({ "all_img.img_enambelas.img":db_setting.all_img.img_enambelas.img}, { $set: {"all_img.img_enambelas.img":"False"} });
+
+     }
+    else  if(img_card_all == "False img 17"){
+         console.log(`data sama dapat di dalate`);
+         hapus_img_multer(db_setting.all_img.img_tujubelas.img);
+         await db_atur_img.updateOne({ "all_img.img_tujubelas.img":db_setting.all_img.img_tujubelas.img}, { $set: {"all_img.img_tujubelas.img":"False"} });
+ 
+    }
+    else  if(img_card_all == "False img 18"){
+          console.log(`data sama dapat di dalate`);
+          hapus_img_multer(db_setting.all_img.img_lapanbelas.img);
+          await db_atur_img.updateOne({ "all_img.img_lapanbelas.img":db_setting.all_img.img_lapanbelas.img}, { $set: {"all_img.img_lapanbelas.img":"False"} });
+  
+    }
+    else  if(img_card_all == "False img 19"){
+           console.log(`data sama dapat di dalate`);
+           hapus_img_multer(db_setting.all_img.img_sembilanbelas.img);
+           await db_atur_img.updateOne({ "all_img.img_sembilanbelas.img":db_setting.all_img.img_sembilanbelas.img}, { $set: {"all_img.img_sembilanbelas.img":"False"} });
+   
+    }
+    else  if(img_card_all == "False img 20"){
+        console.log(`data sama dapat di dalate`);
+        hapus_img_multer(db_setting.all_img.img_duapuluh.img);
+        await db_atur_img.updateOne({ "all_img.img_duapuluh.img":db_setting.all_img.img_duapuluh.img}, { $set: {"all_img.img_duapuluh.img":"False"} });
+
+     }
+     else {
+        console.log(`data tidak sama dan tidak dapat di dalate`);
+    }
+    res.redirect('/admin');
+});
 app.post('/profile-upload-multiple', upload.array('profile-files'), (req, res) => {
     res.redirect('/admin');
 
