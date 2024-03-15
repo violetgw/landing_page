@@ -28,7 +28,31 @@
       
       </head>
 <body>
-    
+<!-- untuk card data masuk wa -->
+<main style="height: 500px">
+  <div class="container h-100 d-flex flex-column">
+      <div class="row">
+          <h1>Dashboard</h1>
+      </div>
+      <div class="row overflow-hidden">
+          <div class="col-7 h-100">
+              <div class="card h-100">
+                  <div class="card-header">Your Items</div>
+                  <div class="card-body overflow-auto">
+                    <% form_data.forEach(data => {%>
+                      <h1> <%= data.nama %></h1>
+                      <h1> <%= data.nomer_telephone %></h1>
+                      <h1> <%= data.jam %></h1>
+
+
+                      <%});%>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</main>
+
 <!-- untuk Upload -->
 <div class="container">
 
@@ -37,6 +61,9 @@
 <div class="card">
   <h1>Slide Satu</h1>
   <div class="card-body">
+    <form method="post" action="/hapus_gambar_all_slide">
+      <input type="submit" name="img_slide_all" value="False slide img 1">
+    </form>
 <form enctype="multipart/form-data" method="post" action="/upload_img_slide_satu">
   <div class="form-group">
     <label for="exampleFormControlFile1">Slide Satu</label>
@@ -45,7 +72,7 @@
   </div>
 </form>
 <img src="/img/gambar_landing_page/<%=db_setting.img_slide.img_satu%>.jpg" alt="slide satu" class="img-thumbnail" width="304" height="236">
-<form enctype="multipart/form-data" method="post" action="/edit_img_satu">
+<form method="post" action="/edit_img_satu">
   <h6>judul</h6>
   <% if(db_setting.img_slide.img_satu_tulisan.judulproduk=="False"){%>
   <input name="judul_slide_satu" class="form-control" type="text" placeholder="Default input" required>
@@ -62,6 +89,7 @@
   %>
   <input name="deskripsi_slide_satu" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_satu_tulisan.deskripsi %>" required>
     <%}%>
+    <input type="submit" value="Kirim">
 </form>
 </div>
 </div>
@@ -71,6 +99,9 @@
   <div class="card">
     <h1>Slide dua</h1>
     <div class="card-body">
+      <form method="post" action="/hapus_gambar_all_slide">
+        <input type="submit" name="img_slide_all" value="False slide img 2">
+      </form>
   <form enctype="multipart/form-data" method="post" action="/upload_img_slide_dua">
     <div class="form-group">
       <label for="exampleFormControlFile1">Slide dua</label>
@@ -79,7 +110,7 @@
     <input type="submit" value="Upload" />
   </form>
   <img src="/img/gambar_landing_page/<%=db_setting.img_slide.img_dua%>.jpg" alt="slide dua" class="img-thumbnail" width="304" height="236">
-  <form enctype="multipart/form-data" method="post" action="/edit_img_dua">
+  <form method="post" action="/edit_img_dua">
     <h6>judul</h6>
     <% if(db_setting.img_slide.img_dua_tulisan.judulproduk=="False"){%>
     <input name="judul_slide_dua" class="form-control" type="text" placeholder="Default input" required>
@@ -94,8 +125,9 @@
     <%} 
     else{
     %>
-    <input name="deskripsi_slide_dua" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_satu_tulisan.deskripsi %>" required>
+    <input name="deskripsi_slide_dua" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_dua_tulisan.deskripsi %>" required>
       <%}%>
+      <input type="submit" value="Kirim">
   </form>
   </div>
   </div>
@@ -104,6 +136,9 @@
     <div class="card">
       <h1>Slide tiga</h1>
       <div class="card-body">
+        <form method="post" action="/hapus_gambar_all_slide">
+          <input type="submit" name="img_slide_all" value="False slide img 3">
+        </form>
     <form enctype="multipart/form-data" method="post" action="/upload_img_slide_tiga">
       <div class="form-group">
         <label for="exampleFormControlFile1">Slide tiga</label>
@@ -112,7 +147,7 @@
       <input type="submit" value="Upload" />
     </form>
     <img src="/img/gambar_landing_page/<%=db_setting.img_slide.img_tiga%>.jpg" alt="slide tiga" class="img-thumbnail" width="304" height="236">
-    <form enctype="multipart/form-data" method="post" action="/edit_img_tiga">
+    <form  method="post" action="/edit_img_tiga">
       <h6>judul</h6>
       <% if(db_setting.img_slide.img_tiga_tulisan.judulproduk=="False"){%>
       <input name="judul_slide_tiga" class="form-control" type="text" placeholder="Default input" required>
@@ -127,8 +162,9 @@
       <%} 
       else{
       %>
-      <input name="deskripsi_slide_tiga" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_satu_tulisan.deskripsi %>" required>
+      <input name="deskripsi_slide_tiga" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_tiga_tulisan.deskripsi %>" required>
         <%}%>
+        <input type="submit" value="Kirim">
     </form>
     </div>
     </div>
@@ -137,6 +173,9 @@
     <div class="card">
       <h1>Slide empat</h1>
       <div class="card-body">
+        <form method="post" action="/hapus_gambar_all_slide">
+          <input type="submit" name="img_slide_all" value="False slide img 4">
+        </form>
     <form enctype="multipart/form-data" method="post" action="/upload_img_slide_empat">
       <div class="form-group">
         <label for="exampleFormControlFile1">Slide empat</label>
@@ -145,7 +184,7 @@
       <input type="submit" value="Upload" />
     </form>
     <img src="/img/gambar_landing_page/<%=db_setting.img_slide.img_empat%>.jpg" alt="slide empat" class="img-thumbnail" width="304" height="236">
-    <form enctype="multipart/form-data" method="post" action="/edit_img_empat">
+    <form method="post" action="/edit_img_empat">
       <h6>judul</h6>
       <% if(db_setting.img_slide.img_empat_tulisan.judulproduk=="False"){%>
       <input name="judul_slide_empat" class="form-control" type="text" placeholder="Default input" required>
@@ -160,8 +199,9 @@
       <%} 
       else{
       %>
-      <input name="deskripsi_slide_empat" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_satu_tulisan.deskripsi %>" required>
+      <input name="deskripsi_slide_empat" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_empat_tulisan.deskripsi %>" required>
         <%}%>
+        <input type="submit" value="Kirim">
     </form>
     </div>
     </div>
@@ -170,6 +210,9 @@
         <div class="card">
           <h1>Slide lima</h1>
           <div class="card-body">
+            <form method="post" action="/hapus_gambar_all_slide">
+              <input type="submit" name="img_slide_all" value="False slide img 5">
+            </form>
         <form enctype="multipart/form-data" method="post" action="upload_img_slide_lima">
           <div class="form-group">
             <label for="exampleFormControlFile1">Slide lima</label>
@@ -178,7 +221,7 @@
           <input type="submit" value="Upload" />
         </form>
     <img src="/img/gambar_landing_page/<%=db_setting.img_slide.img_lima%>.jpg" alt="slide lima" class="img-thumbnail" width="304" height="236">
-    <form enctype="multipart/form-data" method="post" action="/edit_img_lima">
+    <form method="post" action="/edit_img_lima">
       <h6>judul</h6>
       <% if(db_setting.img_slide.img_lima_tulisan.judulproduk=="False"){%>
       <input name="judul_slide_lima" class="form-control" type="text" placeholder="Default input" required>
@@ -193,8 +236,9 @@
       <%} 
       else{
       %>
-      <input name="deskripsi_slide_lima" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_satu_tulisan.deskripsi %>" required>
+      <input name="deskripsi_slide_lima" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.img_slide.img_lima_tulisan.deskripsi %>" required>
         <%}%>
+        <input type="submit" value="Kirim">
     </form>
         </div>
         </div>
@@ -210,7 +254,7 @@
   <div class="card">
     <div class="card-body">
   </form>
-  <form enctype="multipart/form-data" method="post" action="/edit_judul_dan_deskripsi_produk">
+  <form method="post" action="/edit_judul_dan_deskripsi_produk">
     <h6>judul</h6>
     <% if(db_setting.judul_dan_deskripsi_produk.judul=="False"){%>
     <input name="judul" class="form-control" type="text" placeholder="Judul" required>
@@ -248,14 +292,14 @@
     <div class="card">
       <div class="card-body">
     </form>
-    <form enctype="multipart/form-data" method="post" action="/edit_filter_satu">
+    <form method="post" action="/edit_filter">
       <h6>Filter satu</h6>
       <% if(db_setting.filter.satu.nama=="False"){%>
-      <input name="nama_filter" class="form-control" type="text" placeholder="nama" required>
+      <input name="nama_filter_satu" class="form-control" type="text" placeholder="nama" required>
       <%} 
       else{
       %>
-      <input name="nama_filter" class="form-control" value="<%=db_setting.filter.satu.nama%>" type="text" placeholder="nama" required>
+      <input name="nama_filter_satu" class="form-control" value="<%=db_setting.filter.satu.nama%>" type="text" placeholder="nama" required>
       <%}%>
       <% if(db_setting.filter.satu.get_filter=="False"){%>
         <input name="get_filter_satu" class="form-control" type="text" placeholder="get filter" required>
@@ -273,14 +317,14 @@
           <div class="card">
             <div class="card-body">
           </form>
-          <form enctype="multipart/form-data" method="post" action="/edit_filter_dua">
+          <form method="post" action="/edit_filter">
             <h6>Filter dua</h6>
             <% if(db_setting.filter.dua.nama=="False"){%>
-            <input name="nama_filter" class="form-control" type="text" placeholder="nama" required>
+            <input name="nama_filter_dua" class="form-control" type="text" placeholder="nama" required>
             <%} 
             else{
             %>
-            <input name="nama_filter" class="form-control" value="<%=db_setting.filter.dua.nama%>" type="text" placeholder="nama" required>
+            <input name="nama_filter_dua" class="form-control" value="<%=db_setting.filter.dua.nama%>" type="text" placeholder="nama" required>
             <%}%>
             <% if(db_setting.filter.dua.get_filter=="False"){%>
               <input name="get_filter_dua" class="form-control" type="text" placeholder="get filter" required>
@@ -298,14 +342,14 @@
     <div class="card">
       <div class="card-body">
     </form>
-    <form enctype="multipart/form-data" method="post" action="/edit_filter_tiga">
+    <form method="post" action="/edit_filter">
       <h6>Filter tiga</h6>
       <% if(db_setting.filter.tiga.nama=="False"){%>
-      <input name="nama_filter" class="form-control" type="text" placeholder="nama" required>
+      <input name="nama_filter_tiga" class="form-control" type="text" placeholder="nama" required>
       <%} 
       else{
       %>
-      <input name="nama_filter" class="form-control" value="<%=db_setting.filter.tiga.nama%>" type="text" placeholder="nama" required>
+      <input name="nama_filter_tiga" class="form-control" value="<%=db_setting.filter.tiga.nama%>" type="text" placeholder="nama" required>
       <%}%>
       <% if(db_setting.filter.tiga.get_filter=="False"){%>
         <input name="get_filter_tiga" class="form-control" type="text" placeholder="get filter" required>
@@ -323,14 +367,14 @@
       <div class="card">
         <div class="card-body">
       </form>
-      <form enctype="multipart/form-data" method="post" action="/edit_filter_empat">
+      <form method="post" action="/edit_filter">
         <h6>Filter empat</h6>
         <% if(db_setting.filter.empat.nama=="False"){%>
-        <input name="nama_filter" class="form-control" type="text" placeholder="nama" required>
+        <input name="nama_filter_empat" class="form-control" type="text" placeholder="nama" required>
         <%} 
         else{
         %>
-        <input name="nama_filter" class="form-control" value="<%=db_setting.filter.empat.nama%>" type="text" placeholder="nama" required>
+        <input name="nama_filter_empat" class="form-control" value="<%=db_setting.filter.empat.nama%>" type="text" placeholder="nama" required>
         <%}%>
         <% if(db_setting.filter.empat.get_filter=="False"){%>
           <input name="get_filter_empat" class="form-control" type="text" placeholder="get filter" required>
@@ -349,14 +393,14 @@
     <div class="card">
       <div class="card-body">
     </form>
-    <form enctype="multipart/form-data" method="post" action="/edit_filter_lima">
+    <form method="post" action="/edit_filter">
       <h6>Filter lima</h6>
       <% if(db_setting.filter.lima.nama=="False"){%>
-      <input name="nama_filter" class="form-control" type="text" placeholder="nama" required>
+      <input name="nama_filter_lima" class="form-control" type="text" placeholder="nama" required>
       <%} 
       else{
       %>
-      <input name="nama_filter" class="form-control" value="<%=db_setting.filter.lima.nama%>" type="text" placeholder="nama" required>
+      <input name="nama_filter_lima" class="form-control" value="<%=db_setting.filter.lima.nama%>" type="text" placeholder="nama" required>
       <%}%>
       <% if(db_setting.filter.lima.get_filter=="False"){%>
         <input name="get_filter_lima" class="form-control" type="text" placeholder="get filter" required>
@@ -375,14 +419,14 @@
       <div class="card">
         <div class="card-body">
       </form>
-      <form enctype="multipart/form-data" method="post" action="/edit_filter_enam">
+      <form method="post" action="/edit_filter">
         <h6>Filter enam</h6>
         <% if(db_setting.filter.enam.nama=="False"){%>
-        <input name="nama_filter" class="form-control" type="text" placeholder="nama" required>
+        <input name="nama_filter_enam" class="form-control" type="text" placeholder="nama" required>
         <%} 
         else{
         %>
-        <input name="nama_filter" class="form-control" value="<%=db_setting.filter.enam.nama%>" type="text" placeholder="nama" required>
+        <input name="nama_filter_enam" class="form-control" value="<%=db_setting.filter.enam.nama%>" type="text" placeholder="nama" required>
         <%}%>
         <% if(db_setting.filter.enam.get_filter=="False"){%>
           <input name="get_filter_enam" class="form-control" type="text" placeholder="get filter" required>
@@ -410,7 +454,7 @@
       <form method="post" action="/hapus_gambar_all_card">
         <input type="submit" name="img_card_all" value="False img 1">
       </form>
-  <form enctype="multipart/form-data" method="post" action="/upload_all_img_satu">
+  <form method="post" action="/upload_all_img_satu">
     <div class="form-group">
       <label for="exampleFormControlFile1">card Satu</label>
       <input accept="image/jpeg" type="file" name="upload_file" class="form-control-file" id="exampleFormControlFile1">
@@ -418,7 +462,7 @@
     </div>
   </form>
   <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_satu.img%>.jpg" alt="card satu" class="img-thumbnail" width="304" height="236">
-  <form enctype="multipart/form-data" method="post" action="/edit_all_img_satu">
+  <form enctype="multipart/form-data" method="post" action="/edit_all_img">
     <h6>judul</h6>
     <% if(db_setting.all_img.img_satu.judulproduk=="False"){%>
     <input name="judul_img_card_satu" class="form-control" type="text" placeholder="Default input" required>
@@ -465,7 +509,7 @@
       <input type="submit" value="Upload"/>
     </form>
     <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_dua.img%>.jpg" alt="card dua" class="img-thumbnail" width="304" height="236">
-    <form enctype="multipart/form-data" method="post" action="/edit_all_img_dua">
+    <form  method="post" action="/edit_all_img">
       <h6>judul</h6>
       <% if(db_setting.all_img.img_dua.judulproduk=="False"){%>
       <input name="judul_img_card_dua" class="form-control" type="text" placeholder="Default input" required>
@@ -511,7 +555,7 @@
         <input type="submit" value="Upload" />
       </form>
       <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tiga.img%>.jpg" alt="card tiga" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_all_img_tiga">
+      <form method="post" action="/edit_all_img">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_tiga.judulproduk=="False"){%>
         <input name="judul_img_card_tiga" class="form-control" type="text" placeholder="Default input" required>
@@ -557,7 +601,7 @@
         <input type="submit" value="Upload" />
       </form>
       <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_empat.img%>.jpg" alt="card empat" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_all_img_empat">
+      <form method="post" action="/edit_all_img">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_empat.judulproduk=="False"){%>
         <input name="judul_img_card_empat" class="form-control" type="text" placeholder="Default input" required>
@@ -603,7 +647,7 @@
             <input type="submit" value="Upload" />
           </form>
       <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_lima.img%>.jpg" alt="card lima" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_all_img_lima">
+      <form method="post" action="/edit_all_img">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_lima.judulproduk=="False"){%>
         <input name="judul_img_card_lima" class="form-control" type="text" placeholder="Default input" required>
@@ -649,7 +693,7 @@
     </div>
   </form>
   <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_enam.img%>.jpg" alt="card enam" class="img-thumbnail" width="304" height="236">
-  <form enctype="multipart/form-data" method="post" action="/edit_all_img_enam">
+  <form method="post" action="/edit_all_img">
     <h6>judul</h6>
     <% if(db_setting.all_img.img_enam.judulproduk=="False"){%>
     <input name="judul_img_card_enam" class="form-control" type="text" placeholder="Default input" required>
@@ -696,7 +740,7 @@
       <input type="submit" value="Upload" />
     </form>
     <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tuju.img%>.jpg" alt="card tuju" class="img-thumbnail" width="304" height="236">
-    <form enctype="multipart/form-data" method="post" action="/edit_all_img_tuju">
+    <form method="post" action="/edit_all_img">
       <h6>judul</h6>
       <% if(db_setting.all_img.img_tuju.judulproduk=="False"){%>
       <input name="judul_img_card_tuju" class="form-control" type="text" placeholder="Default input" required>
@@ -742,7 +786,7 @@
         <input type="submit" value="Upload" />
       </form>
       <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_lapan.img%>.jpg" alt="card lapan" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_all_img_lapan">
+      <form method="post" action="/edit_all_img">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_lapan.judulproduk=="False"){%>
         <input name="judul_img_card_lapan" class="form-control" type="text" placeholder="Default input" required>
@@ -788,7 +832,7 @@
         <input type="submit" value="Upload" />
       </form>
       <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sembilan.img%>.jpg" alt="card sembilan" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_all_img_sembilan">
+      <form method="post" action="/edit_all_img">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_sembilan.judulproduk=="False"){%>
         <input name="judul_img_card_sembilan" class="form-control" type="text" placeholder="Default input" required>
@@ -834,7 +878,7 @@
             <input type="submit" value="Upload" />
           </form>
       <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sepuluh.img%>.jpg" alt="card sepuluh" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_all_img_sepuluh">
+      <form method="post" action="/edit_all_img">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_sepuluh.judulproduk=="False"){%>
         <input name="judul_img_card_sepuluh" class="form-control" type="text" placeholder="Default input" required>
@@ -880,7 +924,7 @@
       </div>
     </form>
     <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sebelas.img%>.jpg" alt="card sebelas" class="img-thumbnail" width="304" height="236">
-    <form enctype="multipart/form-data" method="post" action="/edit_all_img_sebelas">
+    <form method="post" action="/edit_all_img">
       <h6>judul</h6>
       <% if(db_setting.all_img.img_sebelas.judulproduk=="False"){%>
       <input name="judul_img_card_sebelas" class="form-control" type="text" placeholder="Default input" required>
@@ -927,7 +971,7 @@
         <input type="submit" value="Upload" />
       </form>
       <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_duabelas.img%>.jpg" alt="card duabelas" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_all_img_duabelas">
+      <form method="post" action="/edit_all_img">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_duabelas.judulproduk=="False"){%>
         <input name="judul_img_card_duabelas" class="form-control" type="text" placeholder="Default input" required>
@@ -973,7 +1017,7 @@
           <input type="submit" value="Upload" />
         </form>
         <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tigabelas.img%>.jpg" alt="card tigabelas" class="img-thumbnail" width="304" height="236">
-        <form enctype="multipart/form-data" method="post" action="/edit_all_img_tigabelas">
+        <form method="post" action="/edit_all_img">
           <h6>judul</h6>
           <% if(db_setting.all_img.img_tigabelas.judulproduk=="False"){%>
           <input name="judul_img_card_tigabelas" class="form-control" type="text" placeholder="Default input" required>
@@ -1019,7 +1063,7 @@
           <input type="submit" value="Upload" />
         </form>
         <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_empatbelas.img%>.jpg" alt="card empatbelas" class="img-thumbnail" width="304" height="236">
-        <form enctype="multipart/form-data" method="post" action="/edit_all_img_empatbelas">
+        <form method="post" action="/edit_all_img">
           <h6>judul</h6>
           <% if(db_setting.all_img.img_empatbelas.judulproduk=="False"){%>
           <input name="judul_img_card_empatbelas" class="form-control" type="text" placeholder="Default input" required>
@@ -1065,7 +1109,7 @@
               <input type="submit" value="Upload" />
             </form>
         <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_limabelas.img%>.jpg" alt="card limabelas" class="img-thumbnail" width="304" height="236">
-        <form enctype="multipart/form-data" method="post" action="/edit_all_img_limabelas">
+        <form method="post" action="/edit_all_img">
           <h6>judul</h6>
           <% if(db_setting.all_img.img_limabelas.judulproduk=="False"){%>
           <input name="judul_img_card_limabelas" class="form-control" type="text" placeholder="Default input" required>
@@ -1111,7 +1155,7 @@
       </div>
     </form>
     <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_enambelas.img%>.jpg" alt="card enambelas" class="img-thumbnail" width="304" height="236">
-    <form enctype="multipart/form-data" method="post" action="/edit_all_img_enambelas">
+    <form method="post" action="/edit_all_img">
       <h6>judul</h6>
       <% if(db_setting.all_img.img_enambelas.judulproduk=="False"){%>
       <input name="judul_img_card_enambelas" class="form-control" type="text" placeholder="Default input" required>
@@ -1158,7 +1202,7 @@
         <input type="submit" value="Upload" />
       </form>
       <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_tujubelas.img%>.jpg" alt="card tujubelas" class="img-thumbnail" width="304" height="236">
-      <form enctype="multipart/form-data" method="post" action="/edit_all_img_tujubelas">
+      <form method="post" action="/edit_all_img">
         <h6>judul</h6>
         <% if(db_setting.all_img.img_tujubelas.judulproduk=="False"){%>
         <input name="judul_img_card_tujubelas" class="form-control" type="text" placeholder="Default input" required>
@@ -1204,7 +1248,7 @@
           <input type="submit" value="Upload" />
         </form>
         <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_lapanbelas.img%>.jpg" alt="card lapanbelas" class="img-thumbnail" width="304" height="236">
-        <form enctype="multipart/form-data" method="post" action="/edit_all_img_lapanbelas">
+        <form method="post" action="/edit_all_img">
           <h6>judul</h6>
           <% if(db_setting.all_img.img_lapanbelas.judulproduk=="False"){%>
           <input name="judul_img_card_lapanbelas" class="form-control" type="text" placeholder="Default input" required>
@@ -1250,7 +1294,7 @@
           <input type="submit" value="Upload" />
         </form>
         <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_sembilanbelas.img%>.jpg" alt="card sembilanbelas" class="img-thumbnail" width="304" height="236">
-        <form enctype="multipart/form-data" method="post" action="/edit_all_img_sembilanbelas">
+        <form method="post" action="/edit_all_img">
           <h6>judul</h6>
           <% if(db_setting.all_img.img_sembilanbelas.judulproduk=="False"){%>
           <input name="judul_img_card_sembilanbelas" class="form-control" type="text" placeholder="Default input" required>
@@ -1296,7 +1340,7 @@
               <input type="submit" value="Upload" />
             </form>
         <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_duapuluh.img%>.jpg" alt="card duapuluh" class="img-thumbnail" width="304" height="236">
-        <form enctype="multipart/form-data" method="post" action="/edit_all_img_duapuluh">
+        <form method="post" action="/edit_all_img">
           <h6>judul</h6>
           <% if(db_setting.all_img.img_duapuluh.judulproduk=="False"){%>
           <input name="judul_img_card_duapuluh" class="form-control" type="text" placeholder="Default input" required>
