@@ -31,6 +31,7 @@
 
 <body>
 
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
@@ -56,38 +57,86 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(img/sarimbit_army_sekeluarga.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Sarimbit <span>Azzura Army</span></h2>
-              <p class="animate__animated animate__fadeInUp">Produk Terbaru Dari Aldiva Sarimbit Azzura</p>
-              <a href="#hubungi" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i class="ri-whatsapp-line"></i>Hubungi Kami?</a>
-            </div>
-          </div>
-        </div>
+        <% if(db_setting.img_slide.img_satu !== "False") {%>
+    <div class="carousel-item active" style="background-image: url(img/gambar_landing_page/<%=db_setting.img_slide.img_satu%>.jpg)">
+    <div class="carousel-container">
+      <div class="container">
+        <% if(db_setting.img_slide.img_satu_tulisan.judulproduk !== "False"){  %>
+          <h2 class="animate__animated animate__fadeInDown"><%= db_setting.img_slide.img_satu_tulisan.judulproduk %></h2>
+          <% } %>
+          <% if(db_setting.img_slide.img_satu_tulisan.deskripsi !== "False"){  %>
+        <p class="animate__animated animate__fadeInUp"><%= db_setting.img_slide.img_satu_tulisan.deskripsi  %></p>
+            <% } %>
+        <a href="#hubungi" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i class="ri-whatsapp-line"></i>Hubungi Kami?</a>
+      </div>
+    </div>
+  </div>
 
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(img/sarimbit_sage_sekeluarga.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Sarimbit Azzura Sage</h2>
-              <p class="animate__animated animate__fadeInUp">Produk Terbaru Dari Aldiva Sarimbit Azzura</p>
-              <a href="#hubungi" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i class="ri-whatsapp-line"> </i>Hubungi Kami</a>
-            </div>
-          </div>
-        </div>
+  <% } %>
+  <% if(db_setting.img_slide.img_dua !== "False") {%>
+    <div class="carousel-item" style="background-image: url(img/gambar_landing_page/<%=db_setting.img_slide.img_dua%>.jpg)">
+    <div class="carousel-container">
+      <div class="container">
+        <% if(db_setting.img_slide.img_dua_tulisan.judulproduk !== "False"){  %>
+          <h2 class="animate__animated animate__fadeInDown"><%= db_setting.img_slide.img_dua_tulisan.judulproduk %></h2>
+          <% } %>
+          <% if(db_setting.img_slide.img_dua_tulisan.deskripsi !== "False"){  %>
+        <p class="animate__animated animate__fadeInUp"><%= db_setting.img_slide.img_dua_tulisan.deskripsi  %></p>
+            <% } %>
+        <a href="#hubungi" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i class="ri-whatsapp-line"></i>Hubungi Kami?</a>
+      </div>
+    </div>
+  </div>
 
-        <!-- Slide 3 -->
-        <!-- <div class="carousel-item" style="background-image: url(img/123.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-            </div>
-          </div>
-        </div> -->
+  <% } %>
+  <% if(db_setting.img_slide.img_tiga !== "False") {%>
+    <div class="carousel-item" style="background-image: url(img/gambar_landing_page/<%=db_setting.img_slide.img_tiga%>.jpg)">
+    <div class="carousel-container">
+      <div class="container">
+        <% if(db_setting.img_slide.img_tiga_tulisan.judulproduk !== "False"){  %>
+          <h2 class="animate__animated animate__fadeInDown"><%= db_setting.img_slide.img_tiga_tulisan.judulproduk %></h2>
+          <% } %>
+          <% if(db_setting.img_slide.img_tiga_tulisan.deskripsi !== "False"){  %>
+        <p class="animate__animated animate__fadeInUp"><%= db_setting.img_slide.img_tiga_tulisan.deskripsi  %></p>
+            <% } %>
+        <a href="#hubungi" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i class="ri-whatsapp-line"></i>Hubungi Kami?</a>
+      </div>
+    </div>
+  </div>
 
+  <% } %>
+  <% if(db_setting.img_slide.img_empat !== "False") {%>
+    <div class="carousel-item" style="background-image: url(img/gambar_landing_page/<%=db_setting.img_slide.img_empat%>.jpg)">
+    <div class="carousel-container">
+      <div class="container">
+        <% if(db_setting.img_slide.img_empat_tulisan.judulproduk !== "False"){  %>
+          <h2 class="animate__animated animate__fadeInDown"><%= db_setting.img_slide.img_empat_tulisan.judulproduk %></h2>
+          <% } %>
+          <% if(db_setting.img_slide.img_empat_tulisan.deskripsi !== "False"){  %>
+        <p class="animate__animated animate__fadeInUp"><%= db_setting.img_slide.img_empat_tulisan.deskripsi  %></p>
+            <% } %>
+        <a href="#hubungi" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i class="ri-whatsapp-line"></i>Hubungi Kami?</a>
+      </div>
+    </div>
+  </div>
+
+  <% } %>
+  <% if(db_setting.img_slide.img_lima !== "False") {%>
+    <div class="carousel-item" style="background-image: url(img/gambar_landing_page/<%=db_setting.img_slide.img_lima%>.jpg)">
+    <div class="carousel-container">
+      <div class="container">
+        <% if(db_setting.img_slide.img_lima_tulisan.judulproduk !== "False"){  %>
+          <h2 class="animate__animated animate__fadeInDown"><%= db_setting.img_slide.img_lima_tulisan.judulproduk %></h2>
+          <% } %>
+          <% if(db_setting.img_slide.img_lima_tulisan.deskripsi !== "False"){  %>
+        <p class="animate__animated animate__fadeInUp"><%= db_setting.img_slide.img_lima_tulisan.deskripsi  %></p>
+            <% } %>
+        <a href="#hubungi" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i class="ri-whatsapp-line"></i>Hubungi Kami?</a>
+      </div>
+    </div>
+  </div>
+
+  <% } %>
       </div>
 
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
@@ -101,22 +150,26 @@
     </div>
   </section><!-- End Hero -->
 
-  <main id="main">
 
+  <main id="main">
+    <% if(db_setting.judul_dan_deskripsi_produk.judul !== "False"){ %>
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
 
         <div class="row content">
           <div class="col-lg-6">
-            <h2>Aldiva Sarimbit Azzura</h2>
-            <h3>Produk Terbaru Aldiva</h3>
+    <% if(db_setting.judul_dan_deskripsi_produk.judul !== "False"){ %>
+            <h2><%= db_setting.judul_dan_deskripsi_produk.judul  %></h2>
+            <% } %>
+    <% if(db_setting.judul_dan_deskripsi_produk.jenis_produk !== "False"){ %>
+            <h3><%= db_setting.judul_dan_deskripsi_produk.jenis_produk  %></h3>
+    <% } %>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-
-              Selamat datang di koleksi terbaru Sarimbit Azzura by Aldiva – di mana gaya bertemu kenyamanan dalam harmoni sempurna. Produk terbaru kami dirancang dengan perhatian penuh terhadap detail dan dibuat dengan sepenuh hati. Desain elegan menggabungkan tren modern dengan sentuhan keindahan. Temukan kombinasi sempurna antara gaya yang trendi dan kenyamananan. Sarimbit Azzura adalah jawaban atas pencarian gaya anda.
-            </p>
+    <% if(db_setting.judul_dan_deskripsi_produk.deskripsi_produk !== "False"){ %>
+            <p><%= db_setting.judul_dan_deskripsi_produk.deskripsi_produk %></p>
+    <% } %>
             <ul>
               <li><i class="ri-check-double-line"></i> Nyaman Digunakan</li>
               <li><i class="ri-check-double-line"></i> Kualitas Terbaik</li>
@@ -127,6 +180,7 @@
 
       </div>
     </section><!-- End About Section -->
+    <% } %>
 
 
 
@@ -134,212 +188,329 @@
     <section id="portfolio" class="portfolio">
       <div class="container">
 
+        <% if(db_setting.filter.satu.nama !== "False" && db_setting.filter.satu.nama !== "False"){ %>
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">Semua</li>
-              <li data-filter=".filter-Azzura-Srimbit-Sage">Azzura Sarimbit Sage</li>
-              <li data-filter=".filter-Azzura-Srimbit-Army">Azzura Sarimbit Army</li>
-              <li data-filter=".filter-size-cart">Size Cart</li>
+              <% if(db_setting.filter.satu.nama !== "False" && db_setting.filter.satu.get_filter !== "False"){ %>
+              <li data-filter=".filter-<%= db_setting.filter.satu.get_filter %>"><%= db_setting.filter.satu.nama %></li>
+              <% } %>
+              <% if(db_setting.filter.dua.nama !== "False" && db_setting.filter.dua.get_filter !== "False"){ %>
+              <li data-filter=".filter-<%= db_setting.filter.dua.get_filter %>"><%= db_setting.filter.dua.nama %></li>
+              <% } %>
+              <% if(db_setting.filter.tiga.nama !== "False" && db_setting.filter.tiga.get_filter !== "False"){ %>
+              <li data-filter=".filter-<%= db_setting.filter.tiga.get_filter %>"><%= db_setting.filter.tiga.nama %></li>
+              <% } %>
+              <% if(db_setting.filter.empat.nama !== "False" && db_setting.filter.empat.get_filter !== "False"){ %>
+              <li data-filter=".filter-<%= db_setting.filter.empat.get_filter %>"><%= db_setting.filter.empat.nama %></li>
+              <% } %>
+              <% if(db_setting.filter.lima.nama !== "False" && db_setting.filter.lima.get_filter !== "False"){ %>
+              <li data-filter=".filter-<%= db_setting.filter.lima.get_filter %>"><%= db_setting.filter.lima.nama %></li>
+              <% } %>
+              <% if(db_setting.filter.enam.nama !== "False" && db_setting.filter.enam.get_filter !== "False"){ %>
+              <li data-filter=".filter-<%= db_setting.filter.enam.get_filter %>"><%= db_setting.filter.enam.nama %></li>
+              <% } %>
             </ul>
           </div>
         </div>
+        <% } %>
 
+        <% if(db_setting.all_img.img_satu.img !== "False" && db_setting.all_img.img_satu.judulproduk !== "False" && db_setting.all_img.img_satu.deskripsiproduk !== "False" && db_setting.all_img.img_satu.filter !== "False"){ %>
         <div class="row portfolio-container">
-
-
             <!-- ini untuk warna army sekeleuarga -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Azzura-Srimbit-Army">
+        <% if(db_setting.all_img.img_satu.img !== "False" && db_setting.all_img.img_satu.judulproduk !== "False" && db_setting.all_img.img_satu.deskripsiproduk !== "False" && db_setting.all_img.img_satu.filter !== "False"){ %>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_satu.filter %>">
             <div class="portfolio-wrap">
-              <img src="img/sarimbit_army_sekeluarga.jpg" class="img-fluid" alt="">
+              <img src="img/gambar_landing_page/<%= db_setting.all_img.img_satu.img %>.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Sarimbit Azzura army</h4>
-                <p>Satu Keluarga </p>
+                <h4><%= db_setting.all_img.img_satu.judulproduk %></h4>
+                <p><%= db_setting.all_img.img_satu.deskripsiproduk %> </p>
                 <div class="portfolio-links">
-                  <a href="img/sarimbit_army_sekeluarga.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <a href="img/gambar_landing_page/<%= db_setting.all_img.img_satu.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- ini untuk warna army sekeluarga -->
-          <!-- ini untuk warna army -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Azzura-Srimbit-Army">
-            <div class="portfolio-wrap">
-              <img src="img/gamis_anak_army_cewe.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Sarimbit Azzura army</h4>
-                <p>Anak Perempuan </p>
-                <div class="portfolio-links">
-                  <a href="img/gamis_anak_army_cewe.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ini untuk warna army -->
-          <!-- ini untuk warna army -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Azzura-Srimbit-Army">
-            <div class="portfolio-wrap">
-              <img src="img/gamis_anak_army_pria.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Sarimbit Azzura army</h4>
-                <p>Anak Laki-laki</p>
-                <div class="portfolio-links">
-                  <a href="img/gamis_anak_army_pria.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ini untuk warna army --> 
-          
-          <!-- ini untuk warna army -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Azzura-Srimbit-Army">
-            <div class="portfolio-wrap">
-              <img src="img/gamis_dewasa_cewe_army.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Sarimbit Azzura army</h4>
-                <p>Dewasa Perempuan</p>
-                <div class="portfolio-links">
-                  <a href="img/gamis_dewasa_cewe_army.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ini untuk warna army -->          
-          <!-- ini untuk warna army -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Azzura-Srimbit-Army">
-            <div class="portfolio-wrap">
-              <img src="img/gamis_dewasa_pria_army.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Sarimbit Azzura army</h4>
-                <p>Dewasa Laki-laki</p>
-                <div class="portfolio-links">
-                  <a href="img/gamis_dewasa_pria_army.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ini untuk warna army -->
-          <!-- ini untuk warna sage -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Azzura-Srimbit-Sage">
-            <div class="portfolio-wrap">
-              <img src="img/sarimbit_sage_sekeluarga.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Sarimbit Azzura Sage</h4>
-                <p>Sekeleuarga</p>
-                <div class="portfolio-links">
-                  <a href="img/sarimbit_sage_sekeluarga.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- batas warna sage -->
-          <!-- ini untuk warna sage -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Azzura-Srimbit-Sage">
-            <div class="portfolio-wrap">
-              <img src="img/gamis_anak_sage_cewe.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Sarimbit Azzura Sage</h4>
-                <p>Anak Perempuan</p>
-                <div class="portfolio-links">
-                  <a href="img/gamis_anak_sage_cewe.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- batas warna sage -->
-          <!-- ini untuk warna sage -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Azzura-Srimbit-Sage">
-            <div class="portfolio-wrap">
-              <img src="img/gamis_anak_pria_sage.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Sarimbit Azzura Sage</h4>
-                <p>Anak Laki-laki</p>
-                <div class="portfolio-links">
-                  <a href="img/gamis_anak_pria_sage.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-<!-- batas warna sage -->
-          <!-- ini untuk warna sage -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Azzura-Srimbit-Sage">
-            <div class="portfolio-wrap">
-              <img src="img/gamis_dewasa_cewe_sage.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Sarimbit Azzura Sage</h4>
-                <p>Dewasa Perempuan</p>
-                <div class="portfolio-links">
-                  <a href="img/gamis_dewasa_cewe_sage.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-<!-- batas warna sage -->
-          <!-- ini untuk warna sage -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Azzura-Srimbit-Sage">
-            <div class="portfolio-wrap">
-              <img src="img/gamis_dewasa_pria_sage.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Sarimbit Azzura Sage</h4>
-                <p>Dewasa Laki-Laki</p>
-                <div class="portfolio-links">
-                  <a href="img/gamis_dewasa_pria_sage.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-<!-- batas warna sage -->
-            <!-- ini untuk warna size cart anak kecil -->
-            <div class="col-lg-4 col-md-6 portfolio-item filter-size-cart">
+          </div> 
+          <% } %>
+          <% if(db_setting.all_img.img_dua.img !== "False" && db_setting.all_img.img_dua.judulproduk !== "False" && db_setting.all_img.img_dua.deskripsiproduk !== "False" && db_setting.all_img.img_dua.filter !== "False"){ %>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_dua.filter %>">
               <div class="portfolio-wrap">
-                <img src="img/size_cart_anak_laki.jpeg" class="img-fluid" alt="">
+                <img src="img/gambar_landing_page/<%= db_setting.all_img.img_dua.img %>.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Size Cart Sarimbit</h4>
-                  <p>Anak Laki-Laki</p>
+                  <h4><%= db_setting.all_img.img_dua.judulproduk %></h4>
+                  <p><%= db_setting.all_img.img_dua.deskripsiproduk %> </p>
                   <div class="portfolio-links">
-                    <a href="img/size_cart_anak_laki.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                    <a href="img/gambar_landing_page/<%= db_setting.all_img.img_dua.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- ini untuk warna size cart anak kecil -->   
-            <!-- ini untuk warna size cart anak kecil perempuan-->
-            <div class="col-lg-4 col-md-6 portfolio-item filter-size-cart">
-              <div class="portfolio-wrap">
-                <img src="img/size_cart_anak_cewe.jpeg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Size Cart Sarimbit</h4>
-                  <p>Anak Perempuan</p>
-                  <div class="portfolio-links">
-                    <a href="img/size_cart_anak_cewe.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+            </div> 
+            <% } %>
+            <% if(db_setting.all_img.img_tiga.img !== "False" && db_setting.all_img.img_tiga.judulproduk !== "False" && db_setting.all_img.img_tiga.deskripsiproduk !== "False" && db_setting.all_img.img_tiga.filter !== "False"){ %>
+              <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_tiga.filter %>">
+                <div class="portfolio-wrap">
+                  <img src="img/gambar_landing_page/<%= db_setting.all_img.img_tiga.img %>.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4><%= db_setting.all_img.img_tiga.judulproduk %></h4>
+                    <p><%= db_setting.all_img.img_tiga.deskripsiproduk %> </p>
+                    <div class="portfolio-links">
+                      <a href="img/gambar_landing_page/<%= db_setting.all_img.img_tiga.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <!-- ini untuk warna size cart anak kecil perempuan -->      
-            <!-- ini untuk warna size cart anak kecil perempuan-->
-            <div class="col-lg-4 col-md-6 portfolio-item filter-size-cart">
-              <div class="portfolio-wrap">
-                <img src="img/size_cart_dewasa.jpeg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Size Cart Sarimbit</h4>
-                  <p>Dewasa</p>
-                  <div class="portfolio-links">
-                    <a href="img/size_cart_dewasa.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+              </div> 
+              <% } %>
+              <% if(db_setting.all_img.img_empat.img !== "False" && db_setting.all_img.img_empat.judulproduk !== "False" && db_setting.all_img.img_empat.deskripsiproduk !== "False" && db_setting.all_img.img_empat.filter !== "False"){ %>
+                <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_empat.filter %>">
+                  <div class="portfolio-wrap">
+                    <img src="img/gambar_landing_page/<%= db_setting.all_img.img_empat.img %>.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                      <h4><%= db_setting.all_img.img_empat.judulproduk %></h4>
+                      <p><%= db_setting.all_img.img_empat.deskripsiproduk %> </p>
+                      <div class="portfolio-links">
+                        <a href="img/gambar_landing_page/<%= db_setting.all_img.img_empat.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <!-- ini untuk warna size cart anak kecil perempuan -->     
+                </div> 
+                <% } %>
+                <% if(db_setting.all_img.img_lima.img !== "False" && db_setting.all_img.img_lima.judulproduk !== "False" && db_setting.all_img.img_lima.deskripsiproduk !== "False" && db_setting.all_img.img_lima.filter !== "False"){ %>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_lima.filter %>">
+                    <div class="portfolio-wrap">
+                      <img src="img/gambar_landing_page/<%= db_setting.all_img.img_lima.img %>.jpg" class="img-fluid" alt="">
+                      <div class="portfolio-info">
+                        <h4><%= db_setting.all_img.img_lima.judulproduk %></h4>
+                        <p><%= db_setting.all_img.img_lima.deskripsiproduk %> </p>
+                        <div class="portfolio-links">
+                          <a href="img/gambar_landing_page/<%= db_setting.all_img.img_lima.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                  <% } %>
+                  <% if(db_setting.all_img.img_enam.img !== "False" && db_setting.all_img.img_enam.judulproduk !== "False" && db_setting.all_img.img_enam.deskripsiproduk !== "False" && db_setting.all_img.img_enam.filter !== "False"){ %>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_enam.filter %>">
+                      <div class="portfolio-wrap">
+                        <img src="img/gambar_landing_page/<%= db_setting.all_img.img_enam.img %>.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                          <h4><%= db_setting.all_img.img_enam.judulproduk %></h4>
+                          <p><%= db_setting.all_img.img_enam.deskripsiproduk %> </p>
+                          <div class="portfolio-links">
+                            <a href="img/gambar_landing_page/<%= db_setting.all_img.img_enam.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                    <% } %>
+                    <% if(db_setting.all_img.img_tuju.img !== "False" && db_setting.all_img.img_tuju.judulproduk !== "False" && db_setting.all_img.img_tuju.deskripsiproduk !== "False" && db_setting.all_img.img_tuju.filter !== "False"){ %>
+                      <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_tuju.filter %>">
+                        <div class="portfolio-wrap">
+                          <img src="img/gambar_landing_page/<%= db_setting.all_img.img_tuju.img %>.jpg" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                            <h4><%= db_setting.all_img.img_tuju.judulproduk %></h4>
+                            <p><%= db_setting.all_img.img_tuju.deskripsiproduk %> </p>
+                            <div class="portfolio-links">
+                              <a href="img/gambar_landing_page/<%= db_setting.all_img.img_tuju.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                            </div>
+                          </div>
+                        </div>
+                    </div> 
+                    <% } %>
+                    <% if(db_setting.all_img.img_lapan.img !== "False" && db_setting.all_img.img_lapan.judulproduk !== "False" && db_setting.all_img.img_lapan.deskripsiproduk !== "False" && db_setting.all_img.img_lapan.filter !== "False"){ %>
+                      <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_lapan.filter %>">
+                        <div class="portfolio-wrap">
+                          <img src="img/gambar_landing_page/<%= db_setting.all_img.img_lapan.img %>.jpg" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                            <h4><%= db_setting.all_img.img_lapan.judulproduk %></h4>
+                            <p><%= db_setting.all_img.img_lapan.deskripsiproduk %> </p>
+                            <div class="portfolio-links">
+                              <a href="img/gambar_landing_page/<%= db_setting.all_img.img_lapan.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                            </div>
+                          </div>
+                        </div>
+                    </div> 
+                    <% } %>
+                    <% if(db_setting.all_img.img_sembilan.img !== "False" && db_setting.all_img.img_sembilan.judulproduk !== "False" && db_setting.all_img.img_sembilan.deskripsiproduk !== "False" && db_setting.all_img.img_sembilan.filter !== "False"){ %>
+                      <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_sembilan.filter %>">
+                        <div class="portfolio-wrap">
+                          <img src="img/gambar_landing_page/<%= db_setting.all_img.img_sembilan.img %>.jpg" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                            <h4><%= db_setting.all_img.img_sembilan.judulproduk %></h4>
+                            <p><%= db_setting.all_img.img_sembilan.deskripsiproduk %> </p>
+                            <div class="portfolio-links">
+                              <a href="img/gambar_landing_page/<%= db_setting.all_img.img_sembilan.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                            </div>
+                          </div>
+                        </div>
+                    </div> 
+                    <% } %>
+                    <% if(db_setting.all_img.img_sepuluh.img !== "False" && db_setting.all_img.img_sepuluh.judulproduk !== "False" && db_setting.all_img.img_sepuluh.deskripsiproduk !== "False" && db_setting.all_img.img_sepuluh.filter !== "False"){ %>
+                      <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_sepuluh.filter %>">
+                        <div class="portfolio-wrap">
+                          <img src="img/gambar_landing_page/<%= db_setting.all_img.img_sepuluh.img %>.jpg" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                            <h4><%= db_setting.all_img.img_sepuluh.judulproduk %></h4>
+                            <p><%= db_setting.all_img.img_sepuluh.deskripsiproduk %> </p>
+                            <div class="portfolio-links">
+                              <a href="img/gambar_landing_page/<%= db_setting.all_img.img_sepuluh.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                            </div>
+                          </div>
+                        </div>
+                </div> 
+                <% } %>
+                <% if(db_setting.all_img.img_sebelas.img !== "False" && db_setting.all_img.img_sebelas.judulproduk !== "False" && db_setting.all_img.img_sebelas.deskripsiproduk !== "False" && db_setting.all_img.img_sebelas.filter !== "False"){ %>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_sebelas.filter %>">
+                    <div class="portfolio-wrap">
+                      <img src="img/gambar_landing_page/<%= db_setting.all_img.img_sebelas.img %>.jpg" class="img-fluid" alt="">
+                      <div class="portfolio-info">
+                        <h4><%= db_setting.all_img.img_sebelas.judulproduk %></h4>
+                        <p><%= db_setting.all_img.img_sebelas.deskripsiproduk %> </p>
+                        <div class="portfolio-links">
+                          <a href="img/gambar_landing_page/<%= db_setting.all_img.img_sebelas.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <% } %>
+                <% if(db_setting.all_img.img_duabelas.img !== "False" && db_setting.all_img.img_duabelas.judulproduk !== "False" && db_setting.all_img.img_duabelas.deskripsiproduk !== "False" && db_setting.all_img.img_duabelas.filter !== "False"){ %>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_duabelas.filter %>">
+                    <div class="portfolio-wrap">
+                      <img src="img/gambar_landing_page/<%= db_setting.all_img.img_duabelas.img %>.jpg" class="img-fluid" alt="">
+                      <div class="portfolio-info">
+                        <h4><%= db_setting.all_img.img_duabelas.judulproduk %></h4>
+                        <p><%= db_setting.all_img.img_duabelas.deskripsiproduk %> </p>
+                        <div class="portfolio-links">
+                          <a href="img/gambar_landing_page/<%= db_setting.all_img.img_duabelas.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <% } %>
+                <% if(db_setting.all_img.img_tigabelas.img !== "False" && db_setting.all_img.img_tigabelas.judulproduk !== "False" && db_setting.all_img.img_tigabelas.deskripsiproduk !== "False" && db_setting.all_img.img_tigabelas.filter !== "False"){ %>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_tigabelas.filter %>">
+                    <div class="portfolio-wrap">
+                      <img src="img/gambar_landing_page/<%= db_setting.all_img.img_tigabelas.img %>.jpg" class="img-fluid" alt="">
+                      <div class="portfolio-info">
+                        <h4><%= db_setting.all_img.img_tigabelas.judulproduk %></h4>
+                        <p><%= db_setting.all_img.img_tigabelas.deskripsiproduk %> </p>
+                        <div class="portfolio-links">
+                          <a href="img/gambar_landing_page/<%= db_setting.all_img.img_tigabelas.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <% } %>
+                <% if(db_setting.all_img.img_empatbelas.img !== "False" && db_setting.all_img.img_empatbelas.judulproduk !== "False" && db_setting.all_img.img_empatbelas.deskripsiproduk !== "False" && db_setting.all_img.img_empatbelas.filter !== "False"){ %>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_empatbelas.filter %>">
+                    <div class="portfolio-wrap">
+                      <img src="img/gambar_landing_page/<%= db_setting.all_img.img_empatbelas.img %>.jpg" class="img-fluid" alt="">
+                      <div class="portfolio-info">
+                        <h4><%= db_setting.all_img.img_empatbelas.judulproduk %></h4>
+                        <p><%= db_setting.all_img.img_empatbelas.deskripsiproduk %> </p>
+                        <div class="portfolio-links">
+                          <a href="img/gambar_landing_page/<%= db_setting.all_img.img_empatbelas.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <% } %>
+                <% if(db_setting.all_img.img_limabelas.img !== "False" && db_setting.all_img.img_limabelas.judulproduk !== "False" && db_setting.all_img.img_limabelas.deskripsiproduk !== "False" && db_setting.all_img.img_limabelas.filter !== "False"){ %>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_limabelas.filter %>">
+                    <div class="portfolio-wrap">
+                      <img src="img/gambar_landing_page/<%= db_setting.all_img.img_limabelas.img %>.jpg" class="img-fluid" alt="">
+                      <div class="portfolio-info">
+                        <h4><%= db_setting.all_img.img_limabelas.judulproduk %></h4>
+                        <p><%= db_setting.all_img.img_limabelas.deskripsiproduk %> </p>
+                        <div class="portfolio-links">
+                          <a href="img/gambar_landing_page/<%= db_setting.all_img.img_limabelas.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <% } %>
+                <% if(db_setting.all_img.img_enambelas.img !== "False" && db_setting.all_img.img_enambelas.judulproduk !== "False" && db_setting.all_img.img_enambelas.deskripsiproduk !== "False" && db_setting.all_img.img_enambelas.filter !== "False"){ %>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_enambelas.filter %>">
+                    <div class="portfolio-wrap">
+                      <img src="img/gambar_landing_page/<%= db_setting.all_img.img_enambelas.img %>.jpg" class="img-fluid" alt="">
+                      <div class="portfolio-info">
+                        <h4><%= db_setting.all_img.img_enambelas.judulproduk %></h4>
+                        <p><%= db_setting.all_img.img_enambelas.deskripsiproduk %> </p>
+                        <div class="portfolio-links">
+                          <a href="img/gambar_landing_page/<%= db_setting.all_img.img_enambelas.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <% } %>
+                <% if(db_setting.all_img.img_tujubelas.img !== "False" && db_setting.all_img.img_tujubelas.judulproduk !== "False" && db_setting.all_img.img_tujubelas.deskripsiproduk !== "False" && db_setting.all_img.img_tujubelas.filter !== "False"){ %>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_tujubelas.filter %>">
+                    <div class="portfolio-wrap">
+                      <img src="img/gambar_landing_page/<%= db_setting.all_img.img_tujubelas.img %>.jpg" class="img-fluid" alt="">
+                      <div class="portfolio-info">
+                        <h4><%= db_setting.all_img.img_tujubelas.judulproduk %></h4>
+                        <p><%= db_setting.all_img.img_tujubelas.deskripsiproduk %> </p>
+                        <div class="portfolio-links">
+                          <a href="img/gambar_landing_page/<%= db_setting.all_img.img_tujubelas.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <% } %>
+                <% if(db_setting.all_img.img_lapanbelas.img !== "False" && db_setting.all_img.img_lapanbelas.judulproduk !== "False" && db_setting.all_img.img_lapanbelas.deskripsiproduk !== "False" && db_setting.all_img.img_lapanbelas.filter !== "False"){ %>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_lapanbelas.filter %>">
+                    <div class="portfolio-wrap">
+                      <img src="img/gambar_landing_page/<%= db_setting.all_img.img_lapanbelas.img %>.jpg" class="img-fluid" alt="">
+                      <div class="portfolio-info">
+                        <h4><%= db_setting.all_img.img_lapanbelas.judulproduk %></h4>
+                        <p><%= db_setting.all_img.img_lapanbelas.deskripsiproduk %> </p>
+                        <div class="portfolio-links">
+                          <a href="img/gambar_landing_page/<%= db_setting.all_img.img_lapanbelas.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <% } %>
+                <% if(db_setting.all_img.img_sembilanbelas.img !== "False" && db_setting.all_img.img_sembilanbelas.judulproduk !== "False" && db_setting.all_img.imgsembilan_belas.deskripsiproduk !== "False" && db_setting.all_img.imgsembilan_belas.filter !== "False"){ %>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_sembilan_belas.filter %>">
+                    <div class="portfolio-wrap">
+                      <img src="img/gambar_landing_page/<%= db_setting.all_img.img_sembilan_belas.img %>.jpg" class="img-fluid" alt="">
+                      <div class="portfolio-info">
+                        <h4><%= db_setting.all_img.img_sembilan_belas.judulproduk %></h4>
+                        <p><%= db_setting.all_img.img_sembilan_belas.deskripsiproduk %> </p>
+                        <div class="portfolio-links">
+                          <a href="img/gambar_landing_page/<%= db_setting.all_img.img_sembilan_belas.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+                <% } %>
+                <% if(db_setting.all_img.img_duapuluh.img !== "False" && db_setting.all_img.img_duapuluh.judulproduk !== "False" && db_setting.all_img.img_duapuluh.deskripsiproduk !== "False" && db_setting.all_img.img_duapuluh.filter !== "False"){ %>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_duapuluh.filter %>">
+                    <div class="portfolio-wrap">
+                      <img src="img/gambar_landing_page/<%= db_setting.all_img.img_duapuluh.img %>.jpg" class="img-fluid" alt="">
+                      <div class="portfolio-info">
+                        <h4><%= db_setting.all_img.img_duapuluh.judulproduk %></h4>
+                        <p><%= db_setting.all_img.img_duapuluh.deskripsiproduk %> </p>
+                        <div class="portfolio-links">
+                          <a href="img/gambar_landing_page/<%= db_setting.all_img.img_duapuluh.img %>.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                  <% } %>
+                
         </div>
-
+        <% } %>
       </div>
     </section>
     
     
     <!-- End Portfolio Section -->
+    <% if(db_setting.all_tabel.tabel_satu.tr_satu.ukuran !== "False" && db_setting.all_tabel.tabel_satu.tr_satu.harga !== "False"){ %>
     <div class="container-sm">
       <div class="row justify-content-md-center">
+    <% if(db_setting.all_tabel.tabel_satu.tr_satu.ukuran !== "False" && db_setting.all_tabel.tabel_satu.tr_satu.harga !== "False"){ %>
         <div class="col-xl-3 col-sm-6 col-12">
           <div class="card">
             <div class="card-body">
@@ -347,7 +518,7 @@
                 <i class="icon-frame success font-large-2"></i>
                 <div class="media-body text-left">
                   <table id="tabel_gamis" class="table table shadow p-3 mb-5">
-                    <h4>Koko Dewasa</h4>
+                    <h4><%= db_setting.all_tabel.tabel_satu.judul %></h4>
                       <thead>
                         <tr>
                           <th scope="col">Size</th>
@@ -355,163 +526,330 @@
                         </tr>
                       </thead>
                       <tbody>
+                    <% if(db_setting.all_tabel.tabel_satu.tr_satu.ukuran !== "False" && db_setting.all_tabel.tabel_satu.tr_satu.harga !== "False"){ %>
                         <tr>
-                          <td>XS - XL</td>
-                          <td>Rp 219.900</td>
+                          <td><%= db_setting.all_tabel.tabel_satu.tr_satu.ukuran %></td>
+                          <td><%= db_setting.all_tabel.tabel_satu.tr_satu.harga %></td>
                         </tr>
-                        <tr>
-                          <td>XXL</td>
-                          <td>Rp 229.900</td>
-                        </tr>
-                        <tr>
-                          <td>3XL</td>
-                          <td>Rp 239.900</td>
-                        </tr>
+                      <% } %>
+                      <% if(db_setting.all_tabel.tabel_satu.tr_dua.ukuran !== "False" && db_setting.all_tabel.tabel_satu.tr_dua.harga !== "False"){ %>
+                          <tr>
+                            <td><%= db_setting.all_tabel.tabel_satu.tr_dua.ukuran %></td>
+                            <td><%= db_setting.all_tabel.tabel_satu.tr_dua.harga %></td>
+                          </tr>
+                        <% } %>
+                        <% if(db_setting.all_tabel.tabel_satu.tr_tiga.ukuran !== "False" && db_setting.all_tabel.tabel_satu.tr_tiga.harga !== "False"){ %>
+                          <tr>
+                            <td><%= db_setting.all_tabel.tabel_satu.tr_tiga.ukuran %></td>
+                            <td><%= db_setting.all_tabel.tabel_satu.tr_tiga.harga %></td>
+                          </tr>
+                        <% } %>
+                        <% if(db_setting.all_tabel.tabel_satu.tr_empat.ukuran !== "False" && db_setting.all_tabel.tabel_satu.tr_empat.harga !== "False"){ %>
+                          <tr>
+                            <td><%= db_setting.all_tabel.tabel_satu.tr_empat.ukuran %></td>
+                            <td><%= db_setting.all_tabel.tabel_satu.tr_empat.harga %></td>
+                          </tr>
+                        <% } %>
+                        <% if(db_setting.all_tabel.tabel_satu.tr_lima.ukuran !== "False" && db_setting.all_tabel.tabel_satu.tr_lima.harga !== "False"){ %>
+                          <tr>
+                            <td><%= db_setting.all_tabel.tabel_satu.tr_lima.ukuran %></td>
+                            <td><%= db_setting.all_tabel.tabel_satu.tr_lima.harga %></td>
+                          </tr>
+                        <% } %>
+                        <% if(db_setting.all_tabel.tabel_satu.tr_enam.ukuran !== "False" && db_setting.all_tabel.tabel_satu.tr_enam.harga !== "False"){ %>
+                          <tr>
+                            <td><%= db_setting.all_tabel.tabel_satu.tr_enam.ukuran %></td>
+                            <td><%= db_setting.all_tabel.tabel_satu.tr_enam.harga %></td>
+                          </tr>
+                        <% } %>
+                        <% if(db_setting.all_tabel.tabel_satu.tr_tuju.ukuran !== "False" && db_setting.all_tabel.tabel_satu.tr_tuju.harga !== "False"){ %>
+                            <tr>
+                              <td><%= db_setting.all_tabel.tabel_satu.tr_tuju.ukuran %></td>
+                              <td><%= db_setting.all_tabel.tabel_satu.tr_tuju.harga %></td>
+                            </tr>
+                          <% } %>
+                          <% if(db_setting.all_tabel.tabel_satu.tr_lapan.ukuran !== "False" && db_setting.all_tabel.tabel_satu.tr_lapan.harga !== "False"){ %>
+                            <tr>
+                              <td><%= db_setting.all_tabel.tabel_satu.tr_lapan.ukuran %></td>
+                              <td><%= db_setting.all_tabel.tabel_satu.tr_lapan.harga %></td>
+                            </tr>
+                          <% } %>
+                          <% if(db_setting.all_tabel.tabel_satu.tr_sembilan.ukuran !== "False" && db_setting.all_tabel.tabel_satu.tr_sembilan.harga !== "False"){ %>
+                            <tr>
+                              <td><%= db_setting.all_tabel.tabel_satu.tr_sembilan.ukuran %></td>
+                              <td><%= db_setting.all_tabel.tabel_satu.tr_sembilan.harga %></td>
+                            </tr>
+                          <% } %>
+                          <% if(db_setting.all_tabel.tabel_satu.tr_sepuluh.ukuran !== "False" && db_setting.all_tabel.tabel_satu.tr_sepuluh.harga !== "False"){ %>
+                            <tr>
+                              <td><%= db_setting.all_tabel.tabel_satu.tr_sepuluh.ukuran %></td>
+                              <td><%= db_setting.all_tabel.tabel_satu.tr_sepuluh.harga %></td>
+                            </tr>
+                          <% } %>
                       </tbody>
                     </table>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 col-12">
-          <div class="card">
-            <div class="card-body">
-              <div class="media">
-                <i class="icon-note font-large-2"></i>
-                <div class="media-body text-left">
-                  <table id="tabel_gamis" class="table table shadow p-3 mb-5">
-                    <h4>Gamis Dewasa</h4>
-                      <thead>
+        </div>  
+    <% } %>
+    <% if(db_setting.all_tabel.tabel_dua.tr_satu.ukuran !== "False" && db_setting.all_tabel.tabel_dua.tr_satu.harga !== "False"){ %>
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="media">
+              <i class="icon-frame success font-large-2"></i>
+              <div class="media-body text-left">
+                <table id="tabel_gamis" class="table table shadow p-3 mb-5">
+                  <h4><%= db_setting.all_tabel.tabel_dua.judul %></h4>
+                    <thead>
+                      <tr>
+                        <th scope="col">Size</th>
+                        <th scope="col">Harga</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                  <% if(db_setting.all_tabel.tabel_dua.tr_satu.ukuran !== "False" && db_setting.all_tabel.tabel_dua.tr_satu.harga !== "False"){ %>
+                      <tr>
+                        <td><%= db_setting.all_tabel.tabel_dua.tr_satu.ukuran %></td>
+                        <td><%= db_setting.all_tabel.tabel_dua.tr_satu.harga %></td>
+                      </tr>
+                    <% } %>
+                    <% if(db_setting.all_tabel.tabel_dua.tr_dua.ukuran !== "False" && db_setting.all_tabel.tabel_dua.tr_dua.harga !== "False"){ %>
                         <tr>
-                          <th scope="col">Size</th>
-                          <th scope="col">Harga</th>
+                          <td><%= db_setting.all_tabel.tabel_dua.tr_dua.ukuran %></td>
+                          <td><%= db_setting.all_tabel.tabel_dua.tr_dua.harga %></td>
                         </tr>
-                      </thead>
-                      <tbody>
+                      <% } %>
+                      <% if(db_setting.all_tabel.tabel_dua.tr_tiga.ukuran !== "False" && db_setting.all_tabel.tabel_dua.tr_tiga.harga !== "False"){ %>
                         <tr>
-                          <td>XS - XL</td>
-                          <td>Rp 329.900</td>
+                          <td><%= db_setting.all_tabel.tabel_dua.tr_tiga.ukuran %></td>
+                          <td><%= db_setting.all_tabel.tabel_dua.tr_tiga.harga %></td>
                         </tr>
+                      <% } %>
+                      <% if(db_setting.all_tabel.tabel_dua.tr_empat.ukuran !== "False" && db_setting.all_tabel.tabel_dua.tr_empat.harga !== "False"){ %>
                         <tr>
-                          <td>XXL</td>
-                          <td>Rp 339.900</td>
+                          <td><%= db_setting.all_tabel.tabel_dua.tr_empat.ukuran %></td>
+                          <td><%= db_setting.all_tabel.tabel_dua.tr_empat.harga %></td>
                         </tr>
+                      <% } %>
+                      <% if(db_setting.all_tabel.tabel_dua.tr_lima.ukuran !== "False" && db_setting.all_tabel.tabel_dua.tr_lima.harga !== "False"){ %>
                         <tr>
-                          <td>3XL</td>
-                          <td>Rp 349.900</td>
+                          <td><%= db_setting.all_tabel.tabel_dua.tr_lima.ukuran %></td>
+                          <td><%= db_setting.all_tabel.tabel_dua.tr_lima.harga %></td>
                         </tr>
-                      </tbody>
-                    </table>
-                </div>
+                      <% } %>
+                      <% if(db_setting.all_tabel.tabel_dua.tr_enam.ukuran !== "False" && db_setting.all_tabel.tabel_dua.tr_enam.harga !== "False"){ %>
+                        <tr>
+                          <td><%= db_setting.all_tabel.tabel_dua.tr_enam.ukuran %></td>
+                          <td><%= db_setting.all_tabel.tabel_dua.tr_enam.harga %></td>
+                        </tr>
+                      <% } %>
+                      <% if(db_setting.all_tabel.tabel_dua.tr_tuju.ukuran !== "False" && db_setting.all_tabel.tabel_dua.tr_tuju.harga !== "False"){ %>
+                          <tr>
+                            <td><%= db_setting.all_tabel.tabel_dua.tr_tuju.ukuran %></td>
+                            <td><%= db_setting.all_tabel.tabel_dua.tr_tuju.harga %></td>
+                          </tr>
+                        <% } %>
+                        <% if(db_setting.all_tabel.tabel_dua.tr_lapan.ukuran !== "False" && db_setting.all_tabel.tabel_dua.tr_lapan.harga !== "False"){ %>
+                          <tr>
+                            <td><%= db_setting.all_tabel.tabel_dua.tr_lapan.ukuran %></td>
+                            <td><%= db_setting.all_tabel.tabel_dua.tr_lapan.harga %></td>
+                          </tr>
+                        <% } %>
+                        <% if(db_setting.all_tabel.tabel_dua.tr_sembilan.ukuran !== "False" && db_setting.all_tabel.tabel_dua.tr_sembilan.harga !== "False"){ %>
+                          <tr>
+                            <td><%= db_setting.all_tabel.tabel_dua.tr_sembilan.ukuran %></td>
+                            <td><%= db_setting.all_tabel.tabel_dua.tr_sembilan.harga %></td>
+                          </tr>
+                        <% } %>
+                        <% if(db_setting.all_tabel.tabel_dua.tr_sepuluh.ukuran !== "False" && db_setting.all_tabel.tabel_dua.tr_sepuluh.harga !== "False"){ %>
+                          <tr>
+                            <td><%= db_setting.all_tabel.tabel_dua.tr_sepuluh.ukuran %></td>
+                            <td><%= db_setting.all_tabel.tabel_dua.tr_sepuluh.harga %></td>
+                          </tr>
+                        <% } %>
+                    </tbody>
+                  </table>
               </div>
             </div>
           </div>
         </div>
-        <div class="w-100"></div>
-        <div class="col-xl-3 col-sm-6 col-12">
-          <div class="card">
-            <div class="card-body">
-              <div class="media">
-                <i class="icon-note font-large-2"></i>
-                <div class="media-body text-left">
-                  <table id="tabel_gamis" class="table table shadow p-3 mb-5">
-                    <h4>Gamis Anak</h4>
-                      <thead>
+      </div>  
+  <% } %>
+  <div class="w-60"></div>
+  <% if(db_setting.all_tabel.tabel_tiga.tr_satu.ukuran !== "False" && db_setting.all_tabel.tabel_tiga.tr_satu.harga !== "False"){ %>
+    <div class="col-xl-3 col-sm-6 col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="media">
+            <i class="icon-frame success font-large-2"></i>
+            <div class="media-body text-left">
+              <table id="tabel_gamis" class="table table shadow p-3 mb-5">
+                <h4><%= db_setting.all_tabel.tabel_tiga.judul %></h4>
+                  <thead>
+                    <tr>
+                      <th scope="col">Size</th>
+                      <th scope="col">Harga</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                <% if(db_setting.all_tabel.tabel_tiga.tr_satu.ukuran !== "False" && db_setting.all_tabel.tabel_tiga.tr_satu.harga !== "False"){ %>
+                    <tr>
+                      <td><%= db_setting.all_tabel.tabel_tiga.tr_satu.ukuran %></td>
+                      <td><%= db_setting.all_tabel.tabel_tiga.tr_satu.harga %></td>
+                    </tr>
+                  <% } %>
+                  <% if(db_setting.all_tabel.tabel_tiga.tr_dua.ukuran !== "False" && db_setting.all_tabel.tabel_tiga.tr_dua.harga !== "False"){ %>
+                      <tr>
+                        <td><%= db_setting.all_tabel.tabel_tiga.tr_dua.ukuran %></td>
+                        <td><%= db_setting.all_tabel.tabel_tiga.tr_dua.harga %></td>
+                      </tr>
+                    <% } %>
+                    <% if(db_setting.all_tabel.tabel_tiga.tr_tiga.ukuran !== "False" && db_setting.all_tabel.tabel_tiga.tr_tiga.harga !== "False"){ %>
+                      <tr>
+                        <td><%= db_setting.all_tabel.tabel_tiga.tr_tiga.ukuran %></td>
+                        <td><%= db_setting.all_tabel.tabel_tiga.tr_tiga.harga %></td>
+                      </tr>
+                    <% } %>
+                    <% if(db_setting.all_tabel.tabel_tiga.tr_empat.ukuran !== "False" && db_setting.all_tabel.tabel_tiga.tr_empat.harga !== "False"){ %>
+                      <tr>
+                        <td><%= db_setting.all_tabel.tabel_tiga.tr_empat.ukuran %></td>
+                        <td><%= db_setting.all_tabel.tabel_tiga.tr_empat.harga %></td>
+                      </tr>
+                    <% } %>
+                    <% if(db_setting.all_tabel.tabel_tiga.tr_lima.ukuran !== "False" && db_setting.all_tabel.tabel_tiga.tr_lima.harga !== "False"){ %>
+                      <tr>
+                        <td><%= db_setting.all_tabel.tabel_tiga.tr_lima.ukuran %></td>
+                        <td><%= db_setting.all_tabel.tabel_tiga.tr_lima.harga %></td>
+                      </tr>
+                    <% } %>
+                    <% if(db_setting.all_tabel.tabel_tiga.tr_enam.ukuran !== "False" && db_setting.all_tabel.tabel_tiga.tr_enam.harga !== "False"){ %>
+                      <tr>
+                        <td><%= db_setting.all_tabel.tabel_tiga.tr_enam.ukuran %></td>
+                        <td><%= db_setting.all_tabel.tabel_tiga.tr_enam.harga %></td>
+                      </tr>
+                    <% } %>
+                    <% if(db_setting.all_tabel.tabel_tiga.tr_tuju.ukuran !== "False" && db_setting.all_tabel.tabel_tiga.tr_tuju.harga !== "False"){ %>
                         <tr>
-                          <th scope="col">Size</th>
-                          <th scope="col">Harga</th>
+                          <td><%= db_setting.all_tabel.tabel_tiga.tr_tuju.ukuran %></td>
+                          <td><%= db_setting.all_tabel.tabel_tiga.tr_tuju.harga %></td>
                         </tr>
-                      </thead>
-                      <tbody>
+                      <% } %>
+                      <% if(db_setting.all_tabel.tabel_tiga.tr_lapan.ukuran !== "False" && db_setting.all_tabel.tabel_tiga.tr_lapan.harga !== "False"){ %>
                         <tr>
-                          <td>0</td>
-                          <td>Rp 279.900</td>
+                          <td><%= db_setting.all_tabel.tabel_tiga.tr_lapan.ukuran %></td>
+                          <td><%= db_setting.all_tabel.tabel_tiga.tr_lapan.harga %></td>
                         </tr>
+                      <% } %>
+                      <% if(db_setting.all_tabel.tabel_tiga.tr_sembilan.ukuran !== "False" && db_setting.all_tabel.tabel_tiga.tr_sembilan.harga !== "False"){ %>
                         <tr>
-                          <td>2</td>
-                          <td>Rp 289.900</td>
+                          <td><%= db_setting.all_tabel.tabel_tiga.tr_sembilan.ukuran %></td>
+                          <td><%= db_setting.all_tabel.tabel_tiga.tr_sembilan.harga %></td>
                         </tr>
+                      <% } %>
+                      <% if(db_setting.all_tabel.tabel_tiga.tr_sepuluh.ukuran !== "False" && db_setting.all_tabel.tabel_tiga.tr_sepuluh.harga !== "False"){ %>
                         <tr>
-                          <td>4</td>
-                          <td>Rp 289.900</td>
+                          <td><%= db_setting.all_tabel.tabel_tiga.tr_sepuluh.ukuran %></td>
+                          <td><%= db_setting.all_tabel.tabel_tiga.tr_sepuluh.harga %></td>
                         </tr>
-                        <tr>
-                          <td>6</td>
-                          <td>Rp 299.900</td>
-                        </tr>
-                        <tr>
-                          <td>8</td>
-                          <td>Rp 299.900</td>
-                        </tr>
-                        <tr>
-                          <td>10</td>
-                          <td>Rp 289.900</td>
-                        </tr>
-                          <td>12</td>
-                          <td>Rp 309.900</td>
-                        </tr>
-                        <tr>
-                      </tbody>
-                    </table>
-                </div>
-              </div>
+                      <% } %>
+                  </tbody>
+                </table>
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-sm-6 col-12">
-          <div class="card">
-            <div class="card-body">
-              <div class="media">
-                <i class="icon-note font-large-2"></i>
-                <div class="media-body text-left">
-                  <table id="tabel_gamis" class="table table shadow p-3 mb-5">
-                    <h4>Koko Anak</h4>
-                      <thead>
-                        <tr>
-                          <th scope="col">Size</th>
-                          <th scope="col">Harga</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>0</td>
-                          <td>Rp 239.900</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Rp 249.900</td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>Rp 249.900</td>
-                        </tr>
-                        <tr>
-                          <td>6</td>
-                          <td>Rp 259.900</td>
-                        </tr>
-                        <tr>
-                          <td>8</td>
-                          <td>Rp 259.900</td>
-                        </tr>
-                        <tr>
-                          <td>10</td>
-                          <td>Rp 269.900</td>
-                        </tr>
-                          <td>12</td>
-                          <td>Rp 269.900</td>
-                        </tr>
-                        <tr>
-                      </tbody>
-                    </table>
-                </div>
-              </div>
-            </div>
+      </div>
+    </div>  
+<% } %>  
+<% if(db_setting.all_tabel.tabel_empat.tr_satu.ukuran !== "False" && db_setting.all_tabel.tabel_empat.tr_satu.harga !== "False"){ %>
+  <div class="col-xl-3 col-sm-6 col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="media">
+          <i class="icon-frame success font-large-2"></i>
+          <div class="media-body text-left">
+            <table id="tabel_gamis" class="table table shadow p-3 mb-5">
+              <h4><%= db_setting.all_tabel.tabel_empat.judul %></h4>
+                <thead>
+                  <tr>
+                    <th scope="col">Size</th>
+                    <th scope="col">Harga</th>
+                  </tr>
+                </thead>
+                <tbody>
+              <% if(db_setting.all_tabel.tabel_empat.tr_satu.ukuran !== "False" && db_setting.all_tabel.tabel_empat.tr_satu.harga !== "False"){ %>
+                  <tr>
+                    <td><%= db_setting.all_tabel.tabel_empat.tr_satu.ukuran %></td>
+                    <td><%= db_setting.all_tabel.tabel_empat.tr_satu.harga %></td>
+                  </tr>
+                <% } %>
+                <% if(db_setting.all_tabel.tabel_empat.tr_dua.ukuran !== "False" && db_setting.all_tabel.tabel_empat.tr_dua.harga !== "False"){ %>
+                    <tr>
+                      <td><%= db_setting.all_tabel.tabel_empat.tr_dua.ukuran %></td>
+                      <td><%= db_setting.all_tabel.tabel_empat.tr_dua.harga %></td>
+                    </tr>
+                  <% } %>
+                  <% if(db_setting.all_tabel.tabel_empat.tr_tiga.ukuran !== "False" && db_setting.all_tabel.tabel_empat.tr_tiga.harga !== "False"){ %>
+                    <tr>
+                      <td><%= db_setting.all_tabel.tabel_empat.tr_tiga.ukuran %></td>
+                      <td><%= db_setting.all_tabel.tabel_empat.tr_tiga.harga %></td>
+                    </tr>
+                  <% } %>
+                  <% if(db_setting.all_tabel.tabel_empat.tr_empat.ukuran !== "False" && db_setting.all_tabel.tabel_empat.tr_empat.harga !== "False"){ %>
+                    <tr>
+                      <td><%= db_setting.all_tabel.tabel_empat.tr_empat.ukuran %></td>
+                      <td><%= db_setting.all_tabel.tabel_empat.tr_empat.harga %></td>
+                    </tr>
+                  <% } %>
+                  <% if(db_setting.all_tabel.tabel_empat.tr_lima.ukuran !== "False" && db_setting.all_tabel.tabel_empat.tr_lima.harga !== "False"){ %>
+                    <tr>
+                      <td><%= db_setting.all_tabel.tabel_empat.tr_lima.ukuran %></td>
+                      <td><%= db_setting.all_tabel.tabel_empat.tr_lima.harga %></td>
+                    </tr>
+                  <% } %>
+                  <% if(db_setting.all_tabel.tabel_empat.tr_enam.ukuran !== "False" && db_setting.all_tabel.tabel_empat.tr_enam.harga !== "False"){ %>
+                    <tr>
+                      <td><%= db_setting.all_tabel.tabel_empat.tr_enam.ukuran %></td>
+                      <td><%= db_setting.all_tabel.tabel_empat.tr_enam.harga %></td>
+                    </tr>
+                  <% } %>
+                  <% if(db_setting.all_tabel.tabel_empat.tr_tuju.ukuran !== "False" && db_setting.all_tabel.tabel_empat.tr_tuju.harga !== "False"){ %>
+                      <tr>
+                        <td><%= db_setting.all_tabel.tabel_empat.tr_tuju.ukuran %></td>
+                        <td><%= db_setting.all_tabel.tabel_empat.tr_tuju.harga %></td>
+                      </tr>
+                    <% } %>
+                    <% if(db_setting.all_tabel.tabel_empat.tr_lapan.ukuran !== "False" && db_setting.all_tabel.tabel_empat.tr_lapan.harga !== "False"){ %>
+                      <tr>
+                        <td><%= db_setting.all_tabel.tabel_empat.tr_lapan.ukuran %></td>
+                        <td><%= db_setting.all_tabel.tabel_empat.tr_lapan.harga %></td>
+                      </tr>
+                    <% } %>
+                    <% if(db_setting.all_tabel.tabel_empat.tr_sembilan.ukuran !== "False" && db_setting.all_tabel.tabel_empat.tr_sembilan.harga !== "False"){ %>
+                      <tr>
+                        <td><%= db_setting.all_tabel.tabel_empat.tr_sembilan.ukuran %></td>
+                        <td><%= db_setting.all_tabel.tabel_empat.tr_sembilan.harga %></td>
+                      </tr>
+                    <% } %>
+                    <% if(db_setting.all_tabel.tabel_empat.tr_sepuluh.ukuran !== "False" && db_setting.all_tabel.tabel_empat.tr_sepuluh.harga !== "False"){ %>
+                      <tr>
+                        <td><%= db_setting.all_tabel.tabel_empat.tr_sepuluh.ukuran %></td>
+                        <td><%= db_setting.all_tabel.tabel_empat.tr_sepuluh.harga %></td>
+                      </tr>
+                    <% } %>
+                </tbody>
+              </table>
           </div>
         </div>
-        
       </div>
     </div>
+  </div>  
+<% } %>          
+      </div>
+    </div>
+    <% } %>
 
   <!-- iniUNTUK TABEL HARGA -->
 

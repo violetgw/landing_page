@@ -197,6 +197,7 @@ const akun = new mongoose.Schema({
     }
     ,all_tabel:{
         tabel_satu:{
+            judul:String,
             tr_satu:{
                 ukuran:String,
                 harga:String,
@@ -229,6 +230,7 @@ const akun = new mongoose.Schema({
                 harga:String,
             }
         },tabel_dua:{
+            judul:String,
             tr_satu:{
                 ukuran:String,
                 harga:String,
@@ -261,6 +263,7 @@ const akun = new mongoose.Schema({
                 harga:String,
             }
         },tabel_tiga:{
+            judul:String,
             tr_satu:{
                 ukuran:String,
                 harga:String,
@@ -293,6 +296,7 @@ const akun = new mongoose.Schema({
                 harga:String,
             }
         },tabel_empat:{
+            judul:String,
             tr_satu:{
                 ukuran:String,
                 harga:String,

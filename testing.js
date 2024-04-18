@@ -233,6 +233,7 @@ app.use(bodyParser.json());
         }
     },all_tabel:{
         tabel_satu:{
+            judul:"False",
             tr_satu:{
                 ukuran:"False",
                 harga:"False",
@@ -265,6 +266,7 @@ app.use(bodyParser.json());
                 harga:"False",
             }
         },tabel_dua:{
+            judul:"False",
             tr_satu:{
                 ukuran:"False",
                 harga:"False",
@@ -297,6 +299,7 @@ app.use(bodyParser.json());
                 harga:"False",
             }
         },tabel_tiga:{
+            judul:"False",
             tr_satu:{
                 ukuran:"False",
                 harga:"False",
@@ -329,6 +332,7 @@ app.use(bodyParser.json());
                 harga:"False",
             }
         },tabel_empat:{
+            judul:"False",
             tr_satu:{
                 ukuran:"False",
                 harga:"False",
@@ -407,8 +411,11 @@ app.use(bodyParser.json());
   });
   
   app.get('/landing_page', async (req, res)=> {
+    const db_setting = await db_atur_img.findOne({},);
   
-  res.render('landing_page_dua');
+  res.render('landing_page_dua',{
+  db_setting:db_setting
+  });
   
   });
   
@@ -1462,6 +1469,272 @@ app.post('/edit_all_img', async (req, res) => {
     }
     
 });
+
+// unutk simpan atau edit ukuran dan harga table
+app.post('/simpan_harga_ukuran_table',async (req,res)=>{
+
+    if(req.session.username && req.session.password){
+const{
+    judul_tabel_satu,
+    judul_tabel_dua,
+    judul_tabel_tiga,
+    judul_tabel_empat,
+    tabel_satu_tr_ukuran_satu,
+    tabel_satu_tr_ukuran_dua,
+    tabel_satu_tr_ukuran_tiga,
+    tabel_satu_tr_ukuran_empat,
+    tabel_satu_tr_ukuran_lima,
+    tabel_satu_tr_ukuran_enam,
+    tabel_satu_tr_ukuran_tuju,
+    tabel_satu_tr_ukuran_lapan,
+    tabel_satu_tr_ukuran_sembilan,
+    tabel_satu_tr_ukuran_sepuluh,
+    tabel_satu_tr_harga_satu,
+    tabel_satu_tr_harga_dua,
+    tabel_satu_tr_harga_tiga,
+    tabel_satu_tr_harga_empat,
+    tabel_satu_tr_harga_lima,
+    tabel_satu_tr_harga_enam,
+    tabel_satu_tr_harga_tuju,
+    tabel_satu_tr_harga_lapan,
+    tabel_satu_tr_harga_sembilan,
+    tabel_satu_tr_harga_sepuluh,
+    tabel_dua_tr_ukuran_satu,
+    tabel_dua_tr_ukuran_dua,
+    tabel_dua_tr_ukuran_tiga,
+    tabel_dua_tr_ukuran_empat,
+    tabel_dua_tr_ukuran_lima,
+    tabel_dua_tr_ukuran_enam,
+    tabel_dua_tr_ukuran_tuju,
+    tabel_dua_tr_ukuran_lapan,
+    tabel_dua_tr_ukuran_sembilan,
+    tabel_dua_tr_ukuran_sepuluh,
+    tabel_dua_tr_harga_satu,
+    tabel_dua_tr_harga_dua,
+    tabel_dua_tr_harga_tiga,
+    tabel_dua_tr_harga_empat,
+    tabel_dua_tr_harga_lima,
+    tabel_dua_tr_harga_enam,
+    tabel_dua_tr_harga_tuju,
+    tabel_dua_tr_harga_lapan,
+    tabel_dua_tr_harga_sembilan,
+    tabel_dua_tr_harga_sepuluh,
+    tabel_tiga_tr_ukuran_satu,
+    tabel_tiga_tr_ukuran_dua,
+    tabel_tiga_tr_ukuran_tiga,
+    tabel_tiga_tr_ukuran_empat,
+    tabel_tiga_tr_ukuran_lima,
+    tabel_tiga_tr_ukuran_enam,
+    tabel_tiga_tr_ukuran_tuju,
+    tabel_tiga_tr_ukuran_lapan,
+    tabel_tiga_tr_ukuran_sembilan,
+    tabel_tiga_tr_ukuran_sepuluh,
+    tabel_tiga_tr_harga_satu,
+    tabel_tiga_tr_harga_dua,
+    tabel_tiga_tr_harga_tiga,
+    tabel_tiga_tr_harga_empat,
+    tabel_tiga_tr_harga_lima,
+    tabel_tiga_tr_harga_enam,
+    tabel_tiga_tr_harga_tuju,
+    tabel_tiga_tr_harga_lapan,
+    tabel_tiga_tr_harga_sembilan,
+    tabel_tiga_tr_harga_sepuluh,
+    tabel_empat_tr_ukuran_satu,
+    tabel_empat_tr_ukuran_dua,
+    tabel_empat_tr_ukuran_tiga,
+    tabel_empat_tr_ukuran_empat,
+    tabel_empat_tr_ukuran_lima,
+    tabel_empat_tr_ukuran_enam,
+    tabel_empat_tr_ukuran_tuju,
+    tabel_empat_tr_ukuran_lapan,
+    tabel_empat_tr_ukuran_sembilan,
+    tabel_empat_tr_ukuran_sepuluh,
+    tabel_empat_tr_harga_satu,
+    tabel_empat_tr_harga_dua,
+    tabel_empat_tr_harga_tiga,
+    tabel_empat_tr_harga_empat,
+    tabel_empat_tr_harga_lima,
+    tabel_empat_tr_harga_enam,
+    tabel_empat_tr_harga_tuju,
+    tabel_empat_tr_harga_lapan,
+    tabel_empat_tr_harga_sembilan,
+    tabel_empat_tr_harga_sepuluh
+} = req.body;
+
+
+if(judul_tabel_satu){
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({
+    "all_tabel.tabel_satu.judul":db_setting.all_tabel.tabel_satu.judul,
+    "all_tabel.tabel_satu.tr_satu.ukuran":db_setting.all_tabel.tabel_satu.tr_satu.ukuran,
+    "all_tabel.tabel_satu.tr_satu.harga":db_setting.all_tabel.tabel_satu.tr_satu.harga
+    },
+    { $set: {
+    "all_tabel.tabel_satu.judul":judul_tabel_satu,
+    "all_tabel.tabel_satu.tr_satu.ukuran":tabel_satu_tr_ukuran_satu,
+    "all_tabel.tabel_satu.tr_satu.harga":tabel_satu_tr_harga_satu,
+    "all_tabel.tabel_satu.tr_dua.ukuran":tabel_satu_tr_ukuran_dua,
+    "all_tabel.tabel_satu.tr_dua.harga":tabel_satu_tr_harga_dua,
+    "all_tabel.tabel_satu.tr_tiga.ukuran":tabel_satu_tr_ukuran_tiga,
+    "all_tabel.tabel_satu.tr_tiga.harga":tabel_satu_tr_harga_tiga,
+    "all_tabel.tabel_satu.tr_empat.ukuran":tabel_satu_tr_ukuran_empat,
+    "all_tabel.tabel_satu.tr_empat.harga":tabel_satu_tr_harga_empat,
+    "all_tabel.tabel_satu.tr_lima.ukuran":tabel_satu_tr_ukuran_lima,
+    "all_tabel.tabel_satu.tr_lima.harga":tabel_satu_tr_harga_lima,
+    "all_tabel.tabel_satu.tr_enam.ukuran":tabel_satu_tr_ukuran_enam,
+    "all_tabel.tabel_satu.tr_enam.harga":tabel_satu_tr_harga_enam,
+    "all_tabel.tabel_satu.tr_tuju.ukuran":tabel_satu_tr_ukuran_tuju,
+    "all_tabel.tabel_satu.tr_tuju.harga":tabel_satu_tr_harga_tuju,
+    "all_tabel.tabel_satu.tr_lapan.ukuran":tabel_satu_tr_ukuran_lapan,
+    "all_tabel.tabel_satu.tr_lapan.harga":tabel_satu_tr_harga_lapan,
+    "all_tabel.tabel_satu.tr_sembilan.ukuran":tabel_satu_tr_ukuran_sembilan,
+    "all_tabel.tabel_satu.tr_sembilan.harga":tabel_satu_tr_harga_sembilan,
+    "all_tabel.tabel_satu.tr_sepuluh.ukuran":tabel_satu_tr_ukuran_sepuluh,
+    "all_tabel.tabel_satu.tr_sepuluh.harga":tabel_satu_tr_harga_sepuluh,
+    } });        
+    console.log(`all table berhasil`);
+    res.redirect('/admin');
+}else if(judul_tabel_dua){
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({
+    "all_tabel.tabel_dua.judul":db_setting.all_tabel.tabel_dua.judul,
+    "all_tabel.tabel_dua.tr_satu.ukuran":db_setting.all_tabel.tabel_dua.tr_satu.ukuran,
+    "all_tabel.tabel_dua.tr_satu.harga":db_setting.all_tabel.tabel_dua.tr_satu.harga
+    },
+    { $set: {
+    "all_tabel.tabel_dua.judul":judul_tabel_dua,
+    "all_tabel.tabel_dua.tr_satu.ukuran":tabel_dua_tr_ukuran_satu,
+    "all_tabel.tabel_dua.tr_satu.harga":tabel_dua_tr_harga_satu,
+    "all_tabel.tabel_dua.tr_dua.ukuran":tabel_dua_tr_ukuran_dua,
+    "all_tabel.tabel_dua.tr_dua.harga":tabel_dua_tr_harga_dua,
+    "all_tabel.tabel_dua.tr_tiga.ukuran":tabel_dua_tr_ukuran_tiga,
+    "all_tabel.tabel_dua.tr_tiga.harga":tabel_dua_tr_harga_tiga,
+    "all_tabel.tabel_dua.tr_empat.ukuran":tabel_dua_tr_ukuran_empat,
+    "all_tabel.tabel_dua.tr_empat.harga":tabel_dua_tr_harga_empat,
+    "all_tabel.tabel_dua.tr_lima.ukuran":tabel_dua_tr_ukuran_lima,
+    "all_tabel.tabel_dua.tr_lima.harga":tabel_dua_tr_harga_lima,
+    "all_tabel.tabel_dua.tr_enam.ukuran":tabel_dua_tr_ukuran_enam,
+    "all_tabel.tabel_dua.tr_enam.harga":tabel_dua_tr_harga_enam,
+    "all_tabel.tabel_dua.tr_tuju.ukuran":tabel_dua_tr_ukuran_tuju,
+    "all_tabel.tabel_dua.tr_tuju.harga":tabel_dua_tr_harga_tuju,
+    "all_tabel.tabel_dua.tr_lapan.ukuran":tabel_dua_tr_ukuran_lapan,
+    "all_tabel.tabel_dua.tr_lapan.harga":tabel_dua_tr_harga_lapan,
+    "all_tabel.tabel_dua.tr_sembilan.ukuran":tabel_dua_tr_ukuran_sembilan,
+    "all_tabel.tabel_dua.tr_sembilan.harga":tabel_dua_tr_harga_sembilan,
+    "all_tabel.tabel_dua.tr_sepuluh.ukuran":tabel_dua_tr_ukuran_sepuluh,
+    "all_tabel.tabel_dua.tr_sepuluh.harga":tabel_dua_tr_harga_sepuluh,
+    } });        
+    console.log(`all table berhasil`);
+    res.redirect('/admin');
+}else if(judul_tabel_tiga){
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({
+    "all_tabel.tabel_tiga.judul":db_setting.all_tabel.tabel_tiga.judul,
+    "all_tabel.tabel_tiga.tr_satu.ukuran":db_setting.all_tabel.tabel_tiga.tr_satu.ukuran,
+    "all_tabel.tabel_tiga.tr_satu.harga":db_setting.all_tabel.tabel_tiga.tr_satu.harga
+    },
+    { $set: {
+    "all_tabel.tabel_tiga.judul":judul_tabel_tiga,
+    "all_tabel.tabel_tiga.tr_satu.ukuran":tabel_tiga_tr_ukuran_satu,
+    "all_tabel.tabel_tiga.tr_satu.harga":tabel_tiga_tr_harga_satu,
+    "all_tabel.tabel_tiga.tr_dua.ukuran":tabel_tiga_tr_ukuran_dua,
+    "all_tabel.tabel_tiga.tr_dua.harga":tabel_tiga_tr_harga_dua,
+    "all_tabel.tabel_tiga.tr_tiga.ukuran":tabel_tiga_tr_ukuran_tiga,
+    "all_tabel.tabel_tiga.tr_tiga.harga":tabel_tiga_tr_harga_tiga,
+    "all_tabel.tabel_tiga.tr_empat.ukuran":tabel_tiga_tr_ukuran_empat,
+    "all_tabel.tabel_tiga.tr_empat.harga":tabel_tiga_tr_harga_empat,
+    "all_tabel.tabel_tiga.tr_lima.ukuran":tabel_tiga_tr_ukuran_lima,
+    "all_tabel.tabel_tiga.tr_lima.harga":tabel_tiga_tr_harga_lima,
+    "all_tabel.tabel_tiga.tr_enam.ukuran":tabel_tiga_tr_ukuran_enam,
+    "all_tabel.tabel_tiga.tr_enam.harga":tabel_tiga_tr_harga_enam,
+    "all_tabel.tabel_tiga.tr_tuju.ukuran":tabel_tiga_tr_ukuran_tuju,
+    "all_tabel.tabel_tiga.tr_tuju.harga":tabel_tiga_tr_harga_tuju,
+    "all_tabel.tabel_tiga.tr_lapan.ukuran":tabel_tiga_tr_ukuran_lapan,
+    "all_tabel.tabel_tiga.tr_lapan.harga":tabel_tiga_tr_harga_lapan,
+    "all_tabel.tabel_tiga.tr_sembilan.ukuran":tabel_tiga_tr_ukuran_sembilan,
+    "all_tabel.tabel_tiga.tr_sembilan.harga":tabel_tiga_tr_harga_sembilan,
+    "all_tabel.tabel_tiga.tr_sepuluh.ukuran":tabel_tiga_tr_ukuran_sepuluh,
+    "all_tabel.tabel_tiga.tr_sepuluh.harga":tabel_tiga_tr_harga_sepuluh,
+    } });        
+    console.log(`all table berhasil`);
+    res.redirect('/admin');
+}else if(judul_tabel_tiga){
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({
+    "all_tabel.tabel_tiga.judul":db_setting.all_tabel.tabel_tiga.judul,
+    "all_tabel.tabel_tiga.tr_satu.ukuran":db_setting.all_tabel.tabel_tiga.tr_satu.ukuran,
+    "all_tabel.tabel_tiga.tr_satu.harga":db_setting.all_tabel.tabel_tiga.tr_satu.harga
+    },
+    { $set: {
+    "all_tabel.tabel_tiga.judul":judul_tabel_tiga,
+    "all_tabel.tabel_tiga.tr_satu.ukuran":tabel_tiga_tr_ukuran_satu,
+    "all_tabel.tabel_tiga.tr_satu.harga":tabel_tiga_tr_harga_satu,
+    "all_tabel.tabel_tiga.tr_dua.ukuran":tabel_tiga_tr_ukuran_dua,
+    "all_tabel.tabel_tiga.tr_dua.harga":tabel_tiga_tr_harga_dua,
+    "all_tabel.tabel_tiga.tr_tiga.ukuran":tabel_tiga_tr_ukuran_tiga,
+    "all_tabel.tabel_tiga.tr_tiga.harga":tabel_tiga_tr_harga_tiga,
+    "all_tabel.tabel_tiga.tr_empat.ukuran":tabel_tiga_tr_ukuran_empat,
+    "all_tabel.tabel_tiga.tr_empat.harga":tabel_tiga_tr_harga_empat,
+    "all_tabel.tabel_tiga.tr_lima.ukuran":tabel_tiga_tr_ukuran_lima,
+    "all_tabel.tabel_tiga.tr_lima.harga":tabel_tiga_tr_harga_lima,
+    "all_tabel.tabel_tiga.tr_enam.ukuran":tabel_tiga_tr_ukuran_enam,
+    "all_tabel.tabel_tiga.tr_enam.harga":tabel_tiga_tr_harga_enam,
+    "all_tabel.tabel_tiga.tr_tuju.ukuran":tabel_tiga_tr_ukuran_tuju,
+    "all_tabel.tabel_tiga.tr_tuju.harga":tabel_tiga_tr_harga_tuju,
+    "all_tabel.tabel_tiga.tr_lapan.ukuran":tabel_tiga_tr_ukuran_lapan,
+    "all_tabel.tabel_tiga.tr_lapan.harga":tabel_tiga_tr_harga_lapan,
+    "all_tabel.tabel_tiga.tr_sembilan.ukuran":tabel_tiga_tr_ukuran_sembilan,
+    "all_tabel.tabel_tiga.tr_sembilan.harga":tabel_tiga_tr_harga_sembilan,
+    "all_tabel.tabel_tiga.tr_sepuluh.ukuran":tabel_tiga_tr_ukuran_sepuluh,
+    "all_tabel.tabel_tiga.tr_sepuluh.harga":tabel_tiga_tr_harga_sepuluh,
+    } });        
+    console.log(`all table berhasil`);
+    res.redirect('/admin');
+}else if(judul_tabel_empat){
+    const db_setting = await db_atur_img.findOne({},);
+    await db_atur_img.updateOne({
+    "all_tabel.tabel_empat.judul":db_setting.all_tabel.tabel_empat.judul,
+    "all_tabel.tabel_empat.tr_satu.ukuran":db_setting.all_tabel.tabel_empat.tr_satu.ukuran,
+    "all_tabel.tabel_empat.tr_satu.harga":db_setting.all_tabel.tabel_empat.tr_satu.harga
+    },
+    { $set: {
+    "all_tabel.tabel_empat.judul":judul_tabel_empat,
+    "all_tabel.tabel_empat.tr_satu.ukuran":tabel_empat_tr_ukuran_satu,
+    "all_tabel.tabel_empat.tr_satu.harga":tabel_empat_tr_harga_satu,
+    "all_tabel.tabel_empat.tr_dua.ukuran":tabel_empat_tr_ukuran_dua,
+    "all_tabel.tabel_empat.tr_dua.harga":tabel_empat_tr_harga_dua,
+    "all_tabel.tabel_empat.tr_tiga.ukuran":tabel_empat_tr_ukuran_tiga,
+    "all_tabel.tabel_empat.tr_tiga.harga":tabel_empat_tr_harga_tiga,
+    "all_tabel.tabel_empat.tr_empat.ukuran":tabel_empat_tr_ukuran_empat,
+    "all_tabel.tabel_empat.tr_empat.harga":tabel_empat_tr_harga_empat,
+    "all_tabel.tabel_empat.tr_lima.ukuran":tabel_empat_tr_ukuran_lima,
+    "all_tabel.tabel_empat.tr_lima.harga":tabel_empat_tr_harga_lima,
+    "all_tabel.tabel_empat.tr_enam.ukuran":tabel_empat_tr_ukuran_enam,
+    "all_tabel.tabel_empat.tr_enam.harga":tabel_empat_tr_harga_enam,
+    "all_tabel.tabel_empat.tr_tuju.ukuran":tabel_empat_tr_ukuran_tuju,
+    "all_tabel.tabel_empat.tr_tuju.harga":tabel_empat_tr_harga_tuju,
+    "all_tabel.tabel_empat.tr_lapan.ukuran":tabel_empat_tr_ukuran_lapan,
+    "all_tabel.tabel_empat.tr_lapan.harga":tabel_empat_tr_harga_lapan,
+    "all_tabel.tabel_empat.tr_sembilan.ukuran":tabel_empat_tr_ukuran_sembilan,
+    "all_tabel.tabel_empat.tr_sembilan.harga":tabel_empat_tr_harga_sembilan,
+    "all_tabel.tabel_empat.tr_sepuluh.ukuran":tabel_empat_tr_ukuran_sepuluh,
+    "all_tabel.tabel_empat.tr_sepuluh.harga":tabel_empat_tr_harga_sepuluh,
+    } });        
+    console.log(`all table berhasil`);
+    res.redirect('/admin');
+}
+else{
+    console.log("gagal");
+
+}
+    }
+    else{
+        res.redirect('/login')
+    }
+
+});
+
+
 app.post('/profile-upload-multiple', upload.array('profile-files'), (req, res) => {
     res.redirect('/admin');
 
