@@ -462,7 +462,7 @@
     </div>
   </form>
   <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_satu.img%>.jpg" alt="card satu" class="img-thumbnail" width="304" height="236">
-  <form enctype="multipart/form-data" method="post" action="/edit_all_img">
+  <form method="post" action="/edit_all_img">
     <h6>judul</h6>
     <% if(db_setting.all_img.img_satu.judulproduk=="False"){%>
     <input name="judul_img_card_satu" class="form-control" type="text" placeholder="Default input" required>
@@ -488,6 +488,7 @@
       %>
       <input name="filter_img_card_satu" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_satu.filter %>" required>
         <%}%>
+        <input type="submit" value="simpan">
   </form>
   </div>
   </div>
@@ -534,7 +535,8 @@
       else{
       %>
       <input name="filter_img_card_dua" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_dua.filter %>" required>
-        <%}%>s
+        <%}%>
+        <input type="submit" value="simpan">
     </form>
     </div>
     </div>
@@ -581,6 +583,7 @@
       %>
       <input name="filter_img_card_tiga" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tiga.filter %>" required>
         <%}%>
+        <input type="submit" value="simpan">
       </form>
       </div>
       </div>
@@ -627,6 +630,7 @@
       %>
       <input name="filter_img_card_empat" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_empat.filter %>" required>
         <%}%>
+        <input type="submit" value="simpan">
       </form>
       </div>
       </div>
@@ -673,6 +677,7 @@
       %>
       <input name="filter_img_card_lima" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_lima.filter %>" required>
         <%}%>
+        <input type="submit" value="simpan">
       </form>
           </div>
           </div>      
@@ -719,6 +724,7 @@
       %>
       <input name="filter_img_card_enam" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_enam.filter %>" required>
         <%}%>
+        <input type="submit" value="simpan">
   </form>
   </div>
   </div>
@@ -765,7 +771,8 @@
       else{
       %>
       <input name="filter_img_card_tuju" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tuju.filter %>" required>
-        <%}%>s
+        <%}%>
+        <input type="submit" value="simpan">
     </form>
     </div>
     </div>
@@ -812,6 +819,7 @@
       %>
       <input name="filter_img_card_lapan" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_lapan.filter %>" required>
         <%}%>
+        <input type="submit" value="simpan">
       </form>
       </div>
       </div>
@@ -858,6 +866,7 @@
       %>
       <input name="filter_img_card_sembilan" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sembilan.filter %>" required>
         <%}%>
+        <input type="submit" value="simpan">
       </form>
       </div>
       </div>
@@ -904,6 +913,8 @@
       %>
       <input name="filter_img_card_sepuluh" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sepuluh.filter %>" required>
         <%}%>
+        <input type="submit" value="simpan">
+
       </form>
           </div>
           </div>      
@@ -950,6 +961,7 @@
         %>
         <input name="filter_img_card_sebelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sebelas.filter %>" required>
           <%}%>
+        <input type="submit" value="simpan">
     </form>
     </div>
     </div>
@@ -996,7 +1008,8 @@
         else{
         %>
         <input name="filter_img_card_duabelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_duabelas.filter %>" required>
-          <%}%>s
+          <%}%>
+        <input type="submit" value="simpan">
       </form>
       </div>
       </div>
@@ -1043,6 +1056,7 @@
         %>
         <input name="filter_img_card_tigabelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tigabelas.filter %>" required>
           <%}%>
+        <input type="submit" value="simpan">
         </form>
         </div>
         </div>
@@ -1089,6 +1103,7 @@
         %>
         <input name="filter_img_card_empatbelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_empatbelas.filter %>" required>
           <%}%>
+        <input type="submit" value="simpan">
         </form>
         </div>
         </div>
@@ -1135,6 +1150,7 @@
         %>
         <input name="filter_img_card_limabelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_limabelas.filter %>" required>
           <%}%>
+        <input type="submit" value="simpan">
         </form>
             </div>
             </div>      
@@ -1181,6 +1197,7 @@
         %>
         <input name="filter_img_card_enambelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_enambelas.filter %>" required>
           <%}%>
+        <input type="submit" value="simpan">
     </form>
     </div>
     </div>
@@ -1227,7 +1244,8 @@
         else{
         %>
         <input name="filter_img_card_tujubelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_tujubelas.filter %>" required>
-          <%}%>s
+          <%}%>
+        <input type="submit" value="simpan">
       </form>
       </div>
       </div>
@@ -1274,6 +1292,7 @@
         %>
         <input name="filter_img_card_lapanbelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_lapanbelas.filter %>" required>
           <%}%>
+        <input type="submit" value="simpan">
         </form>
         </div>
         </div>
@@ -1320,6 +1339,7 @@
         %>
         <input name="filter_img_card_sembilanbelas" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_sembilanbelas.filter %>" required>
           <%}%>
+        <input type="submit" value="simpan">
         </form>
         </div>
         </div>
@@ -1339,7 +1359,7 @@
               </div>
               <input type="submit" value="Upload" />
             </form>
-        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_duapuluh.img%>.jpg" alt="card duapuluh" class="img-thumbnail" width="304" height="236">
+        <img src="/img/gambar_landing_page/<%=db_setting.all_img.img_duapuluh.img%>.jpg" alt="card duapuluh" class="img-thumbnail" width="304" height="236" required="">
         <form method="post" action="/edit_all_img">
           <h6>judul</h6>
           <% if(db_setting.all_img.img_duapuluh.judulproduk=="False"){%>
@@ -1366,10 +1386,196 @@
         %>
         <input name="filter_img_card_duapuluh" class="form-control" type="text" placeholder="Default input" value="<%=db_setting.all_img.img_duapuluh.filter %>" required>
           <%}%>
+        <input type="submit" value="simpan">
         </form>
             </div>
             </div>      
             <!-- batasnya card -->
+            <!-- untuk card tabel size-->
+    <div class="container-sm">
+      <div class="row justify-content-md-center">
+        <div class="col-xl-3 col-sm-6 col-12" id="tabel_gamis">
+          <div class="card">
+            <div class="card-body">
+              <div class="media">
+                <i class="icon-frame success font-large-2"></i>
+                <div class="media-body text-left">
+                  <table class="table table shadow p-3 mb-5">
+                    <div class="col-xs-2">
+                    <input name="judul_table_satu" placeholder="judul">
+                    </div>  
+                    <thead>
+                        <tr>
+                          <th scope="col">Size</th>
+                          <th scope="col">Harga</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="col-1">
+                            <input name="judul_table_satu_" placeholder="Ukuran">
+                            </div>
+                            </td>
+                          <td>
+                            <input class="col-xs-2" name="judul_table_satu_" placeholder="Harga">
+                            </td>
+                        </tr>
+                        <tr>
+                          <td>XXL</td>
+                          <td>Rp 229.900</td>
+                        </tr>
+                        <tr>
+                          <td>3XL</td>
+                          <td>Rp 239.900</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12" id="tabel_gamis">
+          <div class="card">
+            <div class="card-body">
+              <div class="media">
+                <i class="icon-note font-large-2"></i>
+                <div class="media-body text-left">
+                  <table class="table table shadow p-3 mb-5">
+                    <h4>Gamis Dewasa</h4>
+                      <thead>
+                        <tr>
+                          <th scope="col">Size</th>
+                          <th scope="col">Harga</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>XS - XL</td>
+                          <td>Rp 329.900</td>
+                        </tr>
+                        <tr>
+                          <td>XXL</td>
+                          <td>Rp 339.900</td>
+                        </tr>
+                        <tr>
+                          <td>3XL</td>
+                          <td>Rp 349.900</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-xl-3 col-sm-6 col-12" id="tabel_gamis">
+          <div class="card">
+            <div class="card-body">
+              <div class="media">
+                <i class="icon-note font-large-2"></i>
+                <div class="media-body text-left">
+                  <table class="table table shadow p-3 mb-5">
+                    <h4>Gamis Anak</h4>
+                      <thead>
+                        <tr>
+                          <th scope="col">Size</th>
+                          <th scope="col">Harga</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>0</td>
+                          <td>Rp 279.900</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Rp 289.900</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Rp 289.900</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>Rp 299.900</td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td>Rp 299.900</td>
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td>Rp 289.900</td>
+                        </tr>
+                          <td>12</td>
+                          <td>Rp 309.900</td>
+                        </tr>
+                        <tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12" id="tabel_gamis">
+          <div class="card">
+            <div class="card-body">
+              <div class="media">
+                <i class="icon-note font-large-2"></i>
+                <div class="media-body text-left">
+                  <table class="table table shadow p-3 mb-5">
+                    <h4>Koko Anak</h4>
+                      <thead>
+                        <tr>
+                          <th scope="col">Size</th>
+                          <th scope="col">Harga</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>0</td>
+                          <td>Rp 239.900</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Rp 249.900</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Rp 249.900</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>Rp 259.900</td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td>Rp 259.900</td>
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td>Rp 269.900</td>
+                        </tr>
+                          <td>12</td>
+                          <td>Rp 269.900</td>
+                        </tr>
+                        <tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+  <!-- iniUNTUK TABEL HARGA -->
   </div>
 
   <!-- Vendor JS Files -->
