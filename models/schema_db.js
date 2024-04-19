@@ -14,6 +14,7 @@ const akun = new mongoose.Schema({
   });
   
   const db_atur_img = new mongoose.Schema({
+    judul_title:String,
     img_slide:{
         img_satu:String,
         img_satu_tulisan:{ 
@@ -194,8 +195,7 @@ const akun = new mongoose.Schema({
             deskripsiproduk:String,
             filter:String
         }
-    }
-    ,all_tabel:{
+    },all_tabel:{
         tabel_satu:{
             judul:String,
             tr_satu:{
@@ -329,7 +329,9 @@ const akun = new mongoose.Schema({
                 harga:String,
             }
         }
-    }
+    },
+    link_belanja:String,
+    link_video:String
   });
 
   module.exports = {

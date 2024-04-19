@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Violet Store - Sarimbit Azzura</title>
+  <title><%=db_setting.judul_title%></title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -219,7 +219,7 @@
         <% if(db_setting.all_img.img_satu.img !== "False" && db_setting.all_img.img_satu.judulproduk !== "False" && db_setting.all_img.img_satu.deskripsiproduk !== "False" && db_setting.all_img.img_satu.filter !== "False"){ %>
         <div class="row portfolio-container">
             <!-- ini untuk warna army sekeleuarga -->
-        <% if(db_setting.all_img.img_satu.img !== "False" && db_setting.all_img.img_satu.judulproduk !== "False" && db_setting.all_img.img_satu.deskripsiproduk !== "False" && db_setting.all_img.img_satu.filter !== "False"){ %>
+        <% if(db_setting.all_img.img_satu.img !== "False"){ %>
           <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_satu.filter %>">
             <div class="portfolio-wrap">
               <img src="img/gambar_landing_page/<%= db_setting.all_img.img_satu.img %>.jpg" class="img-fluid" alt="">
@@ -233,7 +233,7 @@
             </div>
           </div> 
           <% } %>
-          <% if(db_setting.all_img.img_dua.img !== "False" && db_setting.all_img.img_dua.judulproduk !== "False" && db_setting.all_img.img_dua.deskripsiproduk !== "False" && db_setting.all_img.img_dua.filter !== "False"){ %>
+          <% if(db_setting.all_img.img_dua.img !== "False"){ %>
             <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_dua.filter %>">
               <div class="portfolio-wrap">
                 <img src="img/gambar_landing_page/<%= db_setting.all_img.img_dua.img %>.jpg" class="img-fluid" alt="">
@@ -247,7 +247,7 @@
               </div>
             </div> 
             <% } %>
-            <% if(db_setting.all_img.img_tiga.img !== "False" && db_setting.all_img.img_tiga.judulproduk !== "False" && db_setting.all_img.img_tiga.deskripsiproduk !== "False" && db_setting.all_img.img_tiga.filter !== "False"){ %>
+            <% if(db_setting.all_img.img_tiga.img !== "False"){ %>
               <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_tiga.filter %>">
                 <div class="portfolio-wrap">
                   <img src="img/gambar_landing_page/<%= db_setting.all_img.img_tiga.img %>.jpg" class="img-fluid" alt="">
@@ -261,7 +261,7 @@
                 </div>
               </div> 
               <% } %>
-              <% if(db_setting.all_img.img_empat.img !== "False" && db_setting.all_img.img_empat.judulproduk !== "False" && db_setting.all_img.img_empat.deskripsiproduk !== "False" && db_setting.all_img.img_empat.filter !== "False"){ %>
+              <% if(db_setting.all_img.img_empat.img !== "False"){ %>
                 <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_empat.filter %>">
                   <div class="portfolio-wrap">
                     <img src="img/gambar_landing_page/<%= db_setting.all_img.img_empat.img %>.jpg" class="img-fluid" alt="">
@@ -275,7 +275,7 @@
                   </div>
                 </div> 
                 <% } %>
-                <% if(db_setting.all_img.img_lima.img !== "False" && db_setting.all_img.img_lima.judulproduk !== "False" && db_setting.all_img.img_lima.deskripsiproduk !== "False" && db_setting.all_img.img_lima.filter !== "False"){ %>
+                <% if(db_setting.all_img.img_lima.img !== "False"){ %>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_lima.filter %>">
                     <div class="portfolio-wrap">
                       <img src="img/gambar_landing_page/<%= db_setting.all_img.img_lima.img %>.jpg" class="img-fluid" alt="">
@@ -289,7 +289,7 @@
                     </div>
                   </div> 
                   <% } %>
-                  <% if(db_setting.all_img.img_enam.img !== "False" && db_setting.all_img.img_enam.judulproduk !== "False" && db_setting.all_img.img_enam.deskripsiproduk !== "False" && db_setting.all_img.img_enam.filter !== "False"){ %>
+                  <% if(db_setting.all_img.img_enam.img !== "False"){ %>
                     <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_enam.filter %>">
                       <div class="portfolio-wrap">
                         <img src="img/gambar_landing_page/<%= db_setting.all_img.img_enam.img %>.jpg" class="img-fluid" alt="">
@@ -303,7 +303,7 @@
                       </div>
                     </div> 
                     <% } %>
-                    <% if(db_setting.all_img.img_tuju.img !== "False" && db_setting.all_img.img_tuju.judulproduk !== "False" && db_setting.all_img.img_tuju.deskripsiproduk !== "False" && db_setting.all_img.img_tuju.filter !== "False"){ %>
+                    <% if(db_setting.all_img.img_tuju.img !== "False"){ %>
                       <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_tuju.filter %>">
                         <div class="portfolio-wrap">
                           <img src="img/gambar_landing_page/<%= db_setting.all_img.img_tuju.img %>.jpg" class="img-fluid" alt="">
@@ -317,7 +317,7 @@
                         </div>
                     </div> 
                     <% } %>
-                    <% if(db_setting.all_img.img_lapan.img !== "False" && db_setting.all_img.img_lapan.judulproduk !== "False" && db_setting.all_img.img_lapan.deskripsiproduk !== "False" && db_setting.all_img.img_lapan.filter !== "False"){ %>
+                    <% if(db_setting.all_img.img_lapan.img !== "False"){ %>
                       <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_lapan.filter %>">
                         <div class="portfolio-wrap">
                           <img src="img/gambar_landing_page/<%= db_setting.all_img.img_lapan.img %>.jpg" class="img-fluid" alt="">
@@ -331,7 +331,7 @@
                         </div>
                     </div> 
                     <% } %>
-                    <% if(db_setting.all_img.img_sembilan.img !== "False" && db_setting.all_img.img_sembilan.judulproduk !== "False" && db_setting.all_img.img_sembilan.deskripsiproduk !== "False" && db_setting.all_img.img_sembilan.filter !== "False"){ %>
+                    <% if(db_setting.all_img.img_sembilan.img !== "False"){ %>
                       <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_sembilan.filter %>">
                         <div class="portfolio-wrap">
                           <img src="img/gambar_landing_page/<%= db_setting.all_img.img_sembilan.img %>.jpg" class="img-fluid" alt="">
@@ -345,7 +345,7 @@
                         </div>
                     </div> 
                     <% } %>
-                    <% if(db_setting.all_img.img_sepuluh.img !== "False" && db_setting.all_img.img_sepuluh.judulproduk !== "False" && db_setting.all_img.img_sepuluh.deskripsiproduk !== "False" && db_setting.all_img.img_sepuluh.filter !== "False"){ %>
+                    <% if(db_setting.all_img.img_sepuluh.img !== "False"){ %>
                       <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_sepuluh.filter %>">
                         <div class="portfolio-wrap">
                           <img src="img/gambar_landing_page/<%= db_setting.all_img.img_sepuluh.img %>.jpg" class="img-fluid" alt="">
@@ -359,7 +359,7 @@
                         </div>
                 </div> 
                 <% } %>
-                <% if(db_setting.all_img.img_sebelas.img !== "False" && db_setting.all_img.img_sebelas.judulproduk !== "False" && db_setting.all_img.img_sebelas.deskripsiproduk !== "False" && db_setting.all_img.img_sebelas.filter !== "False"){ %>
+                <% if(db_setting.all_img.img_sebelas.img !== "False"){ %>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_sebelas.filter %>">
                     <div class="portfolio-wrap">
                       <img src="img/gambar_landing_page/<%= db_setting.all_img.img_sebelas.img %>.jpg" class="img-fluid" alt="">
@@ -373,7 +373,7 @@
                     </div>
                 </div> 
                 <% } %>
-                <% if(db_setting.all_img.img_duabelas.img !== "False" && db_setting.all_img.img_duabelas.judulproduk !== "False" && db_setting.all_img.img_duabelas.deskripsiproduk !== "False" && db_setting.all_img.img_duabelas.filter !== "False"){ %>
+                <% if(db_setting.all_img.img_duabelas.img !== "False"){ %>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_duabelas.filter %>">
                     <div class="portfolio-wrap">
                       <img src="img/gambar_landing_page/<%= db_setting.all_img.img_duabelas.img %>.jpg" class="img-fluid" alt="">
@@ -387,7 +387,7 @@
                     </div>
                 </div> 
                 <% } %>
-                <% if(db_setting.all_img.img_tigabelas.img !== "False" && db_setting.all_img.img_tigabelas.judulproduk !== "False" && db_setting.all_img.img_tigabelas.deskripsiproduk !== "False" && db_setting.all_img.img_tigabelas.filter !== "False"){ %>
+                <% if(db_setting.all_img.img_tigabelas.img !== "False"){ %>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_tigabelas.filter %>">
                     <div class="portfolio-wrap">
                       <img src="img/gambar_landing_page/<%= db_setting.all_img.img_tigabelas.img %>.jpg" class="img-fluid" alt="">
@@ -401,7 +401,7 @@
                     </div>
                 </div> 
                 <% } %>
-                <% if(db_setting.all_img.img_empatbelas.img !== "False" && db_setting.all_img.img_empatbelas.judulproduk !== "False" && db_setting.all_img.img_empatbelas.deskripsiproduk !== "False" && db_setting.all_img.img_empatbelas.filter !== "False"){ %>
+                <% if(db_setting.all_img.img_empatbelas.img !== "False"){ %>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_empatbelas.filter %>">
                     <div class="portfolio-wrap">
                       <img src="img/gambar_landing_page/<%= db_setting.all_img.img_empatbelas.img %>.jpg" class="img-fluid" alt="">
@@ -415,7 +415,7 @@
                     </div>
                 </div> 
                 <% } %>
-                <% if(db_setting.all_img.img_limabelas.img !== "False" && db_setting.all_img.img_limabelas.judulproduk !== "False" && db_setting.all_img.img_limabelas.deskripsiproduk !== "False" && db_setting.all_img.img_limabelas.filter !== "False"){ %>
+                <% if(db_setting.all_img.img_limabelas.img !== "False"){ %>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_limabelas.filter %>">
                     <div class="portfolio-wrap">
                       <img src="img/gambar_landing_page/<%= db_setting.all_img.img_limabelas.img %>.jpg" class="img-fluid" alt="">
@@ -429,7 +429,7 @@
                     </div>
                 </div> 
                 <% } %>
-                <% if(db_setting.all_img.img_enambelas.img !== "False" && db_setting.all_img.img_enambelas.judulproduk !== "False" && db_setting.all_img.img_enambelas.deskripsiproduk !== "False" && db_setting.all_img.img_enambelas.filter !== "False"){ %>
+                <% if(db_setting.all_img.img_enambelas.img !== "False"){ %>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_enambelas.filter %>">
                     <div class="portfolio-wrap">
                       <img src="img/gambar_landing_page/<%= db_setting.all_img.img_enambelas.img %>.jpg" class="img-fluid" alt="">
@@ -443,7 +443,7 @@
                     </div>
                 </div> 
                 <% } %>
-                <% if(db_setting.all_img.img_tujubelas.img !== "False" && db_setting.all_img.img_tujubelas.judulproduk !== "False" && db_setting.all_img.img_tujubelas.deskripsiproduk !== "False" && db_setting.all_img.img_tujubelas.filter !== "False"){ %>
+                <% if(db_setting.all_img.img_tujubelas.img !== "False"){ %>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_tujubelas.filter %>">
                     <div class="portfolio-wrap">
                       <img src="img/gambar_landing_page/<%= db_setting.all_img.img_tujubelas.img %>.jpg" class="img-fluid" alt="">
@@ -457,7 +457,7 @@
                     </div>
                 </div> 
                 <% } %>
-                <% if(db_setting.all_img.img_lapanbelas.img !== "False" && db_setting.all_img.img_lapanbelas.judulproduk !== "False" && db_setting.all_img.img_lapanbelas.deskripsiproduk !== "False" && db_setting.all_img.img_lapanbelas.filter !== "False"){ %>
+                <% if(db_setting.all_img.img_lapanbelas.img !== "False"){ %>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_lapanbelas.filter %>">
                     <div class="portfolio-wrap">
                       <img src="img/gambar_landing_page/<%= db_setting.all_img.img_lapanbelas.img %>.jpg" class="img-fluid" alt="">
@@ -471,7 +471,7 @@
                     </div>
                 </div> 
                 <% } %>
-                <% if(db_setting.all_img.img_sembilanbelas.img !== "False" && db_setting.all_img.img_sembilanbelas.judulproduk !== "False" && db_setting.all_img.imgsembilan_belas.deskripsiproduk !== "False" && db_setting.all_img.imgsembilan_belas.filter !== "False"){ %>
+                <% if(db_setting.all_img.img_sembilanbelas.img !== "False"){ %>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_sembilan_belas.filter %>">
                     <div class="portfolio-wrap">
                       <img src="img/gambar_landing_page/<%= db_setting.all_img.img_sembilan_belas.img %>.jpg" class="img-fluid" alt="">
@@ -485,7 +485,7 @@
                     </div>
                 </div> 
                 <% } %>
-                <% if(db_setting.all_img.img_duapuluh.img !== "False" && db_setting.all_img.img_duapuluh.judulproduk !== "False" && db_setting.all_img.img_duapuluh.deskripsiproduk !== "False" && db_setting.all_img.img_duapuluh.filter !== "False"){ %>
+                <% if(db_setting.all_img.img_duapuluh.img !== "False"){ %>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-<%= db_setting.all_img.img_duapuluh.filter %>">
                     <div class="portfolio-wrap">
                       <img src="img/gambar_landing_page/<%= db_setting.all_img.img_duapuluh.img %>.jpg" class="img-fluid" alt="">
@@ -937,26 +937,33 @@
                         </div> 
                         <div class="col">
                           <input type="number" id="wa_nama" class="form-control" placeholder="Nomor telephone" name="nomer_telephone" required>
-                        </div>              
-                      </div>
+                        </div>            
+          </div>
           </div>
         </form>
         </div>
       </div>
       <div class="col align-self-center">
         <button type="submit" id="tombol_send_wa" class="btn btn-success mb-2"><i class="ri-truck-line"></i>belanja sekarang + gratis ongkir</button>
-        </div>  
+        </div>
+        <% if(db_setting.link_belanja !== "False"){ %>
+        <div class="col align-self-center">
+          <a href="<%=db_setting.link_belanja%>">Buka Shopee</a>
+        </div>    
+      <% } %>
     </div>
     </div>
 </div>
 </div>
-    <!-- terkhir kirim wa -->
 
+<!-- terkhir kirim wa -->
+<% if(db_setting.link_video !== "False"){ %>
     <center>
     <div class="yt">
-      <iframe class="responsive-iframe" src="https://www.youtube.com/embed/FbV2dpB_yq4"></iframe>
+      <iframe class="responsive-iframe" src="https://www.youtube.com/embed/<%=db_setting.link_video%>"></iframe>
     </div>
 </center>
+<% } %>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->

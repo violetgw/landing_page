@@ -56,6 +56,27 @@
 <!-- untuk Upload -->
 <div class="container">
 
+          <!-- judul titel -->
+          <div class="card">
+            <div class="card-body">
+          </form>
+          <form method="post" action="/judul_title">
+            <h6>Judul Titel</h6>
+            <% if(db_setting.judul_title=="False"){%>
+            <input name="judul_title" class="form-control" type="text" placeholder="judul title" required>
+            <%} 
+            else{
+            %>
+            <input name="judul_title" class="form-control" value="<%=db_setting.judul_title%>" type="text" placeholder="judul title" required>
+            <%}%>
+            <input type="submit" value="simpan">
+          </form>
+          </div>
+          </div>
+          <!-- judul titel -->
+
+
+
 <h4> Gambar Slide </h4>
   <!-- batsan card -->
 <div class="card">
@@ -2165,6 +2186,44 @@
     </div>
 
   <!-- iniUNTUK TABEL HARGA -->
+  <!-- link jual -->
+          <div class="card">
+            <div class="card-body">
+          </form>
+          <form method="post" action="/link_toko">
+            <h6>Link Belanja</h6>
+            <% if(db_setting.link_belanja=="False"){%>
+            <input name="link_toko" class="form-control" type="text" placeholder="link toko" required>
+            <%} 
+            else{
+            %>
+            <input name="link_toko" class="form-control" value="<%=db_setting.link_belanja%>" type="text" placeholder="link toko" required>
+            <%}%>
+            <input type="submit" value="simpan">
+          </form>
+          </div>
+          </div>
+          <!-- link jual -->
+
+          <!-- link video -->
+          <div class="card">
+            <div class="card-body">
+          </form>
+          <form method="post" action="/link_video">
+            <h6>Link Video</h6>
+            <% if(db_setting.link_video=="False"){%>
+            <input name="link_video" class="form-control" type="text" placeholder="judul title" required>
+            <%} 
+            else{
+            %>
+            <input name="link_video" class="form-control" value="<%=db_setting.link_video%>" type="text" placeholder="judul title" required>
+            <%}%>
+            <input type="submit" value="simpan">
+          </form>
+          </div>
+          </div>
+          <!-- link jual -->
+
   </div>
 
   <!-- Vendor JS Files -->

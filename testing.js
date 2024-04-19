@@ -45,6 +45,7 @@ app.use(bodyParser.json());
   
   
   const save_data = new db_atur_img({
+    judul_title:"False",
     img_slide:{
         img_satu:"False",
         img_satu_tulisan:{ 
@@ -365,7 +366,8 @@ app.use(bodyParser.json());
                 harga:"False",
             }
         }
-    }
+    },link_belanja:"False",
+    link_video:"False"
   
   });
 
@@ -382,15 +384,16 @@ app.use(bodyParser.json());
   
   app.get('/send_wa',async (req,res)=>{
     const currentTime = moment();
-  
+    
+     const judul_produk = await db_atur_img.findOne();
      const {wa_nama,nomer_telephone} = req.query;
      console.log(`Data Masuk ${wa_nama} pukul ${currentTime.format("HH:mm:ss")}`);
-  
+     console.log(judul_produk.img_slide.img_satu_tulisan.judulproduk);
      const data_short_form =  await data_form_data.findOne({nama:wa_nama, nomer_telephone:nomer_telephone},`nama nomer_telphone`);
   
      if(data_short_form){
   
-      res.redirect(`https://wa.me/6281290663757/?text=Assalamu'alaikum kak saya ${wa_nama} Mau tanya" terkait sarimbit.😉`)
+      res.redirect(`https://wa.me/6281290663757/?text=Assalamu'alaikum kak saya ${wa_nama} Mau tanya mengenai" ${judul_produk.img_slide.img_satu_tulisan.judulproduk}.😉`);
   
      }
      else{
@@ -403,7 +406,7 @@ app.use(bodyParser.json());
       });
   
       save_short_form.save();
-      res.redirect(`https://wa.me/6281290663757/?text=Assalamu'alaikum kak saya ${wa_nama} Mau tanya" terkait sarimbit.😉`)
+      res.redirect(`https://wa.me/6281290663757/?text=Assalamu'alaikum kak saya ${wa_nama} Mau tanya mengenai" ${judul_produk.img_slide.img_satu_tulisan.judulproduk}.😉`);
      
     }
   
@@ -1734,6 +1737,48 @@ else{
 
 });
 
+app.post('/link_toko', async (req,res) => {
+
+    const db_setting = await  db_atur_img.findOne();
+    const link = req.body.link_toko;
+
+    console.log(link);
+
+    console.log(db_setting.link_belanja);
+    await db_atur_img.updateOne({ "link_belanja":db_setting.link_belanja}, { $set: {"link_belanja":link} });
+
+    res.redirect("/admin");
+
+});
+
+
+app.post('/link_video', async (req,res) => {
+
+    const db_setting = await  db_atur_img.findOne();
+    const link = req.body.link_video;
+
+    console.log(link);
+
+    console.log(db_setting.link_video);
+    await db_atur_img.updateOne({ "link_video":db_setting.link_video}, { $set: {"link_video":link} });
+
+    res.redirect("/admin");
+
+});
+
+app.post('/judul_title', async (req,res) => {
+
+    const db_setting = await  db_atur_img.findOne();
+    const judul_title = req.body.judul_title;
+
+    console.log(judul_title);
+
+    console.log(db_setting.judul_title);
+    await db_atur_img.updateOne({ "judul_title":db_setting.judul_title}, { $set: {"judul_title":judul_title} });
+
+    res.redirect("/admin");
+
+});
 
 app.post('/profile-upload-multiple', upload.array('profile-files'), (req, res) => {
     res.redirect('/admin');
